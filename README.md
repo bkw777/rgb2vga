@@ -23,9 +23,9 @@ For more information and directions see the [original documentation](https://sit
 
 # Changelog
 * 20211101 [v002](../../tree/v002) - Initial commit.  
- Luis Antoniosi's original updated resistor values
- Incorporate the additional bodge resistor (now R26)
- Routing cleanups for clearances and zone fills
+ Luis Antoniosi's original updated resistor values  
+ Incorporate the additional bodge resistor (now R26)  
+ Routing cleanups for clearances and zone fills  
 
 * 20211101 [v001](../../tree/v001) - Initial commit.  
  Import \*.brd file from https://oshpark.com/shared_projects/QwG4zF3f to make KiCad pcb file.  
