@@ -23,7 +23,7 @@ For more information and directions see the [original documentation](https://sit
 * Roger Taylor's resistor values
 
 # Changelog
-* 20211101 [v001](../../tree/v001) - Initial commit.
-::Import *.brd file from https://oshpark.com/shared_projects/QwG4zF3f to make KiCad pcb file.
-::Copy vhdl from https://github.com/lfantoniosi/rgb2vga (forked that repo to start this one).
-::This initial commit preserves the original pcb design for reference.
+* 20211101 [v001](../../tree/v001) - Initial commit.  
+ Import \*.brd file from https://oshpark.com/shared_projects/QwG4zF3f to make KiCad pcb file.  
+ Copy vhdl from https://github.com/lfantoniosi/rgb2vga (forked that repo to start this one).  
+ This initial commit preserves the original pcb design for reference.  
