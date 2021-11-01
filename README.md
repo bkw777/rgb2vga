@@ -22,7 +22,7 @@ For more information and directions see the [original documentation](https://sit
 * Roger Taylor's resistor values
 
 # Changelog
-* 20211101 [v002](../../tree/v002) - Initial commit.  
+* 20211101 [v002](../../tree/v002)  
  Luis Antoniosi's original updated resistor values  
  Incorporate the additional bodge resistor (now R26)  
  Routing cleanups for clearances and zone fills  
