@@ -15,7 +15,7 @@ For more information and directions see the [original documentation](https://sit
 
 <!-- [BOM from DigiKey]() -->
 
-<!-- [Gerbers](../../releases/latest) -->
+[Gerbers](../../releases/latest)
 
 # TODO
 * Manually redraw schematic from ref/schematic.png
