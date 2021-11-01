@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name rgb2vga)(type KiCad)(uri "$(KIPRJMOD)/rgb2vga.pretty")(options "")(descr ""))
+)

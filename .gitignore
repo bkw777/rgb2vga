@@ -1,43 +1,29 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+# For PCBs designed using KiCad: http://www.kicad-pcb.org/
+# Format documentation: http://kicad-pcb.org/help/file-formats/
 
-# Folder config file
-Desktop.ini
+# Temporary files
+*.000
+*.bak
+*.bck
+*.kicad_pcb-bak
+*.sch-bak
+*~
+_autosave-*
+*.tmp
+*-save.pro
+*-save.kicad_pcb
+fp-info-cache
+*-cache.lib
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+# Netlist files (exported from Eeschema)
+*.net
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+# Autorouter files (exported from Pcbnew)
+*.dsn
+*.ses
 
-# =========================
-# Operating System Files
-# =========================
+# Exported BOM files
+#*.xml
+#*.csv
 
-# OSX
-# =========================
-
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Icon must end with two \r
-Icon
-
-# Thumbnails
-._*
-
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+GERBER_*
