@@ -1,0 +1,82 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP +3.3V
+D Power symbol creates a global label with name "+3.3V"
+K power-flag
+$ENDCMP
+#
+$CMP +3V3
+D Power symbol creates a global label with name "+3V3"
+K power-flag
+$ENDCMP
+#
+$CMP +5V
+D Power symbol creates a global label with name "+5V"
+K power-flag
+$ENDCMP
+#
+$CMP C_Small
+D Unpolarized capacitor, small symbol
+K capacitor cap
+F ~
+$ENDCMP
+#
+$CMP Conn_02x05_Odd_Even
+D Generic connector, double row, 02x05, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
+$CMP Conn_02x20_Odd_Even
+D Generic connector, double row, 02x20, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
+$CMP Conn_Coaxial
+D coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, ...)
+K BNC SMA SMB SMC coaxial connector CINCH RCA
+F  ~
+$ENDCMP
+#
+$CMP DB15_Female_HighDensity_MountingHoles
+D 15-pin female D-SUB connector, High density (3 columns), Triple Row, Generic, VGA-connector, Mounting Hole
+K connector db15 female D-SUB VGA
+F  ~
+$ENDCMP
+#
+$CMP GND
+D Power symbol creates a global label with name "GND" , ground
+K power-flag
+$ENDCMP
+#
+$CMP Jumper_2_Open
+D Jumper, 2-pole, open
+K Jumper SPST
+F ~
+$ENDCMP
+#
+$CMP R_POT_Small
+D Potentiometer
+K resistor variable
+F ~
+$ENDCMP
+#
+$CMP R_Small
+D Resistor, small symbol
+K R resistor
+F ~
+$ENDCMP
+#
+$CMP SW_DIP_x08
+D 8x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol
+K dip switch
+F ~
+$ENDCMP
+#
+$CMP VCC
+D Power symbol creates a global label with name "VCC"
+K power-flag
+$ENDCMP
+#
+#End Doc Library
