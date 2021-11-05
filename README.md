@@ -8,7 +8,7 @@ This is a clone of the original design by Luis Felipe da Costa Antoniosi, to pro
 For more information and directions see the [original documentation](https://sites.google.com/site/tandycocoloco/rgb2vga)
 
 ![](PCB/rgb2vga.jpg)
-<!-- ![](PCB/rgb2vga.svg) -->
+![](PCB/rgb2vga.svg)
 
 [PCB from OSHPark](https://oshpark.com/shared_projects/QwG4zF3f)
 <!-- [PCB from PCBWAY]()  -->
