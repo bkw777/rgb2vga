@@ -10,7 +10,7 @@ For more information and directions see the [original documentation](https://sit
 ![](PCB/rgb2vga.jpg)
 ![](PCB/rgb2vga.svg)
 
-[PCB from OSHPark](https://oshpark.com/shared_projects/QwG4zF3f)
+<!-- [PCB from OSHPark](https://oshpark.com/shared_projects/QwG4zF3f) -->
 <!-- [PCB from PCBWAY]()  -->
 
 [BOM from DigiKey](https://www.digikey.com/short/7fwcd5wr)
