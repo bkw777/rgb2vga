@@ -1216,17 +1216,9 @@ _BRIGHT
 Text Label 3000 2600 2    50   ~ 0
 BRIGHT
 Wire Wire Line
-	2700 3800 2700 4000
-Wire Wire Line
-	2700 5100 3200 5100
-Wire Wire Line
 	3200 5100 3200 7200
 Wire Wire Line
 	3200 7200 2900 7200
-Connection ~ 2700 3800
-Connection ~ 2700 4000
-Wire Wire Line
-	2700 4000 2700 5100
 Wire Wire Line
 	2400 7100 2300 7100
 Wire Wire Line
@@ -1251,4 +1243,11 @@ Wire Wire Line
 	2400 7400 4400 7400
 Wire Wire Line
 	4400 7400 4400 3300
+Wire Wire Line
+	2700 3800 2500 3800
+Wire Wire Line
+	2500 3800 2500 5100
+Wire Wire Line
+	2500 5100 3200 5100
+Connection ~ 2700 3800
 $EndSCHEMATC
