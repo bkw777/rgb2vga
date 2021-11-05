@@ -7,6 +7,11 @@ This is a clone of the original design by Luis Felipe da Costa Antoniosi, to pro
 
 For more information and directions see the [original documentation](https://sites.google.com/site/tandycocoloco/rgb2vga)
 
+THIS BRANCH "rc003" IS UN-TESTED  
+This will become "v003" after testing if it checks out.  
+
+There are no gerbers or oshpark or pcbway links in this branch because this version has a lot of changes and has not been tested yet. Boards parts have been ordered, and testing is in the works.
+
 ![](PCB/rgb2vga.jpg)
 ![](PCB/rgb2vga.svg)
 
@@ -18,18 +23,18 @@ For more information and directions see the [original documentation](https://sit
 [DE0-Nano](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=593)  
  (or [search ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15))
 
-[Gerbers](../../releases/latest)
+<!-- [Gerbers](../../releases/latest) -->
 
 # TODO
 * Name the nets in the schematic from the names in the imported pcb.  
-* Flip the symbols in the schematic as necessary to match the pcb so the pad nets don't break.  
-* Verify / test redrawn schematic and new pcb.  
-* Write directions for flashing the DE0-Nano  
+* Flip the symbols in the schematic as necessary to match the pcb so the pad nets won't break on update from schematic.  
+* Test & verify this new schematic and pcb layout.  
+* Write directions for flashing the DE0-Nano.  
 
 # Changelog
 * 20201104<!-- [v003](../../tree/v003) -->  
  Created a new schematic based on the original png image. Same circuit, different layout.  
- Ed Snider/ Roger Taylor resistor values.  
+ Ed Snider / Roger Taylor resistor values.  
  Add the RGBI mod resistors  
  Full BOM from DigiKey, except for the DE0-Nano.  
 
