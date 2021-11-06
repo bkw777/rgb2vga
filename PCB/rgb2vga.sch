@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L 000_LOCAL:DB15_Female_HighDensity_MountingHoles RGBIN
+L 000_LOCAL:DB15_Female_HighDensity_MountingHoles RGB_IN
 U 1 1 61838F0F
 P 3800 2100
-F 0 "RGBIN" H 3830 3020 50  0000 C CNN
+F 0 "RGB_IN" H 3830 3020 50  0000 C CNN
 F 1 "DE15" H 3830 2920 50  0000 C CNN
 F 2 "000_LOCAL:DSUB-15-HD_Female_Horizontal_P2.29x1.98mm_EdgePinOffset3.03mm_Housed_MountingHolesOffset4.94mm" H 2850 2500 50  0001 C CNN
 F 3 " ~" H 2850 2500 50  0001 C CNN
@@ -122,7 +122,7 @@ L 000_LOCAL:GND #PWR0104
 U 1 1 618C3F79
 P 8500 3500
 F 0 "#PWR0104" H 8500 3250 50  0001 C CNN
-F 1 "GND" V 8500 3390 50  0000 R CNN
+F 1 "GND" V 8550 3500 50  0000 R CNN
 F 2 "" H 8500 3500 50  0001 C CNN
 F 3 "" H 8500 3500 50  0001 C CNN
 	1    8500 3500
@@ -502,9 +502,9 @@ Text Notes 2710 6440 0    50   ~ 0
 Wire Wire Line
 	10700 3700 10700 2800
 Wire Wire Line
-	8700 2800 8700 3400
+	9100 2800 9100 3400
 Wire Wire Line
-	8700 3400 8500 3400
+	9100 3400 8500 3400
 NoConn ~ 8500 3000
 NoConn ~ 8500 3100
 NoConn ~ 8500 3200
@@ -514,14 +514,14 @@ NoConn ~ 8500 4700
 NoConn ~ 8500 4800
 NoConn ~ 8500 4900
 Wire Wire Line
-	8500 3300 8600 3300
+	8500 3300 9000 3300
 Wire Wire Line
-	8600 3300 8600 2900
+	9000 3300 9000 2700
 $Comp
-L 000_LOCAL:DB15_Female_HighDensity_MountingHoles VGAOUT
+L 000_LOCAL:DB15_Female_HighDensity_MountingHoles VGA_OUT
 U 1 1 61831D6D
 P 10100 3700
-F 0 "VGAOUT" H 10100 4500 50  0000 C CNN
+F 0 "VGA_OUT" H 10100 4500 50  0000 C CNN
 F 1 "DE15" H 10100 4600 50  0000 C CNN
 F 2 "000_LOCAL:DSUB-15-HD_Female_Horizontal_P2.29x1.98mm_EdgePinOffset3.03mm_Housed_MountingHolesOffset4.94mm" H 9150 4100 50  0001 C CNN
 F 3 " ~" H 9150 4100 50  0001 C CNN
@@ -539,11 +539,11 @@ Wire Wire Line
 Wire Wire Line
 	8500 3600 9000 3600
 Wire Wire Line
-	10700 2800 8700 2800
+	10700 2800 9100 2800
 Wire Wire Line
-	7700 2700 8800 2700
+	7700 2700 8700 2700
 Wire Wire Line
-	8600 2900 10600 2900
+	9000 2700 10600 2700
 Wire Wire Line
 	8500 3700 9000 3700
 Wire Wire Line
@@ -652,10 +652,10 @@ F 3 "" H 3900 5500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 000_LOCAL:Conn_02x05_Odd_Even COCO3RGB
+L 000_LOCAL:Conn_02x05_Odd_Even COCO3_RGB_IN
 U 1 1 61CD355F
 P 4100 3500
-F 0 "COCO3RGB" H 4150 3850 50  0000 C CNN
+F 0 "COCO3_RGB_IN" H 4150 3850 50  0000 C CNN
 F 1 "Conn_02x05_Odd_Even" H 4170 3830 50  0001 C CNN
 F 2 "000_LOCAL:IDC-Header_2x05_P2.54mm_Horizontal" H 4100 3500 50  0001 C CNN
 F 3 "~" H 4100 3500 50  0001 C CNN
@@ -826,10 +826,10 @@ Wire Wire Line
 Wire Wire Line
 	3200 2100 3200 3500
 $Comp
-L 000_LOCAL:LM1881 IC1
+L 000_LOCAL:LM1881 U1
 U 1 1 61E52A44
 P 6000 2200
-F 0 "IC1" H 6170 2650 50  0000 C CNN
+F 0 "U1" H 6170 2650 50  0000 C CNN
 F 1 "LM1881" H 6200 2570 50  0000 C CNN
 F 2 "000_LOCAL:SOIC-8_4x5" H 6000 2200 50  0001 C CNN
 F 3 "" H 6000 2200 50  0001 C CNN
@@ -1077,13 +1077,13 @@ Text Label 3900 3700 2    50   ~ 0
 VSYNC
 Text Label 4400 3600 0    50   ~ 0
 HSYNC
-Text Label 3500 2100 2    50   ~ 0
+Text Label 3200 3500 0    50   ~ 0
 DIFFB
-Text Label 3500 1700 2    50   ~ 0
+Text Label 2100 3400 0    50   ~ 0
 DIFFR
-Text Label 3500 1900 2    50   ~ 0
+Text Label 2700 3000 0    50   ~ 0
 DIFFG
-Text Label 4100 2100 0    50   ~ 0
+Text Label 4410 2100 0    50   ~ 0
 CSYNC
 Text Label 9800 4100 2    50   ~ 0
 RED
@@ -1091,15 +1091,15 @@ Text Label 9800 3900 2    50   ~ 0
 GREEN
 Text Label 9800 3700 2    50   ~ 0
 BLUE
-Text Label 8500 3300 0    50   ~ 0
+Text Label 8820 3300 0    50   ~ 0
 VS
-Text Label 8500 3400 0    50   ~ 0
+Text Label 8820 3400 0    50   ~ 0
 HS
 Text Label 3400 5000 0    50   ~ 0
 D2
-Text Label 2900 5000 1    50   ~ 0
+Text Label 5030 4000 0    50   ~ 0
 _HSYNC
-Text Label 2800 5100 1    50   ~ 0
+Text Label 3430 3900 0    50   ~ 0
 _VSYNC
 Text Label 3400 5100 0    50   ~ 0
 D1
@@ -1107,7 +1107,7 @@ Text Label 3400 5200 0    50   ~ 0
 D0
 Text Label 3400 5300 0    50   ~ 0
 _BRIGHT
-Text Label 3500 2300 2    50   ~ 0
+Text Label 2600 3620 3    50   ~ 0
 BRIGHT
 Wire Wire Line
 	3700 4700 3700 6900
@@ -1275,11 +1275,11 @@ Wire Wire Line
 Wire Wire Line
 	5400 2500 5400 2400
 Wire Wire Line
-	9000 3500 8800 3500
+	9000 3500 8700 3500
 Wire Wire Line
-	8800 3500 8800 2700
+	8700 3500 8700 2700
 Wire Wire Line
-	10600 3500 10600 2900
+	10600 3500 10600 2700
 Wire Wire Line
 	10600 3700 10700 3700
 Wire Wire Line
@@ -1290,4 +1290,24 @@ Wire Wire Line
 Wire Wire Line
 	9200 4100 9800 4100
 Connection ~ 9200 4100
+Text Label 4100 7100 2    50   ~ 0
+DIFF_N
+Text Label 8700 3500 0    50   ~ 0
+B0
+Text Label 8700 3600 0    50   ~ 0
+B1
+Text Label 8700 3700 0    50   ~ 0
+B2
+Text Label 8700 3800 0    50   ~ 0
+G0
+Text Label 8700 3900 0    50   ~ 0
+G1
+Text Label 8700 4000 0    50   ~ 0
+G2
+Text Label 8700 4100 0    50   ~ 0
+R0
+Text Label 8700 4200 0    50   ~ 0
+R1
+Text Label 8700 4300 0    50   ~ 0
+R2
 $EndSCHEMATC
