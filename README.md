@@ -13,6 +13,7 @@ This will become "v003" after testing if it checks out.
 There are no gerbers or oshpark or pcbway links in this branch because this version has a lot of changes and has not been tested yet. Boards parts have been ordered, and testing is in the works.
 
 ![](PCB/rgb2vga.jpg)
+![](PCB/rgb2vga.bottom.jpg)
 ![](PCB/rgb2vga.svg)
 
 <!-- [PCB from OSHPark](https://oshpark.com/shared_projects/QwG4zF3f) -->
