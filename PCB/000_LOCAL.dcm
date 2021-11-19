@@ -74,6 +74,12 @@ K dip switch
 F ~
 $ENDCMP
 #
+$CMP SW_DIP_x12
+D 12x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol
+K dip switch
+F ~
+$ENDCMP
+#
 $CMP VCC
 D Power symbol creates a global label with name "VCC"
 K power-flag

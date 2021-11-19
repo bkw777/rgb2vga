@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "DE0-NANO RGB2VGA"
-Date "2021-11-04"
-Rev "002"
+Date "2021-11-18"
+Rev "004"
 Comp "Brian K. White - b.kenyon.w@gmail.com"
 Comment1 "Original Design by Luis Antoniosi 2014"
 Comment2 ""
@@ -46,33 +46,16 @@ F 3 "~" H 3100 5900 50  0001 C CNN
 	1    3100 5900
 	1    0    0    -1  
 $EndComp
-$Comp
-L 000_LOCAL:SW_DIP_x08 SW1
-U 1 1 61853D37
-P 2100 5900
-F 0 "SW1" H 2100 5400 50  0000 C CNN
-F 1 "SW_DIP_x08" H 2100 5400 50  0001 C CNN
-F 2 "000_LOCAL:SW_DIP_SPSTx08_Slide_9.78x22.5mm_W7.62mm_P2.54mm" H 2100 5900 50  0001 C CNN
-F 3 "~" H 2100 5900 50  0001 C CNN
-	1    2100 5900
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	2400 5600 2900 5600
-Wire Wire Line
-	2400 5700 2900 5700
 Wire Wire Line
 	2400 5800 2900 5800
 Wire Wire Line
 	2400 5900 2900 5900
 Wire Wire Line
-	2400 6000 2900 6000
-Wire Wire Line
 	2400 6100 2900 6100
 Wire Wire Line
 	2400 6200 2900 6200
-Wire Wire Line
-	2400 6300 2900 6300
 $Comp
 L 000_LOCAL:Conn_Coaxial J4
 U 1 1 6186B42D
@@ -144,7 +127,7 @@ L 000_LOCAL:+5V #PWR0107
 U 1 1 618C9673
 P 2900 5500
 F 0 "#PWR0107" H 2900 5350 50  0001 C CNN
-F 1 "+5V" V 2950 5650 50  0000 L CNN
+F 1 "+5V" V 2900 5600 50  0000 L CNN
 F 2 "" H 2900 5500 50  0001 C CNN
 F 3 "" H 2900 5500 50  0001 C CNN
 	1    2900 5500
@@ -588,10 +571,10 @@ U 1 1 61C177E5
 P 5200 5500
 F 0 "R24" V 5270 5410 50  0000 C CNN
 F 1 "10K" V 5130 5490 50  0000 C CNN
-F 2 "000_LOCAL:PT-10" H 5200 5500 50  0001 C CNN
+F 2 "000_LOCAL:PT10Lx-hole" H 5200 5500 50  0001 C CNN
 F 3 "~" H 5200 5500 50  0001 C CNN
 	1    5200 5500
-	0    -1   1    0   
+	0    1    1    0   
 $EndComp
 Wire Wire Line
 	4200 5400 4200 5500
@@ -847,17 +830,6 @@ F 3 "~" H 5400 2100 50  0001 C CNN
 	1    5400 2100
 	0    -1   -1   0   
 $EndComp
-$Comp
-L 000_LOCAL:Jumper_2_Open JP3
-U 1 1 61E8F41B
-P 6700 2100
-F 0 "JP3" H 6690 2040 50  0000 C CNN
-F 1 "Jumper_2_Open" H 6700 2260 50  0001 C CNN
-F 2 "000_LOCAL:JP" H 6700 2100 50  0001 C CNN
-F 3 "~" H 6700 2100 50  0001 C CNN
-	1    6700 2100
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3400 6500 3600 6500
 Wire Wire Line
@@ -867,24 +839,7 @@ Wire Wire Line
 Wire Wire Line
 	2800 5100 2800 3900
 Wire Wire Line
-	6900 3900 6900 2100
-$Comp
-L 000_LOCAL:Jumper_2_Open JP2
-U 1 1 61EBB74E
-P 6700 2000
-F 0 "JP2" H 6700 2110 50  0000 C CNN
-F 1 "Jumper_2_Open" H 6700 2160 50  0001 C CNN
-F 2 "000_LOCAL:JP" H 6700 2000 50  0001 C CNN
-F 3 "~" H 6700 2000 50  0001 C CNN
-	1    6700 2000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
 	2900 5000 2900 4000
-Wire Wire Line
-	7000 4000 7000 2000
-Wire Wire Line
-	7000 2000 6900 2000
 $Comp
 L 000_LOCAL:C_Small C2
 U 1 1 61EDFD57
@@ -985,8 +940,6 @@ F 3 "" H 5300 3600 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	4100 2100 4800 2100
-Wire Wire Line
 	3500 2300 2600 2300
 $Comp
 L 000_LOCAL:R_Small R27
@@ -1051,9 +1004,9 @@ Text Label 8820 3400 0    50   ~ 0
 HS
 Text Label 3400 5000 0    50   ~ 0
 D2
-Text Label 5030 4000 0    50   ~ 0
+Text Label 3120 4000 0    50   ~ 0
 _HSYNC
-Text Label 3430 3900 0    50   ~ 0
+Text Label 3120 3900 0    50   ~ 0
 _VSYNC
 Text Label 3400 5100 0    50   ~ 0
 D1
@@ -1085,8 +1038,6 @@ Wire Wire Line
 Wire Wire Line
 	3000 4700 3700 4700
 Connection ~ 3200 3500
-Wire Wire Line
-	2700 3000 2700 6900
 Wire Wire Line
 	2700 6900 2900 6900
 Wire Wire Line
@@ -1133,9 +1084,6 @@ NoConn ~ 4400 3700
 NoConn ~ 3900 3600
 Wire Wire Line
 	5000 3600 5000 4000
-Connection ~ 5000 4000
-Wire Wire Line
-	5000 4000 7000 4000
 Wire Wire Line
 	4900 3600 5000 3600
 Connection ~ 5000 3600
@@ -1155,9 +1103,6 @@ Wire Wire Line
 	3700 3700 3900 3700
 Wire Wire Line
 	3400 3700 3400 3900
-Connection ~ 3400 3900
-Wire Wire Line
-	3400 3900 6900 3900
 Wire Wire Line
 	3400 3700 3500 3700
 Connection ~ 3400 3700
@@ -1194,7 +1139,6 @@ Wire Wire Line
 	2600 1900 2700 1900
 Wire Wire Line
 	2700 3000 2700 1900
-Connection ~ 2700 3000
 Connection ~ 2700 1900
 Wire Wire Line
 	2700 1900 3500 1900
@@ -1207,18 +1151,11 @@ Wire Wire Line
 Wire Wire Line
 	3100 2100 3200 2100
 Connection ~ 3200 2100
-Wire Wire Line
-	4800 2700 4800 3000
 Connection ~ 4800 3000
 Wire Wire Line
 	4800 3000 4900 3000
 Wire Wire Line
 	4800 3000 4800 3400
-Wire Wire Line
-	4800 2300 4800 2100
-Connection ~ 4800 2100
-Wire Wire Line
-	4800 2100 5300 2100
 Wire Wire Line
 	9000 3500 8700 3500
 Wire Wire Line
@@ -1257,17 +1194,6 @@ Text Label 8700 4300 0    50   ~ 0
 R2
 Text Label 5210 2200 2    50   ~ 0
 RSET
-$Comp
-L 000_LOCAL:Jumper_2_Open JP1
-U 1 1 61F669B3
-P 4800 2500
-F 0 "JP1" V 4800 2490 50  0000 C CNN
-F 1 "Jumper_2_Open" H 4800 2660 50  0001 C CNN
-F 2 "000_LOCAL:JP" H 4800 2500 50  0001 C CNN
-F 3 "~" H 4800 2500 50  0001 C CNN
-	1    4800 2500
-	0    -1   -1   0   
-$EndComp
 $Comp
 L 000_LOCAL:R_Small R7
 U 1 1 619BC479
@@ -1324,4 +1250,62 @@ Wire Wire Line
 Connection ~ 5400 2200
 Wire Wire Line
 	5400 2200 5500 2200
+Wire Wire Line
+	2800 5100 2600 5100
+Wire Wire Line
+	2600 5100 2600 5400
+Connection ~ 2800 5100
+Wire Wire Line
+	2900 5000 2500 5000
+Connection ~ 2900 5000
+Wire Wire Line
+	1400 1300 6500 1300
+Wire Wire Line
+	6500 1300 6500 2000
+Wire Wire Line
+	1300 1200 6600 1200
+Wire Wire Line
+	6600 1200 6600 2100
+Wire Wire Line
+	6600 2100 6500 2100
+Text Label 1800 6400 2    50   ~ 0
+CSYNC
+Text Label 2400 6400 0    50   ~ 0
+DIFFG
+Wire Wire Line
+	4100 2100 5300 2100
+Wire Wire Line
+	2400 6000 2900 6000
+Connection ~ 2700 3000
+Wire Wire Line
+	1400 1300 1400 5500
+Wire Wire Line
+	1800 5400 1300 5400
+Wire Wire Line
+	1300 5400 1300 1200
+Wire Wire Line
+	2500 5500 2400 5500
+Wire Wire Line
+	2500 5000 2500 5500
+Wire Wire Line
+	2400 5400 2600 5400
+Wire Wire Line
+	1400 5500 1800 5500
+Wire Wire Line
+	2400 6300 2900 6300
+Wire Wire Line
+	2700 6900 2700 3000
+Wire Wire Line
+	2400 5700 2900 5700
+$Comp
+L 000_LOCAL:SW_DIP_x12 SW1
+U 1 1 61853D37
+P 2100 5900
+F 0 "SW1" H 2090 6650 50  0000 C CNN
+F 1 "SW_DIP_x12" H 2100 5400 50  0001 C CNN
+F 2 "000_LOCAL:SW_DIP_SPSTx12_Slide_6.7x32.04mm_W8.61mm_P2.54mm_LowProfile" H 2100 5900 50  0001 C CNN
+F 3 "~" H 2100 5900 50  0001 C CNN
+	1    2100 5900
+	-1   0    0    1   
+$EndComp
 $EndSCHEMATC

@@ -18,7 +18,7 @@ There are no gerbers or oshpark or pcbway links in this branch because this vers
 <!-- [PCB from OSHPark](https://oshpark.com/shared_projects/QwG4zF3f) -->
 <!-- [PCB from PCBWAY]()  -->
 
-[BOM from DigiKey](https://www.digikey.com/short/7fwcd5wr)
+[BOM from DigiKey](https://www.digikey.com/short/7f8hm2tm)
 
 [DE0-Nano](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=593)  
  (or [search ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15))
