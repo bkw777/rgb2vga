@@ -7,6 +7,8 @@ This is a clone of the original design by Luis Felipe da Costa Antoniosi, to pro
 
 For more information and directions see the [original documentation](https://sites.google.com/site/tandycocoloco/rgb2vga)
 
+Don't rush out to buy the parts yet. As of v003 this is tested, the PCB and BOM links are good and it works. That's what's in the video. But there is already some updates on the way, so I suggest wait for v004. The "lowprofile" branch is v004, but isn't done yet.
+
 [![](https://img.youtube.com/vi/MPYQRHWyUGA/hqdefault.jpg)](https://youtu.be/MPYQRHWyUGA)
 
 ![](PCB/rgb2vga.jpg)
@@ -23,9 +25,10 @@ For more information and directions see the [original documentation](https://sit
 <!-- [Gerbers](../../releases/latest) -->
 
 # TODO
-* Write directions for flashing the DE0-Nano.  
+* Write directions for flashing the DE0-Nano  
 * Design a 3D-printable enclosure  
 * Test the lowprofile branch (aka v004)  
+* Move the artifact switch from the dip switch to a larger toggle or rocker or push-on-push-off etc
 
 # Changelog
 * 20201104 [v003](../../tree/v003)  
