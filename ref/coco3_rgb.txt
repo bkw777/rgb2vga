@@ -1,0 +1,44 @@
+Color Computer 3 rgb
+
+http://www.colorcomputerarchive.com/coco/Documents/Manuals/Hardware/Color%20Computer%203%20Revised%20Schematic%20(Ty%20Sopko).pdf
+
+http://www.tehkella.net/retro/wp-content/uploads/2015/01/PB230053.jpg
+
+CN3
+looking at outside/bottom
+
+ ----------- 
+| 2 4   8 0 |
+| 1 3 5 7 9 |
+ -----------
+   RGB OUT
+
+1 – Ground [1]
+2 – Ground [1]
+3 – Red
+4 – Green
+5 – Blue
+6 – NC/Key [2]
+7 – Audio
+8 – HSYNC
+9 – VSYNC
+10 – PB3 [3]
+
+[1] Both pins tied to the same ground, not separate chassis/shield ground and signal ground)
+
+[2] No connection and no pin present. The pin header has no shroud and no other polarity key mechanism, so install a plug in this position in the female connector to make a polarity keyed plug.
+
+[3] PB3 is Peripheral Interface B bit 3, which is pin 13 on U4 PIA1 6821, Peripheral Interface B, bit 3, with a pullup resitor to 5v, also connected to U7 pin 39 - CSS on the MC6847. Not used with most rgb monitors or with DB9 connection.
+
+From the MC6847 VDG data sheet:
+"The CSS pin is used to select between two possible alphanumeric colors when the VDG is in the alphanumeric mode, and between two color sets when the the VDG in is the Semigraphics 6 or full graphics modes."
+
+Not sure what good this signal is. It's an input on the VDG, so the pin on PIA1 is being used as an output, so the pin on the RGB OUT connector is an output only. So, what could a monitor or anything else do with that?
+
+https://archive.org/download/Trs-80ColorComputerTechnicalReferenceManual/coco.pdf
+
+http://www.colorcomputerarchive.com/coco/Documents/Datasheets/MC6847%20MOS%20Video%20Display%20Generator%20(Motorola).pdf
+
+----------
+
+Cable, serial cable with 8 conductors, foil shield, and drain wire.
