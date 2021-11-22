@@ -26,7 +26,7 @@ For more information and directions see the [original documentation](https://sit
 * Test the lowprofile branch (aka v004)  
 
 # Changelog
-* 20201104<!-- [v003](../../tree/v003) -->  
+* 20201104 [v003](../../tree/v003)  
  Re-draw the schematic in KiCad from the original png image. Same circuit, different layout.  
  Ed Snider / Roger Taylor resistor values.  
  Add the RGBI bright channel resistors  
