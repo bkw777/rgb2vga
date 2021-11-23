@@ -59,7 +59,7 @@ This produces the file: output_files/rgb2vga.jic
 
 ### Program the DE0-Nano  
 Tools -> Programmer  
-Hardware Setup... -> USB-Blaster  (should be already autodetected)
+Hardware Setup... -> USB-Blaster  (should be already autodetected)  
 Delete any entries pre-loaded in the middle section (probably has output_files/rgb2vga.sof)  
 Add File... -> output_files/rgb2vga.jic  
 Tick "Program/Configure"  
