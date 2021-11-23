@@ -20,15 +20,39 @@ Don't rush out to buy the parts yet. As of v003 this is tested, the PCB and BOM 
 [BOM from DigiKey](https://www.digikey.com/short/7fwcd5wr)
 
 [DE0-Nano](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=593)  
- (or [search ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15))
+ (or [search ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15))  
 
-<!-- [Gerbers](../../releases/latest) -->
+[Gerbers, Firmware](../../releases/latest)
 
-# TODO
-* Write directions for flashing the DE0-Nano  
-* Design a 3D-printable enclosure  
-* Test the lowprofile branch (aka v004)  
-* Move the artifact switch from the dip switch to a larger toggle or rocker or push-on-push-off etc
+# Directions  
+
+## Programming the DE0-Nano  
+### Install Quartus  
+https://fpgasoftware.intel.com/  
+- Select edition: Lite  
+- Individual Files
+
+Download just these two parts:  
+- Quartus Prime  
+- Cyclone IV device support  
+
+### Compile the VHDL  
+Start Quartus and connect the usb cable  
+Open Project, vhdl/rgb2vga.qpf  
+Processing, Start Compilation  
+
+This produces the file: output_files/rgb2vga.sof
+
+### Program the DE0-Nano  
+See: https://mvidakovic.blogspot.com/2019/10/flashing-de0-nano-fpga-board.html  
+Skip down to "2. Permanent programming (flashing)"  
+Follow the directions to generate a .jic file from the .sof file, and write the .jic file to the DE0-Nano.  
+
+# TODO  
+* Better directions  
+* Enclosure  
+* Lowprofile / v004  
+* Bigger switch or button for Artifact
 
 # Changelog
 * 20201104 [v003](../../tree/v003)  
