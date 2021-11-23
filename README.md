@@ -25,7 +25,7 @@ Don't rush out to buy the parts yet. As of v003 this is tested, the PCB and BOM 
 [Gerbers, Firmware](../../releases/latest)
 
 # Directions  
-## Building the rgb2vga PCB  
+## Building the PCB  
 - Polarity keys for the coco3 rgb cable and connector  
   - Extract pin 6 from the 2x5 pin coco3 rgb connector before soldering. This is the center pin on the bottom row, opposite/away from the polarity notch. Pin 5 is in the way, just cut pin 6 on the back side and pull out from the front side.  
   - Insert a plug into pin 6 on each end of the ribbon cable.  This is the center pin on the opposite row away from the the polarity bump.  
