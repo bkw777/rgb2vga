@@ -41,7 +41,7 @@ set_global_assignment -name DEVICE EP4CE22F17C6
 set_global_assignment -name TOP_LEVEL_ENTITY coco3
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "22:47:32  SEPTEMBER 22, 2014"
-set_global_assignment -name LAST_QUARTUS_VERSION 15.0.0
+set_global_assignment -name LAST_QUARTUS_VERSION "21.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -153,7 +153,7 @@ set_global_assignment -name QIP_FILE altiobuf.qip
 set_global_assignment -name QIP_FILE ram2.qip
 set_global_assignment -name VHDL_FILE genlock.vhd
 set_global_assignment -name VHDL_FILE input_detect.vhd
-set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_SIMULATION_TOOL "Questa Intel FPGA (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
 set_global_assignment -name QIP_FILE dac_counter.qip
 set_global_assignment -name QIP_FILE pll_speccy.qip
