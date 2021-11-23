@@ -25,6 +25,13 @@ Don't rush out to buy the parts yet. As of v003 this is tested, the PCB and BOM 
 [Gerbers, Firmware](../../releases/latest)
 
 # Directions  
+## Building the rgb2vga PCB  
+- Polarity keys for the coco3 rgb cable and connector  
+  - Extract pin 6 from the 2x5 pin coco3 rgb connector before soldering. This is the center pin on the bottom row, opposite/away from the polarity notch. Pin 5 is in the way, just cut pin 6 on the back side and pull out from the front side.  
+  - Insert a plug into pin 6 on each end of the ribbon cable.  This is the center pin on the opposite row away from the the polarity bump.  
+- Solder the surface mount LM1881 first.  
+- Solder all other parts, any order.  
+- Turn the trim pot to 50%.  
 
 ## Programming the DE0-Nano  
 ### Install Quartus  
@@ -38,15 +45,29 @@ Download just these two parts:
 
 ### Compile the VHDL  
 Start Quartus and connect the usb cable  
-Open Project, vhdl/rgb2vga.qpf  
-Processing, Start Compilation  
+Open Project -> vhdl/rgb2vga.qpf  
+Processing -> Start Compilation  
 
 This produces the file: output_files/rgb2vga.sof
 
+File -> Convert Programming Files...  
+Open Conversion Setup Data... -> DE0-Nano.cof  
+Generate  
+Close  
+
+This produces the file: output_files/rgb2vga.jic
+
 ### Program the DE0-Nano  
-See: https://mvidakovic.blogspot.com/2019/10/flashing-de0-nano-fpga-board.html  
-Skip down to "2. Permanent programming (flashing)"  
-Follow the directions to generate a .jic file from the .sof file, and write the .jic file to the DE0-Nano.  
+Tools -> Programmer  
+Hardware Setup... -> USB-Blaster  (should be already autodetected)
+Delete any entries pre-loaded in the middle section (probably has output_files/rgb2vga.sof)  
+Add File... -> output_files/rgb2vga.jic  
+Tick "Program/Configure"  
+Start  
+
+## Assemble
+- Put the RGB2VGA and DE0-Nano together with the trim pot on the same side as the USB connector.  
+- For use with a TANDY Color Computer 3, leave all jumpers open and all dip switches off, except turn the Artifact switch on. For some games, turn Artifact off as desired.
 
 # TODO  
 * Better directions  
