@@ -3,45 +3,89 @@ Convert 15khz RGB to 31khz VGA
 
 Uses Altera DE0-Nano FPGA development board to convert analog 15Khz RGB signal to VGA 31Khz 256 color.
 
-This is a clone of the original design by Luis Felipe da Costa Antoniosi, to provide the schematic, pcb, vhdl, and docs all together in one place, and to provide editable work files.
+This is a slightly modified version of the original design by Luis Felipe da Costa Antoniosi.
 
 For more information and directions see the [original documentation](https://sites.google.com/site/tandycocoloco/rgb2vga)
 
-THIS BRANCH "rc003" IS UN-TESTED  
-This will become "v003" after testing if it checks out.  
-
-There are no gerbers or oshpark or pcbway links in this branch because this version has a lot of changes and has not been tested yet. Boards parts have been ordered, and testing is in the works.
+Video showing v003 in action  
+[![](https://img.youtube.com/vi/MPYQRHWyUGA/hqdefault.jpg)](https://youtu.be/MPYQRHWyUGA)
 
 ![](PCB/rgb2vga.jpg)
 ![](PCB/rgb2vga.bottom.jpg)
 ![](PCB/rgb2vga.svg)
 
-<!-- [PCB from OSHPark](https://oshpark.com/shared_projects/QwG4zF3f) -->
-<!-- [PCB from PCBWAY]()  -->
+<!-- [PCB from OSHPark]()  -->
+[PCB from PCBWAY](https://www.pcbway.com/project/shareproject/de0_nano_fpga_rgb2vga.html)  
 
 [BOM from DigiKey](https://www.digikey.com/short/7f8hm2tm)
 
 [DE0-Nano](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=593)  
- (or [search ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15))
+ (or [search ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15))  
 
-<!-- [Gerbers](../../releases/latest) -->
+[Gerbers, Firmware](../../releases/latest)
 
-# TODO
-* Name the nets in the schematic from the names in the imported pcb.  
-* Flip the symbols in the schematic as necessary to match the pcb so the pad nets won't break on update from schematic.  
-* Test & verify this new schematic and pcb layout.  
-* Write directions for flashing the DE0-Nano.  
+# Directions  
+## Building the PCB  
+- Polarity keys for the coco3 rgb cable and connector  
+  - Extract pin 6 from the 2x5 pin coco3 rgb connector before soldering. This is the center pin on the bottom row, opposite/away from the polarity notch. Pin 5 is in the way, just cut pin 6 on the back side and pull out from the front side.  
+  - Insert a plug into pin 6 on each end of the ribbon cable.  This is the center pin on the opposite row away from the the polarity bump.  
+- Solder the surface mount LM1881 first.  
+- Solder all other parts, any order.  
+- Turn the trim pot to 50%.  
+
+## Programming the DE0-Nano  
+### Install Quartus  
+https://fpgasoftware.intel.com/  
+- Select edition: Lite  
+- Individual Files
+
+Download just these two parts:  
+- Quartus Prime  
+- Cyclone IV device support  
+
+### Compile the VHDL  
+Start Quartus and connect the usb cable  
+Open Project -> vhdl/rgb2vga.qpf  
+Processing -> Start Compilation  
+
+This produces the file: output_files/rgb2vga.sof
+
+File -> Convert Programming Files...  
+Open Conversion Setup Data... -> DE0-Nano.cof  
+Generate  
+Close  
+
+This produces the file: output_files/rgb2vga.jic
+
+### Program the DE0-Nano  
+Tools -> Programmer  
+Hardware Setup... -> USB-Blaster  (should be already autodetected)  
+Delete any entries pre-loaded in the middle section (probably has output_files/rgb2vga.sof)  
+Add File... -> output_files/rgb2vga.jic  
+Tick "Program/Configure"  
+Start  
+
+## Assemble
+- Put the RGB2VGA and DE0-Nano together with the trim pot on the same side as the USB connector.  
+- For TANDY Color Computer 3, leave all dip switches off, except turn the Artifact switch on. For some games, turn Artifact off as desired.
+
+# TODO  
+* Enclosure  
+* Bigger more convenient switch for Artifact
 
 # Changelog
-* 20201104<!-- [v003](../../tree/v003) -->  
- Created a new schematic based on the original png image. Same circuit, different layout.  
+* 20211126 v004  
+ Low profile pcb - flip tall components to bottom side  
+ Move plugs to use only 2 sides instead of all 4  
+
+* 20211104 [v003](../../tree/v003)  
+ Re-draw the schematic in KiCad from the original png image. Same circuit, different layout.  
  Ed Snider / Roger Taylor resistor values.  
- Add the RGBI mod resistors  
+ Add the RGBI bright channel resistors  
  Full BOM from DigiKey, except for the DE0-Nano.  
 
 * 20211101 [v002](../../tree/v002)  
- Luis Antoniosi's original updated resistor values  
- Incorporate the additional bodge resistor (now R26)  
+ Incorporate the additional blue channel bodge resistor (now R26)  
  Routing cleanups for clearances and zone fills  
 
 * 20211101 [v001](../../tree/v001) - Initial commit.  
