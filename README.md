@@ -66,6 +66,7 @@ Tick "Program/Configure"
 Start  
 
 ## Assemble
+- Remove the acrylic cover from the DE0-Nano  
 - Put the RGB2VGA and DE0-Nano together with the trim pot on the same side as the USB connector.  
 - For TANDY Color Computer 3, leave all dip switches off, except turn the Artifact switch on. For some games, turn Artifact off as desired.
 
