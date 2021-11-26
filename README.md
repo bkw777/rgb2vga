@@ -1,18 +1,7 @@
 rgb2vga
 =======
 
-Analog RGB 15Khz to VGA 31Khz in FPGA
+This branch "800x600" just contains a version of the vhdl that outputs 800x600 vga
 
-Using the development board Altera DE0-Nano this converter will convert analog 15Khz RGB signal into VGA 31Khz 256 colours.
-
-More information can be found at:
-
-https://sites.google.com/site/tandycocoloco/rgb2vga
-
-Luis Felipe da Costa Antoniosi
-
-
-
-
-
-
+See the main branch for the rest of the project and directions:  
+https://github.com/bkw777/rgb2vga
