@@ -37,11 +37,11 @@ Video showing v003 in action
 
 ## Programming the DE0-Nano  
 Below is the minimum directions and minimum download possible, using the stand-alone Quartus programmer app and the pre-compiled firmware.  
-Alternatively, to compile the firmware from the vhdl source, see [](compile_vhdl.md).
+Alternatively, [compile the firmware from the vhdl source](compile_vhdl.md).
 
 ### Install the Quartus Standalone Programmer  
 https://fpgasoftware.intel.com/  
-Select edition: Lite -> Additional Software -> Quartus Prime Programmer and Tools
+Select edition: Lite -> Additional Software -> Quartus Prime Programmer and Tools  
 (For Linux, install: Individual Files -> Quartus Prime, not the stand-alone programmer package. The stand-alone Quartus programmer package for Linux is broken, missing ```libprotobuf.so.14.0.0```)
 
 ### Download the firmware
