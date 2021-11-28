@@ -74,9 +74,21 @@ K dip switch
 F ~
 $ENDCMP
 #
+$CMP SW_DIP_x10
+D 10x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol
+K dip switch
+F ~
+$ENDCMP
+#
 $CMP SW_DIP_x12
 D 12x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol
 K dip switch
+F ~
+$ENDCMP
+#
+$CMP SW_DP3T
+D Switch, three position, dual pole triple throw, 3 position switch, SP3T
+K switch dp3t ON-ON-ON
 F ~
 $ENDCMP
 #

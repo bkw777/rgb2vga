@@ -17,10 +17,11 @@ Video showing v003 in action
 <!-- [PCB from OSHPark]()  -->
 [PCB from PCBWAY](https://www.pcbway.com/project/shareproject/de0_nano_fpga_rgb2vga.html)  
 
-[BOM from DigiKey](https://www.digikey.com/short/7f8hm2tm)
+[BOM from DigiKey](https://www.digikey.com/short/47fbdpb0)
 
 [DE0-Nano](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=593)  
- (or [search ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15))  
+ or [search ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15))  
+ note: "DE0-Nano", don't accidentally get "DE0-Nano-SoC"
 
 [Gerbers, Firmware](../../releases/latest)
 
@@ -30,54 +31,45 @@ Video showing v003 in action
   - Extract pin 6 from the 2x5 pin coco3 rgb connector before soldering. This is the center pin on the bottom row, opposite/away from the polarity notch. Pin 5 is in the way, just cut pin 6 on the back side and pull out from the front side.  
   - Insert a plug into pin 6 on each end of the ribbon cable.  This is the center pin on the opposite row away from the the polarity bump.  
 - Solder the surface mount LM1881 first.  
-- Solder all other parts, any order.  
+- Solder SW2 on the bottom before soldering R24.  
+- Solder remaining parts in any order.  
 - Turn the trim pot to 50%.  
 
 ## Programming the DE0-Nano  
-### Install Quartus  
+Below is the minimum directions and minimum download possible, using the stand-alone Quartus programmer app and the pre-compiled firmware.  
+Alternatively, to compile the firmware from the vhdl source, see [](compile_vhdl.md).
+
+### Install the Quartus Standalone Programmer  
 https://fpgasoftware.intel.com/  
-- Select edition: Lite  
-- Individual Files
+Select edition: Lite -> Additional Software -> Quartus Prime Programmer and Tools
+(For Linux, install: Individual Files -> Quartus Prime, not the stand-alone programmer package. The stand-alone Quartus programmer package for Linux is broken, missing ```libprotobuf.so.14.0.0```)
 
-Download just these two parts:  
-- Quartus Prime  
-- Cyclone IV device support  
-
-### Compile the VHDL  
-Start Quartus and connect the usb cable  
-Open Project -> vhdl/rgb2vga.qpf  
-Processing -> Start Compilation  
-
-This produces the file: output_files/rgb2vga.sof
-
-File -> Convert Programming Files...  
-Open Conversion Setup Data... -> DE0-Nano.cof  
-Generate  
-Close  
-
-This produces the file: output_files/rgb2vga.jic
+### Download the firmware
+Download ```rgb2vga.jic``` from [releases](../../releases/latest)  
 
 ### Program the DE0-Nano  
-Tools -> Programmer  
-Hardware Setup... -> USB-Blaster  (should be already autodetected)  
-Delete any entries pre-loaded in the middle section (probably has output_files/rgb2vga.sof)  
-Add File... -> output_files/rgb2vga.jic  
+Connect the usb cable  
+Launch the Quartus Programmer app  
+Hardware Setup... -> USB-Blaster  
+Add File... -> ```rgb2vga.jic```  
 Tick "Program/Configure"  
 Start  
 
 ## Assemble
-- Remove the acrylic cover from the DE0-Nano  
+- Remove the acrylic cover from the DE0-Nano, keep the standoffs.  
+ Optionally replace the short standoffs on top with the screws from the acrylic cover.  
 - Put the RGB2VGA and DE0-Nano together with the trim pot on the same side as the USB connector.  
 - For TANDY Color Computer 3, leave all dip switches off, except turn the Artifact switch on. For some games, turn Artifact off as desired.
 
 # TODO  
 * Enclosure  
-* Bigger more convenient switch for Artifact
+* Bigger more convenient switch for Artifact, maybe for Scanline too.
 
 # Changelog
 * 20211126 v004  
- Low profile pcb - flip tall components to bottom side  
+ Low profile pcb - flip the tall components to the bottom side  
  Move plugs to use only 2 sides instead of all 4  
+ Ground the monitor sense pin on the coco3 rgb input.
 
 * 20211104 [v003](../../tree/v003)  
  Re-draw the schematic in KiCad from the original png image. Same circuit, different layout.  

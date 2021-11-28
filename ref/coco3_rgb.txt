@@ -26,14 +26,11 @@ looking at outside/bottom
 
 [1] Both pins tied to the same ground, not separate chassis/shield ground and signal ground)
 
-[2] No connection and no pin present. The pin header has no shroud and no other polarity key mechanism, so install a plug in this position in the female connector to make a polarity keyed plug.
+[2] No connection and no physical pin present. The pin header has no other form of polarity key (no shroud with polarity notch), so to make a polarity keyed cable install a plug in pin 6 in the female connector on the cable.
 
-[3] PB3 is Peripheral Interface B bit 3, which is pin 13 on U4 PIA1 6821, Peripheral Interface B, bit 3, with a pullup resitor to 5v, also connected to U7 pin 39 - CSS on the MC6847. Not used with most rgb monitors or with DB9 connection.
-
-From the MC6847 VDG data sheet:
-"The CSS pin is used to select between two possible alphanumeric colors when the VDG is in the alphanumeric mode, and between two color sets when the the VDG in is the Semigraphics 6 or full graphics modes."
-
-Not sure what good this signal is. It's an input on the VDG, so the pin on PIA1 is being used as an output, so the pin on the RGB OUT connector is an output only. So, what could a monitor or anything else do with that?
+[3] RGB Monitor Sensing INPUT  
+ I/O control register 0xFF22 Bit 3, Peripheral Interface B, bit 3, pin 13 on U4/IC4 PIA1 6821.  
+ Has 4.7k pullup to 5v and 4.7k current limit between RGB port and U4, so to use this pin, just tie pin 10 directly to GND in the monitor or peripheral  
 
 https://archive.org/download/Trs-80ColorComputerTechnicalReferenceManual/coco.pdf
 
