@@ -21,6 +21,12 @@ K capacitor cap
 F ~
 $ENDCMP
 #
+$CMP Conn_01x03_Male
+D Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
 $CMP Conn_02x05_Odd_Even
 D Generic connector, double row, 02x05, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)
 K connector
