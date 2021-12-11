@@ -4,7 +4,7 @@
 // "explode" = show both top & bottom shells, seperated by explode_seperation, and pcb model
 // "top" = show top shell alone, rotated and translated for FDM printing
 // "bottom" = show bottom shell alone, rotated and translated for FDM printing
-view = "closed";
+view = "explode";
 explode_seperation = 30;
 
 // comment this before importing .scad into freecad
@@ -36,7 +36,7 @@ rgb2vga_pcb_width = 55.88;  // from pcbnew
 rgb2vga_pcb_corner = 3.175; // from pcbnew
 rgb2vga_pcb_elev = de0nano_pcb_elev + pcb_thickness + space_between;
 
-o = 0.1;  // overlap / overcut
+o = 0.01;  // overlap / overcut
 fc = 0.2; // fitment clearance
 wall_thickness = 2; // default thickness of all walls
 port_gap = 1; // default gap around all port connectors
@@ -74,7 +74,6 @@ ports_gap = fc;
 ports_corner = 2;
 ports_elev = rgb2vga_pcb_elev-ports_height/2+pcb_thickness;
 
-//split_elev = rca_elev - 0.5;
 split_elev = outer_height/2;
 
 clip_width = 3;
@@ -98,14 +97,16 @@ module de0nano_pcb_clearance () {
    cube([w,l,h]);
 }
 
-module rgb2vga_pcb_clearance () {
-  translate([0,pcb_centers_offset,-fc+wall_thickness+rgb2vga_pcb_elev])
+module rgb2vga_pcb_clearance (tall=true) {
+  h = (tall) ? rgb2vga_pcb_elev+pcb_thickness+fc : fc+pcb_thickness+fc ;
+  e = (tall) ? wall_thickness : wall_thickness+rgb2vga_pcb_elev-fc ;
+  translate([0,pcb_centers_offset,e])
    hull()
     mirror_copy([0,1,0])
      translate([0,rgb2vga_pcb_width/2-rgb2vga_pcb_corner,0])
       mirror_copy([1,0,0])
        translate([rgb2vga_pcb_length/2-rgb2vga_pcb_corner,0,0])
-        cylinder(h=fc+pcb_thickness+fc,r=rgb2vga_pcb_corner+fc);
+        cylinder(h=h,r=rgb2vga_pcb_corner+fc);
 }
 
 module main_ports () {
@@ -124,18 +125,19 @@ module main_ports () {
 module pcb_model () {
  translate([0,pcb_centers_offset,wall_thickness+pcb_model_elev])
   import(pcb_model_stl);
- //#de0nano_pcb_clearance();
- //#rgb2vga_pcb_clearance();
+  //#de0nano_pcb_clearance();
+  //#rgb2vga_pcb_clearance(false);
 }
 
 module upper_clip () {
  e = 2; // extra wider than the female part
  w = 2; // clip_width;
  d = 4; // clip_depth;
- l = w + clip_width + e;
+ l = w + clip_width + e - o;
  translate([-clip_width/2-w-fc/2,0,split_elev+clip_detent+fc]) {
-  rotate([0,90,0])
-   cylinder(h=l,r=clip_detent); // bump
+  translate([o,0,0])
+   rotate([0,90,0])
+    cylinder(h=l,r=clip_detent); // bump
   difference () {
    // add registration rib
    translate([0,-o,-clip_detent])
@@ -155,7 +157,6 @@ module lower_clip () {
   union() {
    // add main post
    translate([-clip_width/2,-o,wall_thickness-o]) cube([clip_width,clip_depth+o,o+ih+clip_height]);
-   //translate([-clip_width/2,fc,wall_thickness-o]) cube([clip_width,clip_depth-fc,ih+o+clip_height]);
   }
   union(){
    // cut detent
@@ -239,13 +240,12 @@ module main_shell() {
   
   // main ports
   main_ports();
-
-  // pcb corners clearance
-  rgb2vga_pcb_clearance();
   
   // cut-aways for seeing inside
-  //translate([0,-40,0]) cube([100,50,100],center=true);
-  //translate([-40,0,0]) cube([50,100,100],center=true);
+  //rotate([0,0,180])
+  //translate([-outer_length/2-o,0,-o]) cube([o+outer_length+o,outer_width/2+o,o+outer_height+o]);
+  //rotate([0,0,180])
+  //translate([0,-outer_width/2-o,-o]) cube([outer_length/2+o,o+outer_width+o,o+outer_height+o]);
 
   } // union remove
 
@@ -277,6 +277,10 @@ module top_case () {
     tch = split_elev + o;
     translate([0,0,tch/2-o])
      cube([o+outer_length+o,o+outer_width+o,tch],center=true);
+
+    // pcb corners clearance
+    rgb2vga_pcb_clearance();
+
    } // remove
 
  } // difference
@@ -310,13 +314,12 @@ module bottom_case () {
 } // bottom_case
 
 if (view == "closed") {
- 
-pcb_model();
+ pcb_model();
  %top_case();
  bottom_case();
 }
 if (view == "explode") {
- pcb_model();
+ %pcb_model();
  translate([0,0,explode_seperation/2]) top_case();
  translate([0,0,-explode_seperation/2]) bottom_case();
 }

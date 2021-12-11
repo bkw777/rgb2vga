@@ -13,6 +13,7 @@ Video showing v003 in action
 ![](PCB/rgb2vga.jpg)
 ![](PCB/rgb2vga.bottom.jpg)
 ![](PCB/rgb2vga.svg)
+![](case/rgb2vga.png)
 
 <!-- [PCB from OSHPark]()  -->
 [PCB from PCBWAY](https://www.pcbway.com/project/shareproject/de0_nano_fpga_rgb2vga.html)  
@@ -58,14 +59,17 @@ Start
 ## Assemble
 - Remove the acrylic cover from the DE0-Nano, keep the standoffs.  
  Optionally replace the short standoffs on top with the screws from the acrylic cover.  
+ If using the 3d-printable enclosure, remove the standoffs too.  
 - Put the RGB2VGA and DE0-Nano together with the trim pot on the same side as the USB connector.  
 - For TANDY Color Computer 3, leave all dip switches off, except turn the Artifact switch on. For some games, turn Artifact off as desired.
 
-# TODO  
-* Enclosure  
-* Bigger more convenient switch for Artifact, maybe for Scanline too.
-
 # Changelog
+* 20211211 v009  
+ Add 3d-printable enclosure  
+ Add optional remote artifact switch  
+ Clean out non-source files from vhdl  
+ Add directions how to compile and flash the firmware  
+
 * 20211126 v004  
  Low profile pcb - flip the tall components to the bottom side  
  Move plugs to use only 2 sides instead of all 4  
