@@ -24,7 +24,9 @@ Video showing v003 in action
  or [search ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15))  
  note: "DE0-Nano", don't accidentally get "DE0-Nano-SoC"
 
-[Gerbers, Firmware](../../releases/latest)
+[3d-printed enclosure] (https://craftcloud3d.com/offer/e04f3790-d076-4645-88c5-82346bebfb7c?utm_campaign=shareable_cart)
+
+[Gerbers, Firmware, STL](../../releases/latest)
 
 # Directions  
 ## Building the PCB  
