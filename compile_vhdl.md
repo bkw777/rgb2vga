@@ -5,7 +5,10 @@ https://fpgasoftware.intel.com/
 Select edition: Lite -> Individual Files  
 Download these two parts:  
 - Quartus Prime  
-- Cyclone IV device support  
+- Cyclone IV device support
+
+Install the Qartus Prime package, and it will pick up the Cyclone IV package itself.  
+Installation help: https://github.com/Jefferson-Lopes/quartus-installation
 
 ### Compile the VHDL  
 Connect the usb cable  
