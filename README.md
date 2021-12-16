@@ -26,7 +26,7 @@ Video showing v003 in action
 
 [3d-printed enclosure - 009.3] (https://craftcloud3d.com/offer/d6a42c57-db52-448a-ad5a-508a885461aa?utm_campaign=shareable_cart) - pending testing - 1.5mm thin walls, 100% infill, 0.2mm fitment clearance  
 
-[Gerbers, Firmware, STL](../../releases/latest)
+[PCB Gerbers, FPGA Firmware, Enclosure STLs](../../releases/)
 
 # Directions  
 ## Building the PCB  
@@ -48,7 +48,7 @@ Select edition: Lite -> Additional Software -> Quartus Prime Programmer and Tool
 (For Linux, install: Individual Files -> Quartus Prime, not the stand-alone programmer package. The stand-alone Quartus programmer package for Linux is broken, missing ```libprotobuf.so.14.0.0```)
 
 ### Download the firmware
-Download ```rgb2vga.jic``` from [releases](../../releases/latest)  
+Download ```rgb2vga.jic``` from [releases](../../releases/)  
 
 ### Program the DE0-Nano  
 Connect the usb cable  
