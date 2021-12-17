@@ -1,56 +1,3 @@
-# -------------------------------------------------------------------------- #
-#
-# Copyright (C) 1991-2013 Altera Corporation
-# Your use of Altera Corporation's design tools, logic functions 
-# and other software and tools, and its AMPP partner logic 
-# functions, and any output files from any of the foregoing 
-# (including device programming or simulation files), and any 
-# associated documentation or information are expressly subject 
-# to the terms and conditions of the Altera Program License 
-# Subscription Agreement, Altera MegaCore Function License 
-# Agreement, or other applicable license agreement, including, 
-# without limitation, that your use is for the sole purpose of 
-# programming logic devices manufactured by Altera and sold by 
-# Altera or its authorized distributors.  Please refer to the 
-# applicable agreement for further details.
-#
-# -------------------------------------------------------------------------- #
-#
-# Quartus II 64-Bit
-# Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-# Date created = 22:47:32  September 22, 2014
-#
-# -------------------------------------------------------------------------- #
-#
-# Notes:
-#
-# 1) The default values for assignments are stored in the file:
-#		rgb2vga_assignment_defaults.qdf
-#    If this file doesn't exist, see file:
-#		assignment_defaults.qdf
-#
-# 2) Altera recommends that you do not modify this file. This
-#    file is updated automatically by the Quartus II software
-#    and any changes you make may be lost or overwritten.
-#
-# -------------------------------------------------------------------------- #
-
-
-set_global_assignment -name FAMILY "Cyclone IV E"
-set_global_assignment -name DEVICE EP4CE22F17C6
-set_global_assignment -name TOP_LEVEL_ENTITY rgb2vga
-set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "22:47:32  SEPTEMBER 22, 2014"
-set_global_assignment -name LAST_QUARTUS_VERSION "21.1.0 Lite Edition"
-set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
-set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
-set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
-set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
-set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
-set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_location_assignment PIN_R8 -to CLOCK_50
 set_location_assignment PIN_L4 -to DRAM_ADDR[12]
 set_location_assignment PIN_N1 -to DRAM_ADDR[11]
@@ -126,42 +73,8 @@ set_location_assignment PIN_C8 -to FP4
 set_location_assignment PIN_E7 -to FP5
 set_location_assignment PIN_E8 -to FP6
 set_location_assignment PIN_F9 -to FP7
-set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
-set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
-set_global_assignment -name RESERVE_ALL_UNUSED_PINS_WEAK_PULLUP "AS OUTPUT DRIVING GROUND"
-set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
-set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
-set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
-set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
-set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
-set_global_assignment -name SMART_RECOMPILE OFF
-set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC ON
-set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
-set_global_assignment -name RESERVE_DCLK_AFTER_CONFIGURATION "COMPILER CONFIGURED"
-set_global_assignment -name OUTPUT_IO_TIMING_ENDPOINT "NEAR END"
-set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
-set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
-set_global_assignment -name OPTIMIZE_POWER_DURING_FITTING "NORMAL COMPILATION"
-set_global_assignment -name FITTER_EFFORT "AUTO FIT"
-set_global_assignment -name TIMING_ANALYZER_DO_REPORT_TIMING ON
-set_global_assignment -name TIMING_ANALYZER_DO_CCPP_REMOVAL ON
-set_global_assignment -name SDC_FILE rgb2vga.out.sdc
-set_global_assignment -name VHDL_FILE vgaout.vhd
-set_global_assignment -name VHDL_FILE ram.vhd
-set_global_assignment -name VHDL_FILE sdram.vhd
-set_global_assignment -name QIP_FILE altiobuf.qip
-set_global_assignment -name QIP_FILE ram2.qip
-set_global_assignment -name VHDL_FILE genlock.vhd
-set_global_assignment -name VHDL_FILE input_detect.vhd
-set_global_assignment -name EDA_SIMULATION_TOOL "Questa Intel FPGA (VHDL)"
-set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
-set_global_assignment -name QIP_FILE dac_counter.qip
-set_global_assignment -name QIP_FILE pll_speccy.qip
 set_location_assignment PLL_1 -to "pll_speccy:pll_inst"
 set_location_assignment PLL_1 -to "pll_coco3:pll_inst"
-set_global_assignment -name QIP_FILE pll_coco3.qip
-set_global_assignment -name CDF_FILE rgb2vga.cdf
-set_global_assignment -name BDF_FILE rgb2vga.bdf
 set_location_assignment PIN_R10 -to VGAB2
 set_location_assignment PIN_B4 -to BRIGHT
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to D0
@@ -203,7 +116,57 @@ set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to FP6
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to FP7
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to VGAB2
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to BRIGHT
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE22F17C6
+set_global_assignment -name TOP_LEVEL_ENTITY rgb2vga
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "22:47:32  SEPTEMBER 22, 2014"
+set_global_assignment -name LAST_QUARTUS_VERSION "21.1.0 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_WEAK_PULLUP "AS OUTPUT DRIVING GROUND"
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
+set_global_assignment -name SMART_RECOMPILE OFF
+set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
+set_global_assignment -name RESERVE_DCLK_AFTER_CONFIGURATION "COMPILER CONFIGURED"
+set_global_assignment -name OUTPUT_IO_TIMING_ENDPOINT "NEAR END"
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_global_assignment -name OPTIMIZE_POWER_DURING_FITTING "NORMAL COMPILATION"
+set_global_assignment -name FITTER_EFFORT "AUTO FIT"
+set_global_assignment -name TIMING_ANALYZER_DO_REPORT_TIMING ON
+set_global_assignment -name TIMING_ANALYZER_DO_CCPP_REMOVAL ON
+set_global_assignment -name EDA_SIMULATION_TOOL "Questa Intel FPGA (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SDC_FILE rgb2vga.out.sdc
+set_global_assignment -name VHDL_FILE vgaout.vhd
+set_global_assignment -name VHDL_FILE ram.vhd
+set_global_assignment -name VHDL_FILE sdram.vhd
+set_global_assignment -name QIP_FILE altiobuf.qip
+set_global_assignment -name QIP_FILE ram2.qip
+set_global_assignment -name VHDL_FILE genlock.vhd
+set_global_assignment -name VHDL_FILE input_detect.vhd
+set_global_assignment -name QIP_FILE dac_counter.qip
+set_global_assignment -name QIP_FILE pll_speccy.qip
+set_global_assignment -name QIP_FILE pll_coco3.qip
+set_global_assignment -name CDF_FILE rgb2vga.cdf
+set_global_assignment -name BDF_FILE rgb2vga.bdf
+
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -21,6 +21,12 @@ K capacitor cap
 F ~
 $ENDCMP
 #
+$CMP Conn_01x03_Male
+D Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
 $CMP Conn_02x05_Odd_Even
 D Generic connector, double row, 02x05, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)
 K connector
@@ -71,6 +77,24 @@ $ENDCMP
 $CMP SW_DIP_x08
 D 8x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol
 K dip switch
+F ~
+$ENDCMP
+#
+$CMP SW_DIP_x10
+D 10x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol
+K dip switch
+F ~
+$ENDCMP
+#
+$CMP SW_DIP_x12
+D 12x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol
+K dip switch
+F ~
+$ENDCMP
+#
+$CMP SW_DP3T
+D Switch, three position, dual pole triple throw, 3 position switch, SP3T
+K switch dp3t ON-ON-ON
 F ~
 $ENDCMP
 #

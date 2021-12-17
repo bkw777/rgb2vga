@@ -4,50 +4,51 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 1991-2013 Altera Corporation
-Your use of Altera Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, Altera MegaCore Function License 
-Agreement, or other applicable license agreement, including, 
-without limitation, that your use is for the sole purpose of 
-programming logic devices manufactured by Altera and sold by 
-Altera or its authorized distributors.  Please refer to the 
-applicable agreement for further details.
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 */
 (header "symbol" (version "1.2"))
 (symbol
 	(rect 0 0 232 96)
-	(text "altiobuf" (rect 97 0 146 16)(font "Arial" (font_size 10)))
-	(text "inst" (rect 8 80 25 92)(font "Arial" ))
+	(text "altiobuf" (rect 77 0 157 25)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 74 37 92)(font "Arial" ))
 	(port
 		(pt 0 48)
 		(input)
-		(text "datain[2..0]" (rect 0 0 62 14)(font "Arial" (font_size 8)))
-		(text "datain[2..0]" (rect 4 34 55 47)(font "Arial" (font_size 8)))
+		(text "datain[2..0]" (rect 0 0 100 20)(font "Arial" (font_size 8)))
+		(text "datain[2..0]" (rect 4 28 85 47)(font "Arial" (font_size 8)))
 		(line (pt 0 48)(pt 100 48)(line_width 3))
 	)
 	(port
 		(pt 0 64)
 		(input)
-		(text "datain_b[2..0]" (rect 0 0 76 14)(font "Arial" (font_size 8)))
-		(text "datain_b[2..0]" (rect 4 50 67 63)(font "Arial" (font_size 8)))
+		(text "datain_b[2..0]" (rect 0 0 121 20)(font "Arial" (font_size 8)))
+		(text "datain_b[2..0]" (rect 4 44 103 63)(font "Arial" (font_size 8)))
 		(line (pt 0 64)(pt 100 64)(line_width 3))
 	)
 	(port
 		(pt 232 56)
 		(output)
-		(text "dataout[2..0]" (rect 0 0 70 14)(font "Arial" (font_size 8)))
-		(text "dataout[2..0]" (rect 169 42 227 55)(font "Arial" (font_size 8)))
+		(text "dataout[2..0]" (rect 0 0 112 20)(font "Arial" (font_size 8)))
+		(text "dataout[2..0]" (rect 117 36 208 55)(font "Arial" (font_size 8)))
 		(line (pt 232 56)(pt 132 56)(line_width 3))
 	)
 	(drawing
-		(text "+" (rect 101 39 209 93)(font "Arial" (font_size 10)))
-		(text "-" (rect 102 55 206 125)(font "Arial" (font_size 10)))
-		(text "differential mode" (rect 157 77 383 165)(font "Arial" ))
+		(text "+" (rect 101 30 212 84)(font "Arial" (font_size 10)))
+		(text "-" (rect 102 46 210 116)(font "Arial" (font_size 10)))
+		(text "differential mode" (rect 99 71 304 159)(font "Arial" ))
 		(line (pt 100 40)(pt 100 72))
 		(line (pt 100 40)(pt 132 56))
 		(line (pt 100 72)(pt 132 56))

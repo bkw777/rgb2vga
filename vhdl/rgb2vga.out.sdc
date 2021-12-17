@@ -263,7 +263,7 @@ set_false_path -from {sdram:dram|SdrAdr[12]} -to {DRAM_ADDR[12]}
 set_false_path -from {sdram:dram|SdrCmd[0]} -to {DRAM_WE_N}
 set_false_path -from {sdram:dram|SdrCmd[1]} -to {DRAM_CAS_N}
 set_false_path -from {sdram:dram|SdrCmd[2]} -to {DRAM_RAS_N}
-set_false_path -from {sdram:dram|SdrCmd[3]} -to {DRAM_CS_N}
+#set_false_path -from {sdram:dram|SdrCmd[3]} -to {DRAM_CS_N}
 
 set_false_path -from {sdram:dram|SdrBa0} -to {DRAM_BA[0]}
 set_false_path -from {sdram:dram|SdrBa1} -to {DRAM_BA[1]}
