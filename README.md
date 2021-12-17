@@ -22,7 +22,7 @@ Video showing v003 in action
 
 [DE0-Nano](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=593)  
  or [search ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15))  
- note: "DE0-Nano", don't accidentally get "DE0-Nano-SoC"
+ NOTE: don't accidentally get **DE0-Nano-SoC**, that's something else
 
 [3d-printed enclosure - 009.3](https://craftcloud3d.com/offer/d6a42c57-db52-448a-ad5a-508a885461aa?utm_campaign=shareable_cart) - pending testing - 1.5mm thin walls, 100% infill, 0.2mm fitment clearance  
 
