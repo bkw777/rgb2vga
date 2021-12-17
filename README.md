@@ -5,7 +5,17 @@ Uses Altera DE0-Nano FPGA development board to convert analog 15Khz RGB signal t
 
 This is a modified version of the original [RGB2VGA by Luis Felipe da Costa Antoniosi](https://sites.google.com/site/tandycocoloco/rgb2vga).
 
-The electronics and fpga code are the same as the original. The resistor values are from [Roger Taylor](http://www.cococommunity.net/vga-for-the-coco-3/). The physical layout is changed to make a more compact package and to include the two modifications described on the original version. The schematic and pcb layout are re-drawn from scratch in KiCad to provide editable source files. The enclosure is new and also included here in OpenSCAD source form. The vhdl source is included and cleaned up to remove any non-source files. And everything, PCB, Firmware, Enclosure is included here in a single repo for convenience and to provide sourcees for each.
+The electronics and fpga code are the same as the original.
+
+The resistor values are from [Roger Taylor](http://www.cococommunity.net/vga-for-the-coco-3/).
+
+The physical layout is changed to make a more compact package and to build-in the two modifications described in the original docs.
+
+The schematic and pcb layout are re-drawn from scratch in KiCad to provide editable source files.
+
+The VHDL source is just a fork of [the original](https://github.com/lfantoniosi/rgb2vga) but with all the non-source files cleaned out.
+
+The enclosure is new, and the OpenSCAD source provided.
 
 Video showing v003 in action.  
 [![](https://img.youtube.com/vi/MPYQRHWyUGA/hqdefault.jpg)](https://youtu.be/MPYQRHWyUGA)
