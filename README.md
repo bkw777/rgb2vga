@@ -3,80 +3,94 @@ Convert 15khz RGB to 31khz VGA
 
 Uses Altera DE0-Nano FPGA development board to convert analog 15Khz RGB signal to VGA 31Khz 256 color.
 
-This is a clone of the original design by Luis Felipe da Costa Antoniosi, to provide the schematic, pcb, vhdl, and docs all together in one place, and to provide editable work files.
+This is a modified version of the original [RGB2VGA by Luis Felipe da Costa Antoniosi](https://sites.google.com/site/tandycocoloco/rgb2vga).
 
-For more information and directions see the [original documentation](https://sites.google.com/site/tandycocoloco/rgb2vga)
+The electronics and fpga code are the same as the original.
 
-Don't rush out to buy the parts yet. As of v003 this is tested, the PCB and BOM links are good and it works. That's what's in the video. But there are already some updates on the way, so I suggest wait for the [next version](../../tree/009) to be tested and finalized.
+The resistor values are from [Roger Taylor](http://www.cococommunity.net/vga-for-the-coco-3/).
 
+The physical layout is changed to make a more compact package and to build-in the two modifications described in the original docs.
+
+The schematic and pcb layout are re-drawn from scratch in KiCad to provide editable source files.
+
+The VHDL source is just a fork of [the original](https://github.com/lfantoniosi/rgb2vga) but with all the non-source files cleaned out.
+
+The enclosure is new, and the OpenSCAD source provided.
+
+Video showing v003 in action.  
 [![](https://img.youtube.com/vi/MPYQRHWyUGA/hqdefault.jpg)](https://youtu.be/MPYQRHWyUGA)
 
 ![](PCB/rgb2vga.jpg)
+![](PCB/rgb2vga.bottom.jpg)
 ![](PCB/rgb2vga.svg)
+![](case/rgb2vga.png)
 
-[PCB from OSHPark](https://oshpark.com/shared_projects/a1T9J3OD)  
+<!-- [PCB from OSHPark]()  -->
 [PCB from PCBWAY](https://www.pcbway.com/project/shareproject/de0_nano_fpga_rgb2vga.html)  
 
-[BOM from DigiKey](https://www.digikey.com/short/7fwcd5wr)
+[BOM from DigiKey](https://www.digikey.com/short/dzzj59h1)
 
-[DE0-Nano](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=593)  
- (or [search ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15))  
+[DE0-Nano](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=593) (or [search ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15))  
+When searching, don't accidentally get **DE0-Nano-SoC**, that's something else.
 
-[Gerbers, Firmware](../../releases/latest)
+[Enclosure from CraftCloud](https://craftcloud3d.com/offer/d6a42c57-db52-448a-ad5a-508a885461aa?utm_campaign=shareable_cart) (This model is still pending testing)
+
+[PCB Gerbers, FPGA Firmware, Enclosure STLs](../../releases/)
 
 # Directions  
 ## Building the PCB  
-- Polarity keys for the coco3 rgb cable and connector  
-  - Extract pin 6 from the 2x5 pin coco3 rgb connector before soldering. This is the center pin on the bottom row, opposite/away from the polarity notch. Pin 5 is in the way, just cut pin 6 on the back side and pull out from the front side.  
-  - Insert a plug into pin 6 on each end of the ribbon cable.  This is the center pin on the opposite row away from the the polarity bump.  
-- Solder the surface mount LM1881 first.  
-- Solder all other parts, any order.  
-- Turn the trim pot to 50%.  
+- Remove pin #6 from the 2x5 coco3 rgb connector before soldering. Pin #6 is the center pin on the bottom row, opposite/away from the polarity notch. Because pin #5 is in the way, the easiest way is to cut the pin flush on the back side and then pull the remaining pin out from the front.  
+- Solder the LM1881 U1 before any of the other parts around it.  
+- Solder the Artifact switch SW2 before soldering the trim pot R24.  
+- Solder the 3-pin J7 on the bottom and flush-cut the legs on top before soldering the resistors on the top side.  
+- Solder remaining parts in any order.  
 
 ## Programming the DE0-Nano  
-### Install Quartus  
+Below is the minimum directions and minimum download possible, using the stand-alone Quartus programmer app and the pre-compiled firmware.  
+Alternatively, [compile the firmware from the vhdl source](compile_vhdl.md).
+
+### Install the Quartus Standalone Programmer  
 https://fpgasoftware.intel.com/  
-- Select edition: Lite  
-- Individual Files
+Select edition: Lite -> Additional Software -> Quartus Prime Programmer and Tools  
+(For Linux, install: Individual Files -> Quartus Prime, not the stand-alone programmer package. The stand-alone Quartus programmer package for Linux is broken, missing ```libprotobuf.so.14.0.0```)
 
-Download just these two parts:  
-- Quartus Prime  
-- Cyclone IV device support  
-
-### Compile the VHDL  
-Start Quartus and connect the usb cable  
-Open Project -> vhdl/rgb2vga.qpf  
-Processing -> Start Compilation  
-
-This produces the file: output_files/rgb2vga.sof
-
-File -> Convert Programming Files...  
-Open Conversion Setup Data... -> DE0-Nano.cof  
-Generate  
-Close  
-
-This produces the file: output_files/rgb2vga.jic
+### Download the firmware
+Download ```rgb2vga.jic``` from [releases](../../releases/)  
 
 ### Program the DE0-Nano  
-Tools -> Programmer  
-Hardware Setup... -> USB-Blaster  (should be already autodetected)  
-Delete any entries pre-loaded in the middle section (probably has output_files/rgb2vga.sof)  
-Add File... -> output_files/rgb2vga.jic  
+Connect the usb cable  
+Launch the Quartus Programmer app  
+Hardware Setup... -> USB-Blaster  
+Add File... -> ```rgb2vga.jic```  
 Tick "Program/Configure"  
 Start  
 
 ## Assemble
+- Remove the acrylic cover from the DE0-Nano, keep the loger bottom standoffs, replace the short top standoffs with the screws from the cover.  
+ If using the 3d-printed enclosure, remove everything, all standoffs, screws, and cover.  
 - Put the RGB2VGA and DE0-Nano together with the trim pot on the same side as the USB connector.  
-- For use with a TANDY Color Computer 3, leave all jumpers open and all dip switches off, except turn the Artifact switch on. For some games, turn Artifact off as desired.
+- For TANDY Color Computer 3, turn all dip switches off. For most games, turn the Artifact switch on.  
+- Turn the trim pot to 50%.  
+- Insert the IDC pin block-off plugs into pin #6 on each end of the ribbon cable. Pin #6 is the center pin on the row opposite/away from the the polarity bump.  
 
-# TODO  
-* Better directions  
-* Enclosure  
-* Lowprofile / v004  
-* Bigger switch or button for Artifact
+## Enclosure
+The source for the enclosure is the [rgb2vga.scad](case/rgb2vga.scad) OpenSCAD file.  
+The current enclosure dimensions are still pending testing.  
+The elements that still need to be verified are the 1.5mm walls (```wall_thickness = 1.5;```) might be too thin, and the 0.2mm fitment clearance (```fc = 0.2;```) might be either too loose or too tight.  
 
 # Changelog
-* 20201104 [v003](../../tree/v003)  
+* 20211211 v009  
+ Add 3d-printable enclosure  
+ Add optional remote artifact switch  
+ Clean out non-source files from vhdl  
+ Add directions how to compile and flash the firmware  
+
+* 20211126 v004  
+ Low profile pcb - flip the tall components to the bottom side  
+ Move plugs to use only 2 sides instead of all 4  
+ Ground the monitor sense pin on the coco3 rgb input.
+
+* 20211104 [v003](../../tree/v003)  
  Re-draw the schematic in KiCad from the original png image. Same circuit, different layout.  
  Ed Snider / Roger Taylor resistor values.  
  Add the RGBI bright channel resistors  
