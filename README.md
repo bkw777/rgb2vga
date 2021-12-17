@@ -23,19 +23,16 @@ Video showing v003 in action
 [DE0-Nano](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=593) (or [search ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15))  
 When searching, don't accidentally get **DE0-Nano-SoC**, that's something else.
 
-[3d-printed enclosure - 009.3](https://craftcloud3d.com/offer/d6a42c57-db52-448a-ad5a-508a885461aa?utm_campaign=shareable_cart) - pending testing - 1.5mm thin walls, 100% infill, 0.2mm fitment clearance  
+[Enclosure from CraftCloud](https://craftcloud3d.com/offer/d6a42c57-db52-448a-ad5a-508a885461aa?utm_campaign=shareable_cart) (This model is still pending testing)
 
 [PCB Gerbers, FPGA Firmware, Enclosure STLs](../../releases/)
 
 # Directions  
 ## Building the PCB  
-- Polarity keys for the coco3 rgb cable and connector  
-  - Extract pin 6 from the 2x5 pin coco3 rgb connector before soldering. This is the center pin on the bottom row, opposite/away from the polarity notch. Pin 5 is in the way, just cut pin 6 on the back side and pull out from the front side.  
-  - Insert a plug into pin 6 on each end of the ribbon cable.  This is the center pin on the opposite row away from the the polarity bump.  
-- Solder the surface mount LM1881 first.  
-- Solder SW2 on the bottom before soldering R24.  
+- Cut and remove pin #6 from the 2x5 pin coco3 rgb connector before soldering. Pin #6 is the center pin on the bottom row, opposite/away from the polarity notch. The easiest way is to cut the pin on the back side and then pull the pin out from the front.  
+- Solder the LM1881 before any of the other parts around it.  
+- Solder SW2 on the bottom before soldering the trim pot R24.  
 - Solder remaining parts in any order.  
-- Turn the trim pot to 50%.  
 
 ## Programming the DE0-Nano  
 Below is the minimum directions and minimum download possible, using the stand-alone Quartus programmer app and the pre-compiled firmware.  
@@ -58,11 +55,17 @@ Tick "Program/Configure"
 Start  
 
 ## Assemble
-- Remove the acrylic cover from the DE0-Nano, keep the standoffs.  
- Optionally replace the short standoffs on top with the screws from the acrylic cover.  
- If using the 3d-printable enclosure, remove the standoffs too.  
+- Remove the acrylic cover from the DE0-Nano, keep the loger bottom standoffs, replace the short top standoffs with the screws from the cover.  
+ If using the 3d-printed enclosure, remove everything, all standoffs, screws, and cover.  
 - Put the RGB2VGA and DE0-Nano together with the trim pot on the same side as the USB connector.  
-- For TANDY Color Computer 3, leave all dip switches off, except turn the Artifact switch on. For some games, turn Artifact off as desired.
+- For TANDY Color Computer 3, turn all dip switches off. For most games, turn the Artifact switch on.  
+- Turn the trim pot to 50%.  
+- Insert a polarity key plug into pin #6 on each end of the ribbon cable.  Pin #6 is the center pin on the opposite row away from the the polarity bump.  
+
+## Enclosure
+The source for the enclosure is the [rgb2vga.scad](case/rgb2vga.scad) OpenSCAD file.  
+The current enclosure dimensions are still pending testing.  
+The elements that still need to be verified are the 1.5mm walls (```wall_thickness = 1.5;```) might be too thin, and the 0.2mm fitment clearance (```fc = 0.2;```) might be either too loose or too tight.  
 
 # Changelog
 * 20211211 v009  
