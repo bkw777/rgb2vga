@@ -3,11 +3,11 @@ Convert 15khz RGB to 31khz VGA
 
 Uses Altera DE0-Nano FPGA development board to convert analog 15Khz RGB signal to VGA 31Khz 256 color.
 
-This is a slightly modified version of the original design by Luis Felipe da Costa Antoniosi.
+This is a modified version of the original [RGB2VGA by Luis Felipe da Costa Antoniosi](https://sites.google.com/site/tandycocoloco/rgb2vga).
 
-For more information and directions see the [original documentation](https://sites.google.com/site/tandycocoloco/rgb2vga)
+The electronics and fpga code are the same as the original. The resistor values are from [Roger Taylor](http://www.cococommunity.net/vga-for-the-coco-3/). The physical layout is changed to make a more compact package and to include the two modifications described on the original version. The schematic and pcb layout are re-drawn from scratch in KiCad to provide editable source files. The enclosure is new and also included here in OpenSCAD source form. The vhdl source is included and cleaned up to remove any non-source files. And everything, PCB, Firmware, Enclosure is included here in a single repo for convenience and to provide sourcees for each.
 
-Video showing v003 in action  
+Video showing v003 in action.  
 [![](https://img.youtube.com/vi/MPYQRHWyUGA/hqdefault.jpg)](https://youtu.be/MPYQRHWyUGA)
 
 ![](PCB/rgb2vga.jpg)
