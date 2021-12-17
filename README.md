@@ -18,7 +18,7 @@ Video showing v003 in action
 <!-- [PCB from OSHPark]()  -->
 [PCB from PCBWAY](https://www.pcbway.com/project/shareproject/de0_nano_fpga_rgb2vga.html)  
 
-[BOM from DigiKey](https://www.digikey.com/short/47fbdpb0)
+[BOM from DigiKey](https://www.digikey.com/short/dzzj59h1)
 
 [DE0-Nano](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=593) (or [search ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15))  
 When searching, don't accidentally get **DE0-Nano-SoC**, that's something else.
@@ -29,9 +29,10 @@ When searching, don't accidentally get **DE0-Nano-SoC**, that's something else.
 
 # Directions  
 ## Building the PCB  
-- Cut and remove pin #6 from the 2x5 pin coco3 rgb connector before soldering. Pin #6 is the center pin on the bottom row, opposite/away from the polarity notch. The easiest way is to cut the pin on the back side and then pull the pin out from the front.  
-- Solder the LM1881 before any of the other parts around it.  
-- Solder SW2 on the bottom before soldering the trim pot R24.  
+- Remove pin #6 from the 2x5 coco3 rgb connector before soldering. Pin #6 is the center pin on the bottom row, opposite/away from the polarity notch. Because pin #5 is in the way, the easiest way is to cut the pin flush on the back side and then pull the remaining pin out from the front.  
+- Solder the LM1881 U1 before any of the other parts around it.  
+- Solder the Artifact switch SW2 before soldering the trim pot R24.  
+- Solder the 3-pin J7 on the bottom and flush-cut the legs on top before soldering the resistors on the top side.  
 - Solder remaining parts in any order.  
 
 ## Programming the DE0-Nano  
@@ -60,7 +61,7 @@ Start
 - Put the RGB2VGA and DE0-Nano together with the trim pot on the same side as the USB connector.  
 - For TANDY Color Computer 3, turn all dip switches off. For most games, turn the Artifact switch on.  
 - Turn the trim pot to 50%.  
-- Insert a polarity key plug into pin #6 on each end of the ribbon cable.  Pin #6 is the center pin on the opposite row away from the the polarity bump.  
+- Insert the IDC pin block-off plugs into pin #6 on each end of the ribbon cable. Pin #6 is the center pin on the row opposite/away from the the polarity bump.  
 
 ## Enclosure
 The source for the enclosure is the [rgb2vga.scad](case/rgb2vga.scad) OpenSCAD file.  
