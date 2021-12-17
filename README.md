@@ -39,7 +39,7 @@ When searching, don't accidentally get **DE0-Nano-SoC**, that's something else.
 
 # Directions  
 ## Building the PCB  
-- Remove pin #6 from the 2x5 coco3 rgb connector before soldering. Pin #6 is the center pin on the bottom row, opposite/away from the polarity notch. Because pin #5 is in the way, the easiest way is to cut the pin flush on the back side and then pull the remaining pin out from the front.  
+- Remove pin #6 from the 2x5 coco3 rgb connector before soldering. Pin #6 is the center pin on the bottom row, opposite/away from the polarity notch.  
 - Solder the LM1881 U1 before any of the other parts around it.  
 - Solder the Artifact switch SW2 before soldering the trim pot R24.  
 - Solder the 3-pin J7 on the bottom and flush-cut the legs on top before soldering the resistors on the top side.  
