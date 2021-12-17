@@ -7,7 +7,7 @@ This is a clone of the original design by Luis Felipe da Costa Antoniosi, to pro
 
 For more information and directions see the [original documentation](https://sites.google.com/site/tandycocoloco/rgb2vga)
 
-Don't rush out to buy the parts yet. As of v003 this is tested, the PCB and BOM links are good and it works. That's what's in the video. But there are already some updates on the way, so I suggest wait for v004. The "lowprofile" branch is v004, but isn't done yet.
+Don't rush out to buy the parts yet. As of v003 this is tested, the PCB and BOM links are good and it works. That's what's in the video. But there are already some updates on the way, so I suggest wait for the [next version](../../tree/009) to be tested and finalized.
 
 [![](https://img.youtube.com/vi/MPYQRHWyUGA/hqdefault.jpg)](https://youtu.be/MPYQRHWyUGA)
 
