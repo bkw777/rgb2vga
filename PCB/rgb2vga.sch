@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "DE0-NANO RGB2VGA"
-Date "2021-11-28"
-Rev "005"
+Date "2021-12-19"
+Rev "006"
 Comp "Brian K. White - b.kenyon.w@gmail.com"
 Comment1 "Original Design by Luis Antoniosi 2014"
 Comment2 ""
@@ -1388,9 +1388,6 @@ F 3 "~" H 1275 6875 50  0001 C CNN
 	2    1900 6700
 	1    0    0    -1  
 $EndComp
-NoConn ~ 2100 6800
-NoConn ~ 2100 7100
-NoConn ~ 2100 7000
 Wire Notes Line
 	1900 6940 1900 6660
 Wire Wire Line
@@ -1490,4 +1487,37 @@ Text Notes 1880 7330 2    50   ~ 0
 ARTIFACT
 Text Notes 1880 7540 2    50   ~ 0
 INVERSE ARTIFACT
+$Comp
+L 000_LOCAL:GND #PWR?
+U 1 1 61C181AA
+P 2100 7100
+F 0 "#PWR?" H 2100 6850 50  0001 C CNN
+F 1 "GND" V 2100 7000 50  0000 R CNN
+F 2 "" H 2100 7100 50  0001 C CNN
+F 3 "" H 2100 7100 50  0001 C CNN
+	1    2100 7100
+	0    -1   1    0   
+$EndComp
+$Comp
+L 000_LOCAL:GND #PWR?
+U 1 1 61C199CE
+P 2100 7000
+F 0 "#PWR?" H 2100 6750 50  0001 C CNN
+F 1 "GND" V 2100 6900 50  0000 R CNN
+F 2 "" H 2100 7000 50  0001 C CNN
+F 3 "" H 2100 7000 50  0001 C CNN
+	1    2100 7000
+	0    -1   1    0   
+$EndComp
+$Comp
+L 000_LOCAL:GND #PWR?
+U 1 1 61C19F7B
+P 2100 6800
+F 0 "#PWR?" H 2100 6550 50  0001 C CNN
+F 1 "GND" V 2100 6700 50  0000 R CNN
+F 2 "" H 2100 6800 50  0001 C CNN
+F 3 "" H 2100 6800 50  0001 C CNN
+	1    2100 6800
+	0    -1   1    0   
+$EndComp
 $EndSCHEMATC
