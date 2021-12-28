@@ -8,7 +8,7 @@
 // "explode" = show both top & bottom shells, seperated by explode_seperation, and pcb model
 // "top" = show top shell alone, rotated and translated for FDM printing
 // "bottom" = show bottom shell alone, rotated and translated for FDM printing
-view = "bottom";
+view = "explode";
 explode_seperation = 30;
 
 // customizable options
