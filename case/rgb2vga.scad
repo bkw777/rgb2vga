@@ -8,12 +8,21 @@
 // "explode" = show both top & bottom shells, seperated by explode_seperation, and pcb model
 // "top" = show top shell alone, rotated and translated for FDM printing
 // "bottom" = show bottom shell alone, rotated and translated for FDM printing
-view = "explode";
+view = "bottom";
 explode_seperation = 30;
 
-//$fn = 36;
-//$fn = 72;
-//$fn = 96;
+// customizable options
+wall_thickness = 1.0;
+fc = 0.2; // fitment clearance
+inner_corner_h = 6;  // main shell inside corner horizontal radius
+inner_corner_v = 2;  // main shell inside corner vertical radius
+df = 1;   // default fillet
+pcb_mount_post_id = 2.6;  // M3 screw, but not needed
+//pcb_mount_post_od = 4.8;  // 6.8 , max 8
+pcb_mount_post_wall = 1.8;
+pcb_mount_post_od = pcb_mount_post_id + pcb_mount_post_wall*2;   // 6.8 , max 8 possible
+
+// arc smoothness
 $fs = 0.2;
 $fa = 1;
 
@@ -31,8 +40,8 @@ space_below = 10;      // inside wall floor to de0nano pcb bottom
 // difference between de0-nano center and rgb2vga center
 pcb_centers_offset = 2.7;   // from pcbnew
 
-de0nano_pcb_length = 75.2;
-de0nano_pcb_width = 49;
+de0nano_pcb_length = 75.4;
+de0nano_pcb_width = 49.2;
 de0nano_pcb_elev = space_below;
 de0nano_pcb_mount_l = 68.6; // from pcbnew
 de0nano_pcb_mount_w = 42.4; // from pcbnew
@@ -42,10 +51,8 @@ rgb2vga_pcb_width = 55.88;  // from pcbnew
 rgb2vga_pcb_corner = 3.175; // from pcbnew
 rgb2vga_pcb_elev = de0nano_pcb_elev + pcb_thickness + space_between;
 
-fc = 0.2; // part fitment clearance
-wall_thickness = 1.5; // default thickness of all walls
-port_gap = 1; // default gap around all port connectors
-port_corner = port_gap; // default corner radius around ports
+port_gap = 1; // gap around port connectors
+port_corner = port_gap; // inside corner radius around port connectors
 
 inner_height = space_below + pcb_thickness + space_between + pcb_thickness + space_above;
 outer_height = wall_thickness + inner_height + wall_thickness;
@@ -59,9 +66,6 @@ inner_length = outer_length - wall_thickness - wall_thickness;
 // WIDTH - inner width larger than de0-nano pcb length
 inner_width = fc + de0nano_pcb_length + fc; // inside fit to de0-nano pcb
 outer_width = wall_thickness + inner_width + wall_thickness;
-
-inner_fillet = 1;
-inner_corner = 6;
 
 window_height = 28;
 window_width = 23.5;
@@ -86,10 +90,16 @@ clip_depth = 6;
 clip_height = 4;
 clip_detent = 1;
 
-pcb_mount_post_od = 8;   // fat enough for screw, but no screw needed
-pcb_mount_post_id = 2.8; // M3 screw
+reg_post_width = 2;
+reg_post_depth = 4;
 
-top_ribs_width = 2;
+top_ribs_loc = 18.85; // 18.85 inside, 21.7 gpio, 25.3 outside
+top_ribs_width = 1;
+
+rca_pin_l = 18.41;
+rca_pin_i = 2.75;
+rca_pin_r = 1.8;
+rca_pin_h = 3;
 
 o = 0.01; // overlap / overcut - ensure union parts overlap and cuts cupletely cut
 
@@ -141,6 +151,13 @@ module usb_port () {
          cylinder(h=o+wall_thickness+o,r=usb_corner);
 }
 
+module rca_pin_clearance() {
+  translate([rgb2vga_pcb_length/2-rca_pin_i,rca_pin_l+pcb_centers_offset,wall_thickness+rgb2vga_pcb_elev+pcb_thickness+rca_pin_h/2-o])
+   cylinder(h=rca_pin_h/2,r1=rca_pin_r+fc,r2=(rca_pin_r+fc)/2);
+  translate([rgb2vga_pcb_length/2-rca_pin_i,rca_pin_l+pcb_centers_offset,wall_thickness+rgb2vga_pcb_elev+pcb_thickness])
+   cylinder(h=rca_pin_h/2,r=rca_pin_r+fc);
+}
+
 module top_window () {
   w = window_width/2-window_corner;
   h = window_height/2-window_corner;
@@ -168,32 +185,32 @@ module pcb_model () {
 }
 
 module top_clip () {
- d = 4; // registration post depth
- w = 2; // registration post width
+ d = reg_post_depth; // registration post depth
+ w = reg_post_width; // registration post width
  l = inner_length/2-de0nano_pcb_width/2+w+o ; // bump cylinder length
  translate([-w,0,split_elev+clip_detent+fc]) {
   difference() {
    translate([o,0,0]) rotate([0,90,0]) cylinder(h=l,r=clip_detent); // bump
    difference () { // cut bump cylinder to inner shell + o
-    translate([l-inner_corner,inner_corner-o,-clip_detent-o]) rotate([0,0,-90]) cube([inner_corner+wall_thickness,inner_corner+wall_thickness,o+clip_detent*2+o]);
-    translate([l-inner_corner+o,inner_corner-o,-clip_detent-o-o]) cylinder(h=o+o+clip_detent*2+o+o,r=inner_corner+o);
+    translate([l-inner_corner_h,inner_corner_h-o,-clip_detent-o]) rotate([0,0,-90]) cube([inner_corner_h+wall_thickness,inner_corner_h+wall_thickness,o+clip_detent*2+o]);
+    translate([l-inner_corner_h+o,inner_corner_h-o,-clip_detent-o-o]) cylinder(h=o+o+clip_detent*2+o+o,r=inner_corner_h+o);
    }
   }
   difference () {
    union(){
     translate([0,-o,-clip_detent]) cube([w,d+o,split_elev-wall_thickness+o-fc]); // registration post
-    translate([inner_fillet,0,0]) mirror_copy([1,0,0]) translate([w-o,inner_fillet-o,-inner_fillet]) rotate([0,0,180]) fillet_linear(l=split_elev-wall_thickness+o-fc,r=inner_fillet); // vertical fillets
-    translate([inner_fillet,0,0]) mirror_copy([1,0,0]) translate([w-o,-o,-inner_fillet*2+split_elev-wall_thickness+o-fc]) rotate([90,0,180]) fillet_linear(l=d+o,r=inner_fillet); // horizontal fillets
+    translate([df+w-o,df-o,o-fc]) rotate([0,0,180]) fillet_linear(l=split_elev-wall_thickness+o-clip_detent-inner_corner_v,r=df); // vertical outside fillet
+    translate([-df+o,df-o,-wall_thickness]) rotate([0,0,-90]) fillet_linear(l=split_elev-wall_thickness-inner_corner_v-fc+o,r=df); // vertical inside fillet
+    translate([w/2,0,-wall_thickness+df]) mirror_copy([1,0,0]) {
+      translate([df+w/2-o,inner_corner_v/2-o,-df*2+split_elev-wall_thickness+o-fc]) rotate([90,0,180]) fillet_linear(l=d-inner_corner_v/2+o,r=df); // horizontal depth fillets
+      translate([-w/2+o,d-o,-df-df+split_elev-wall_thickness-fc+o]) rotate([0,0,-90]) fillet_polar(R=0,r=df);
+      translate([df+w/2-o,inner_corner_v-o,-df+split_elev-wall_thickness-inner_corner_v-fc+o]) rotate([90,0,-90]) fillet_polar(R=inner_corner_v,r=df);
+    }
    }
-   translate([w-1,-o-o,-clip_detent-o]) rotate([0,45,0]) cube([w,o+d+o+o,w*2]); // registration ramp
+   translate([w-1,-o-o,-clip_detent-o]) rotate([0,45,0]) cube([w,o+d+o+o,clip_detent*1.6]); // registration ramp
   }
  }
- translate([0,d+inner_fillet-o,-inner_fillet+outer_height-wall_thickness+o]) {
-   rotate([90,0,-90]) fillet_linear(l=w,r=inner_fillet);
-   translate([-o,-inner_fillet,0]) rotate([0,0,180]) fillet_polar(R=0,r=inner_fillet);
-   translate([o-w,-inner_fillet,0]) rotate([0,0,-90]) fillet_polar(R=0,r=inner_fillet);
-   translate([-w/2,0,0]) mirror_copy([1,0,0]) translate([inner_fillet-o+w/2,-d,0]) rotate([90,0,-90]) fillet_polar(R=inner_fillet,r=inner_fillet);
- }
+ translate([0,d+df-o,-df+outer_height-wall_thickness+o]) rotate([90,0,-90]) fillet_linear(l=w,r=df); // horizontal end fillet
 }
 
 module bottom_clip () {
@@ -204,11 +221,12 @@ module bottom_clip () {
   union() {
    // add main post
    cube([clip_width,clip_depth+o,o+h+clip_height]);
-   translate([clip_width+inner_fillet-o,clip_depth-inner_fillet+o,0]) rotate([0,0,90]) fillet_linear(l=h,r=inner_fillet);
-   translate([clip_width+inner_fillet-o,0,inner_fillet]) rotate([-90,90,0]) fillet_linear(l=clip_depth+o,r=inner_fillet);
-   translate([clip_width+inner_fillet-o,clip_depth-inner_fillet+o,inner_fillet]) rotate([0,0,90]) fillet_polar(R=inner_fillet,r=inner_fillet,as=90);
-   translate([clip_width-o,o,inner_fillet]) fillet_polar(R=0,r=inner_fillet,A=270,as=90);
-   translate([0,-inner_fillet+o,inner_fillet]) rotate([0,90,0]) fillet_linear(l=clip_width,r=inner_fillet);
+   translate([clip_width+df-o,clip_depth-df+o,0]) rotate([0,0,90]) fillet_linear(l=h+o,r=df);
+   translate([clip_width+df-o,0,df]) rotate([-90,90,0]) fillet_linear(l=clip_depth+o,r=df);
+   translate([clip_width+df-o,clip_depth-df+o,df]) rotate([0,0,90]) fillet_polar(R=df,r=df,as=90);
+   translate([clip_width-o,o,df]) rotate([0,0,90]) fillet_polar(R=0,r=df,A=90,as=90);
+   //translate([0,-df+o,df]) rotate([0,90,0]) #fillet_linear(l=clip_width,r=df); // moved to bottom_tower()
+
   }
   union(){
    // cut main outside fitment clearance
@@ -237,25 +255,33 @@ module bottom_tower () {
  aw = inner_width/2-de0nano_pcb_mount_l/2;
  bw = min(clip_depth,aw+pcb_mount_post_od/2);
  bl = de0nano_pcb_width/2-de0nano_pcb_mount_w/2+fc;
+ bfl = pcb_mount_post_od/2+bl+clip_width;
 
  // pcb mount post
  difference () {
   union() {
-   screw_post(h=h,od=pcb_mount_post_od,fr=2,o=0.003);
-   translate([-pcb_mount_post_od/2,0,0]) cube([pcb_mount_post_od/2+bl+o,aw+o,h]); // fill from post to end wall
-   translate([0,aw-bw,0]) cube([bl+o,bw+o,h]); // fill from post to case clip
-   translate([-pcb_mount_post_od/2-inner_fillet+o,aw-inner_fillet+o,0]) fillet_linear(l=de0nano_pcb_elev-fc+o);
+   screw_post(h=h,od=pcb_mount_post_od,fr=df,o=o);
+   translate([-pcb_mount_post_od/2,0,0]) {
+     cube([pcb_mount_post_od/2+bl+o,aw+o,h]); // fill from post to end wall
+     translate([-df+o,aw-df+o,0]) fillet_linear(l=h,r=df);
+     translate ([bfl/2,0,0]) mirror_copy([1,0,0]) translate([-df-bfl/2+o,aw-inner_corner_v+o,inner_corner_v]) rotate([0,90,0]) fillet_polar(R=inner_corner_v,r=df,a=90);
+     translate([-df+o,0,df]) rotate([270,0,0]) fillet_linear(r=df,l=aw+o);
+   }
+   translate([0,aw-bw,0]) {
+     cube([bl+o,bw+o,h]); // fill from post to case clip
+     translate([0,-df+o,df]) rotate([0,90,0]) fillet_linear(l=bl+clip_width,r=df); // moved from bottom_clip()
+   }
   }
   union(){
   translate([0,0,o]) cylinder(d=pcb_mount_post_id,h=h); // screw hole
   translate([0,0,de0nano_pcb_elev-fc-pcb_mount_post_id*0.7]) cylinder(h=pcb_mount_post_id,r1=0,r2=pcb_mount_post_id); // chamfer
 
   // kludge-tastic... just to trim the fillet down to the inner hull + o
-  translate([-10,inner_width/2-de0nano_pcb_mount_l/2-inner_fillet+o,inner_fillet-o])
+  translate([-10,inner_width/2-de0nano_pcb_mount_l/2-df+o,df-o])
    rotate([0,90,0])
     difference() {
      cube([10,10,20]);
-     translate([0,0,-o]) cylinder(r=inner_fillet+o,h=o+20+o);
+     translate([0,0,-o]) cylinder(r=df+o,h=o+20+o);
     }
   }
  }
@@ -276,7 +302,7 @@ module bottom_towers () {
 
 module main_shell() {
  difference() {
-  translate([0,0,outer_height/2]) rounded_cube(w=inner_length,d=inner_width,h=inner_height,rh=inner_corner,rv=inner_fillet,t=wall_thickness);
+  translate([0,0,outer_height/2]) rounded_cube(w=inner_length,d=inner_width,h=inner_height,rh=inner_corner_h,rv=inner_corner_v,t=wall_thickness);
   union(){
    usb_port();
    main_ports();
@@ -289,22 +315,23 @@ module top_case () {
  difference () {
   union() {
    main_shell(); // add main shell
+   // top ribs
    mirror_copy([1,0,0]) // add pcb-hold-down / panel stiffener ribs
-    translate([17.9,-inner_width/2-o,wall_thickness+inner_height-space_above+fc+o])
+    translate([top_ribs_loc-top_ribs_width/2,-inner_width/2-o,wall_thickness+inner_height-space_above+fc+o])
      union() {
       cube([top_ribs_width,o+inner_width+o,space_above-fc]); // main rib
-      translate([inner_fillet,o+inner_width+o,space_above-inner_fillet-fc])
+      translate([top_ribs_width/2,o+inner_width+o,space_above-df-fc])
        rotate([90,0,0])
         mirror_copy([1,0,0])
-         translate([-inner_fillet-top_ribs_width/2+o,0,0]) {
-          fillet_linear(l=o+inner_width+o,r=inner_fillet); // main fillet
-          translate([0,0,inner_width/2]) mirror_copy([0,0,1]) translate([0,0,-inner_fillet+inner_width/2+o]) {
-            fillet_polar(R=inner_fillet,r=inner_fillet);
-            translate([0,inner_fillet,0]) rotate([90,0,0]) fillet_linear(l=space_above-fc,r=inner_fillet);
-            translate([inner_fillet,-space_above+inner_fillet+fc+o,0]) fillet_polar(R=0,r=inner_fillet);
+         translate([-df-top_ribs_width/2+o,0,0]) {
+          fillet_linear(l=o+inner_width+o,r=df); // main fillet
+          translate([0,0,inner_width/2]) mirror_copy([0,0,1]) translate([0,0,-df+inner_width/2+o]) {
+            translate([0,df-inner_corner_v,df-inner_corner_v]) rotate([90,0,90]) fillet_polar(R=inner_corner_v,r=df);
+            translate([0,df,0]) rotate([90,0,0]) fillet_linear(l=space_above-fc,r=df);
+            translate([df,-space_above+df+fc+o,0]) fillet_polar(R=0,r=df);
           }
          }
-      translate([0,inner_width/2+o+o,o]) mirror_copy([0,1,0]) translate([top_ribs_width,-inner_width/2+inner_fillet-o,-inner_fillet]) rotate([90,0,-90]) fillet_linear(l=top_ribs_width,r=inner_fillet);
+      translate([0,inner_width/2+o+o,o]) mirror_copy([0,1,0]) translate([top_ribs_width,-inner_width/2+df-o,-df]) rotate([90,0,-90]) fillet_linear(l=top_ribs_width,r=df);
      }
   }
 
@@ -313,6 +340,7 @@ module top_case () {
    translate([0,0,tch/2-o]) cube([o+outer_length+o,o+outer_width+o,tch],center=true);
    rgb2vga_pcb_clearance(); // cut pcb clearance
    top_window(); // cut top window
+   rca_pin_clearance();
   }
  } // difference
 
@@ -337,8 +365,8 @@ module bottom_case () {
 } // bottom_case
 
 if (view == "closed") {
- //pcb_model();
- %top_case();
+ %pcb_model();
+ top_case();
  bottom_case();
 }
 if (view == "explode") {
