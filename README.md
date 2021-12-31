@@ -79,7 +79,7 @@ The source for the enclosure is the [rgb2vga.scad](case/rgb2vga.scad) OpenSCAD f
 The bottom part of the enclosure has screw holes that will accept the screws that came on the rgb2vga, but the screws are not needed. You can just remove all hardware parts from the rgb2vga, put it in the case and snap it together.
 
 # Changelog
-* 20211211 v009  
+* 20211211 [v009](../../tree/v009)  
  Added 3d-printable enclosure  
  Added optional remote artifact switch  
  Cleaned out non-source files from vhdl  
