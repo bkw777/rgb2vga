@@ -33,7 +33,7 @@ Video showing v003 in action.
 [DE0-Nano](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=593) (or [search ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15))  
 When searching, don't accidentally get **DE0-Nano-SoC**, that's something else.
 
-[Enclosure from CraftCloud](https://craftcloud3d.com/offer/d6a42c57-db52-448a-ad5a-508a885461aa?utm_campaign=shareable_cart) (This model is still pending testing)
+[Enclosure from CraftCloud](https://craftcloud3d.com/offer/6b5035d1-93f6-451d-a0e6-c438b9c68faa)
 
 [PCB Gerbers, FPGA Firmware, Enclosure STLs](../../releases/)
 
@@ -74,16 +74,16 @@ Start
 - Insert the IDC pin block-off plugs into pin #6 on each end of the ribbon cable. Pin #6 is the center pin on the row opposite/away from the the polarity bump.  
 
 ## Enclosure
-The source for the enclosure is the [rgb2vga.scad](case/rgb2vga.scad) OpenSCAD file.  
-The current enclosure dimensions are still pending testing.  
-The elements that still need to be verified are the 1.5mm walls (```wall_thickness = 1.5;```) might be too thin, and the 0.2mm fitment clearance (```fc = 0.2;```) might be either too loose or too tight.  
+The source for the enclosure is the [rgb2vga.scad](case/rgb2vga.scad) OpenSCAD file.
+
+The bottom part of the enclosure has screw holes that will accept the screws that came on the rgb2vga, but the screws are not needed. You can just remove all hardware parts from the rgb2vga, put it in the case and snap it together.
 
 # Changelog
 * 20211211 v009  
- Add 3d-printable enclosure  
- Add optional remote artifact switch  
- Clean out non-source files from vhdl  
- Add directions how to compile and flash the firmware  
+ Added 3d-printable enclosure  
+ Added optional remote artifact switch  
+ Cleaned out non-source files from vhdl  
+ Added directions how to compile and flash the firmware  
 
 * 20211126 v004  
  Low profile pcb - flip the tall components to the bottom side  
