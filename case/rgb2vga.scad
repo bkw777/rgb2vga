@@ -11,10 +11,13 @@
 view = "explode";
 
 // customizable options
+
+// switch_type
 // 0 = no switch
-// 1 = OS203013MT7QN1 on glue/melt posts
-// 2 = OS203013MT7QN1 with screw holes
+// 1 = OS203013MT7QN1 on meltable posts
+// 2 = OS203013MT7QN1 with screw holes, M2.5x8 flat head screws, and printed nuts
 switch_type = 1;
+
 explode_seperation = 30;
 wall_thickness = 1.0;
 text_depth = 0.2;
@@ -258,8 +261,6 @@ module bottom_clip () {
    translate([clip_width+df-o,0,df]) rotate([-90,90,0]) fillet_linear(l=clip_depth+o,r=df);
    translate([clip_width+df-o,clip_depth-df+o,df]) rotate([0,0,90]) fillet_polar(R=df,r=df,as=90);
    translate([clip_width-o,o,df]) rotate([0,0,90]) fillet_polar(R=0,r=df,A=90,as=90);
-   //translate([0,-df+o,df]) rotate([0,90,0]) #fillet_linear(l=clip_width,r=df); // moved to bottom_tower()
-
   }
   union(){
    // cut main outside fitment clearance
@@ -440,6 +441,8 @@ module top_case () {
    sw_hole();
    translate([0,0,outer_height-text_depth]) {
     th = text_depth + o;
+    translate([0,inner_width/2-inner_corner_v-4,0])
+     linear_extrude(height=th) text(text="RGB TO VGA",size=5,halign="center",valign="center");
     translate([-inner_length/2+inner_corner_v+1,pcb_centers_offset+4,0])
      rotate([0,0,-90])
       linear_extrude(height=th) text(text="COCO3 IN      RGB IN",size=3,halign="center");
@@ -447,8 +450,6 @@ module top_case () {
      rotate([0,0,90])
       linear_extrude(height=th) text(text="VGA OUT      CVBS IN",size=3,halign="center");
     if(switch_type>0) {
-    translate([0,inner_width/2-inner_corner_v-4,0])
-     linear_extrude(height=th) text(text="RGB TO VGA",size=5,halign="center",valign="center");
     translate([0,-inner_width/2+inner_corner_v+1+10,0])
      linear_extrude(height=th) text(text="ARTIFACT",size=3,halign="center");
     translate([0,-inner_width/2+inner_corner_v+1,0])
