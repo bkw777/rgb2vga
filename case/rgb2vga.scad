@@ -9,10 +9,15 @@
 // "top" = show top shell alone, rotated and translated for FDM printing
 // "bottom" = show bottom shell alone, rotated and translated for FDM printing
 view = "explode";
-explode_seperation = 30;
 
 // customizable options
+// 0 = no switch
+// 1 = OS203013MT7QN1 on glue/melt posts
+// 2 = OS203013MT7QN1 with screw holes
+switch_type = 1;
+explode_seperation = 30;
 wall_thickness = 1.0;
+text_depth = 0.2;
 fc = 0.2; // fitment clearance
 inner_corner_h = 6;  // main shell inside corner horizontal radius
 inner_corner_v = 2;  // main shell inside corner vertical radius
@@ -70,6 +75,8 @@ outer_width = wall_thickness + inner_width + wall_thickness;
 window_height = 28;
 window_width = 23.5;
 window_corner = 2;
+window_pos_x = -5.3;
+window_pos_y = 6.505;
 
 usb_width = 7.8;
 usb_height = 4.1;
@@ -100,6 +107,32 @@ rca_pin_l = 18.41;
 rca_pin_i = 2.75;
 rca_pin_r = 1.8;
 rca_pin_h = 3;
+
+// artifact/inverse switch
+// switch_type == 1 or 2
+sw1_model_stl = "CK_OS203013MT7QN1.stl";
+sw1_sheet_thickness = 0.5;
+sw1_body_z = 9.9;
+sw1_body_tl = 24;
+sw1_body_l = 14.2;
+sw1_body_ml = 12.6;
+sw1_pos_x = 0;
+sw1_pos_y = sw1_sheet_thickness - inner_width/2 + fc;
+sw1_pos_z = inner_height - sw1_body_z/2 - fc;
+sw1_hole_l = 9.7;
+sw1_hole_h = 4.3;
+sw1_post_dx = 2.8;
+sw1_post_dz = 4.4;
+sw1_post_mx = 17 / 2; // posts 17 center-center
+sw1_wing_setback = 2; // center front to wing rear, includes wing sw_sheet_thickness
+sw1_wing_z = 8.4;
+sw1_wing_x = (sw1_body_tl - sw1_body_l) / 2;
+// switch_type == 2
+sw2_screw_model_stl = "M2.5x8_flat.stl";
+sw2_screw_d = 2.5;
+sw2_screw_l = 8;
+sw2_nut_thickness = 4;
+sw2_nut_width = (sw1_body_tl-sw1_body_ml)/2;
 
 o = 0.01; // overlap / overcut - ensure union parts overlap and cuts cupletely cut
 
@@ -161,7 +194,7 @@ module rca_pin_clearance() {
 module top_window () {
   w = window_width/2-window_corner;
   h = window_height/2-window_corner;
-  translate([-5.3,6.5,outer_height-wall_thickness-o]) {
+  translate([window_pos_x,window_pos_y,outer_height-wall_thickness-o]) {
    hull()
     mirror_copy([0,1,0])
      translate([0,h,0])
@@ -299,6 +332,68 @@ module bottom_towers () {
      bottom_tower();
 }
 
+module sw_model () {
+ if (switch_type==1 || switch_type==2) {
+  translate([sw1_pos_x,sw1_pos_y,sw1_pos_z]) rotate([0,0,180])
+   color("grey",0.5) import(sw1_model_stl);
+  }
+ if (switch_type==2) {
+ mirror_copy([1,0,0])
+  translate([sw1_post_mx,-outer_width/2-o,sw1_pos_z]) {
+   rotate([0,0,180])
+    color("grey",0.5) import(sw2_screw_model_stl);
+    translate([-sw1_post_mx+sw1_body_ml/2+fc/2,o+fc+wall_thickness+sw1_wing_setback+o,-sw1_body_z/2]) sw2_nut();
+  }
+ }
+}
+
+module sw_hole () {
+ if (switch_type==1 || switch_type==2) {
+  translate([0,-inner_width/2-wall_thickness/2,sw1_pos_z])
+   cube([sw1_hole_l+fc,o+wall_thickness+o,sw1_hole_h+fc],center=true);
+ }
+ if (switch_type==2) {
+  base_thickness = sw1_wing_setback - sw1_sheet_thickness + fc + o;
+  mirror_copy([1,0,0])
+   translate([sw1_post_mx,-outer_width/2-o,sw1_pos_z])
+    rotate ([-90,0,0]) {
+     cylinder(h=o+wall_thickness+base_thickness+o,d=sw2_screw_d);
+     cylinder(h=wall_thickness*2,d1=sw2_screw_d*2,d2=0);
+    }
+ }
+}
+
+module sw_mount () {
+ if (switch_type==1) {
+  base_thickness = sw1_wing_setback - sw1_sheet_thickness + fc + o;
+  mirror_copy([1,0,0]) {
+   translate ([sw1_body_l/2,-inner_width/2-o-o,sw1_pos_z]) {
+    translate([fc/2,0,-sw1_wing_z/2]) cube([sw1_wing_x-fc/2,base_thickness,outer_height-sw1_pos_z+sw1_wing_z/2-wall_thickness+o]);
+    translate([sw1_post_dx/2,base_thickness-o,0]) rotate ([-90,0,0]) hull() mirror_copy([0,1,0]) translate([0,sw1_post_dz/2-sw1_post_dx/2,0]) cylinder(h=sw1_sheet_thickness+o+1,d=sw1_post_dx-fc/2);
+   }
+   translate([-sw1_body_tl/2,-inner_width/2+base_thickness+df-o-o,outer_height-df-wall_thickness+o])
+    rotate([0,-90,180])
+     fillet_linear(l=sw1_wing_x-fc/2,r=df);
+  }
+ }
+ if (switch_type==2) {
+  base_thickness = sw1_wing_setback - sw1_sheet_thickness + fc + o;
+  mirror_copy([1,0,0]) {
+   translate ([sw1_body_l/2+fc/2,-inner_width/2-o,sw1_pos_z-sw1_wing_z/2])
+    cube([sw1_wing_x-fc/2,base_thickness,outer_height-sw1_pos_z+sw1_wing_z/2-wall_thickness+o]);
+   translate([-sw1_body_tl/2,-inner_width/2+base_thickness+df-o-o,outer_height-df-wall_thickness+o])
+    rotate([0,-90,180])
+     fillet_linear(l=sw1_wing_x-fc/2,r=df);
+  }
+ }
+}
+
+module sw2_nut() {
+ difference () {
+  cube([sw2_nut_width,sw2_nut_thickness,sw1_body_z]);
+  translate([sw1_post_mx-sw1_body_ml/2-fc/2,-o,sw1_body_z/2]) rotate([-90,0,0]) cylinder(h=o+sw2_nut_thickness+o,d=sw2_screw_d-0.4);
+ }
+}
 
 module main_shell() {
  difference() {
@@ -333,6 +428,7 @@ module top_case () {
          }
       translate([0,inner_width/2+o+o,o]) mirror_copy([0,1,0]) translate([top_ribs_width,-inner_width/2+df-o,-df]) rotate([90,0,-90]) fillet_linear(l=top_ribs_width,r=df);
      }
+   sw_mount();
   }
 
   union () {
@@ -341,6 +437,29 @@ module top_case () {
    rgb2vga_pcb_clearance(); // cut pcb clearance
    top_window(); // cut top window
    rca_pin_clearance();
+   sw_hole();
+   translate([0,0,outer_height-text_depth]) {
+    th = text_depth + o;
+    translate([-inner_length/2+inner_corner_v+1,pcb_centers_offset+4,0])
+     rotate([0,0,-90])
+      linear_extrude(height=th) text(text="COCO3 IN      RGB IN",size=3,halign="center");
+    translate([inner_length/2-inner_corner_v-1,pcb_centers_offset+1,0])
+     rotate([0,0,90])
+      linear_extrude(height=th) text(text="VGA OUT      CVBS IN",size=3,halign="center");
+    if(switch_type>0) {
+    translate([0,inner_width/2-inner_corner_v-4,0])
+     linear_extrude(height=th) text(text="RGB TO VGA",size=5,halign="center",valign="center");
+    translate([0,-inner_width/2+inner_corner_v+1+10,0])
+     linear_extrude(height=th) text(text="ARTIFACT",size=3,halign="center");
+    translate([0,-inner_width/2+inner_corner_v+1,0])
+     rotate([0,0,90]) {
+     translate([0,4,0]) linear_extrude(height=th) text(text="ON",size=3,halign="left",valign="center");
+     linear_extrude(height=th) text(text="OFF",size=3,halign="left",valign="center");
+     translate([0,-4,0]) linear_extrude(height=th) text(text="INV",size=3,halign="left",valign="center");
+     }
+    }
+   }
+
   }
  } // difference
 
@@ -365,20 +484,32 @@ module bottom_case () {
 } // bottom_case
 
 if (view == "closed") {
- %pcb_model();
  top_case();
  bottom_case();
+ %pcb_model();
+ %sw_model();
 }
 if (view == "explode") {
  %pcb_model();
- translate([0,0,explode_seperation/2]) top_case();
+ translate([0,0,explode_seperation/2]) {
+  top_case();
+  sw_model();
+ }
  translate([0,0,-explode_seperation/2]) bottom_case();
 }
 if (view == "top") {
  translate([0,0,outer_height])
   rotate([180,0,0]) {
    //%pcb_model();
+   //sw_model();
    top_case();
+  }
+  if (switch_type==2) {
+   translate([0,-sw1_wing_x,0])
+    rotate([90,0,-90])
+     mirror_copy ([1,0,0])
+      translate([2,0,0])
+       sw2_nut();
   }
 }
 if (view == "bottom") {

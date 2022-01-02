@@ -28,7 +28,7 @@ Video showing v003 in action.
 <!-- [PCB from OSHPark]()  -->
 [PCB from PCBWAY](https://www.pcbway.com/project/shareproject/de0_nano_fpga_rgb2vga.html)  
 
-[BOM from DigiKey](https://www.digikey.com/short/d7t70mwp)
+[BOM from DigiKey](https://www.digikey.com/short/j4vbnmvj)
 
 [DE0-Nano](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=593) (or [search ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15))  
 When searching, don't accidentally get **DE0-Nano-SoC**, that's something else.
@@ -77,6 +77,12 @@ Start
 The source for the enclosure is the [rgb2vga.scad](case/rgb2vga.scad) OpenSCAD file.
 
 The bottom part of the enclosure has screw holes that will accept the screws that came on the rgb2vga, but the screws are not needed. You can just remove all hardware parts from the rgb2vga, put it in the case and snap it together.
+
+## Artifact Switch
+Cut one end off of the 3-pin female jumper cable, and solder the cut end to the larger slide switch as per the diagram on the silk screen on the bottom of the PCB.  
+Place the switch onto the posts inside the top cover, and melt the posts with a soldering iron to secure the switch to the top cover.  
+Plug the remaining 3-pin female plug onto the 3-pin male header on the pcb.  
+Set the small artifact switch on the pcb to the "OFF" position before closing up the enclosure.
 
 # Changelog
 * 20211211 [v009](../../tree/v009)  
