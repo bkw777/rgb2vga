@@ -78,6 +78,11 @@ The source for the enclosure is the [rgb2vga.scad](case/rgb2vga.scad) OpenSCAD f
 
 The bottom part of the enclosure has screw holes that will accept the screws that came on the rgb2vga, but the screws are not needed. You can just remove all hardware parts from the rgb2vga, put it in the case and snap it together.
 
+The scad file supplies 3 options for the artifact switch, controlled by the variable ```switch_type```.  
+```switch_type = 0;``` - no enclosure switch (use this if you want to drill a hole to install a panel mounted toggle switch or anything else besides the slide switch in the BOM.  
+```switch_type = 1;``` - (default) slide switch secured to the top cover by melting or gluing to built-in posts.  
+```switch_type = 2;``` - slide switch secured with flat head M2.5x8 screws into printed nuts.  
+
 ## Artifact Switch
 Cut one end off of the 3-pin female jumper cable, and solder the cut end to the larger slide switch as per the diagram on the silk screen on the bottom of the PCB.  
 Place the switch onto the posts inside the top cover, and melt the posts with a soldering iron to secure the switch to the top cover.  
@@ -85,6 +90,10 @@ Plug the remaining 3-pin female plug onto the 3-pin male header on the pcb.
 Set the small artifact switch on the pcb to the "OFF" position before closing up the enclosure.
 
 # Changelog
+* 20220102 [v010](../../tree/v010)  
+ Added remote artifact switch mounted on enclosure  
+ Added labels to enclosure
+
 * 20211211 [v009](../../tree/v009)  
  Added 3d-printable enclosure  
  Added optional remote artifact switch  
