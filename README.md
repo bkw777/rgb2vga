@@ -66,20 +66,20 @@ Tick "Program/Configure"
 Start  
 
 ## Assemble
-- Remove the acrylic cover from the DE0-Nano, keep the loger bottom standoffs, replace the short top standoffs with the screws from the cover.  
- If using the 3d-printed enclosure, remove everything, all standoffs, screws, and cover.  
+- Remove the acrylic cover and short upper stand-offs from the DE0-Nano. If using the printed enclosure, remove the lower stand-offs too. If not using the printed enclosure, keep the longer bottom standoffs, replace the short upper standoffs with the screws from the cover.  
 - Put the RGB2VGA and DE0-Nano together with the trim pot on the same side as the USB connector.  
-- For TANDY Color Computer 3, turn all dip switches off. For most games, turn the Artifact switch on.  
+- For TANDY Color Computer 3, turn all dip switches off. For most games, turn the Artifact switch on. If using the printed enclosure with enclosure artifact switch, set the pcb artifact switch to OFF.  
 - Turn the trim pot to 50%.  
 - Insert the IDC pin block-off plugs into pin #6 on each end of the ribbon cable. Pin #6 is the center pin on the row opposite/away from the the polarity bump.  
 
 ## Enclosure
 The source for the enclosure is the [rgb2vga.scad](case/rgb2vga.scad) OpenSCAD file.
 
-The bottom part of the enclosure has screw holes that will accept the screws that came on the rgb2vga, but the screws are not needed. You can just remove all hardware parts from the rgb2vga, put it in the case and snap it together.
+The bottom part of the enclosure has screw holes that will accept the M3 screws that came on the rgb2vga, but the screws are not needed. You can simply remove all hardware parts from the DE0-Nano, put the DE0-Nano + rgb2vga in the case and snap it together.
 
 ## Artifact Switch
-Cut one end off of the 3-pin female jumper cable, and solder the cut end to the larger slide switch as per the diagram on the silk screen on the bottom of the PCB.  
+Cut the 3-pin female jumper cable in half. Set one half aside, it won't be used.  
+Take one half and solder the cut ends to the slide switch as per the diagram on the silk screen on the bottom of the PCB.  
 Place the switch onto the posts inside the top cover, and melt the posts with a soldering iron to secure the switch to the top cover.  
 Plug the remaining 3-pin female plug onto the 3-pin male header on the pcb.  
 Set the small artifact switch on the pcb to the "OFF" position before closing up the enclosure.
