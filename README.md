@@ -33,7 +33,7 @@ Video showing v003 in action.
 [DE0-Nano](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=593) (or [search ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15))  
 When searching, don't accidentally get **DE0-Nano-SoC**, that's something else.
 
-[Enclosure from CraftCloud](https://craftcloud3d.com/offer/6b5035d1-93f6-451d-a0e6-c438b9c68faa)
+[Enclosure from CraftCloud](https://craftcloud3d.com/offer/810e1983-4456-413a-bb98-c8a85ea8f2b3)
 
 [PCB Gerbers, FPGA Firmware, Enclosure STLs](../../releases/)
 
