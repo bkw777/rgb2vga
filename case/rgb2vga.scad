@@ -1,4 +1,5 @@
 /* 3d-printable enclosure for github.com/bkw777/rgb2vga - v009 */
+// Version: 012
 
 // This file contains both the top and bottom case parts.
 // The "view = ..." setting below selects which part to render for STL export for printing,
@@ -23,12 +24,12 @@ switch_type = 1;
 // The ID of screw holes needs to be adjusted depending on whether the model is printed by FDM or SLS.
 // Holes come out slightly undersized with FDM. A hole the right size for a given screw when printed by FDM, will be too large when printed by SLS.
 // So this setting adjusts the ID of screw holes to be optimal for the specified printing method.
-print_tech = "FDM"; // FDM or SLS, adjusts ID of screw holes
+printing_process = "FDM"; // FDM or SLS, adjusts ID of screw holes
 
-include_text = true;
+include_text = (printing_process=="SLS") ? true : false;
 
 explode_seperation = 30;
-wall_thickness = 1.0;
+wall_thickness = 1;
 
 text_depth = 0.2;
 text_size_1 = 3.2;
@@ -43,7 +44,7 @@ df = 1;  // default fillet
 pcb_mount_screw_d = 3;
 pcb_mount_post_id_fdm = pcb_mount_screw_d * 0.85;
 pcb_mount_post_id_sls = pcb_mount_screw_d * 0.8;
-pcb_mount_post_id = (print_tech=="SLS") ? pcb_mount_post_id_sls : pcb_mount_post_id_fdm;
+pcb_mount_post_id = (printing_process=="SLS") ? pcb_mount_post_id_sls : pcb_mount_post_id_fdm;
 
 pcb_mount_post_wall = 1.8;
 pcb_mount_post_od = pcb_mount_post_id + pcb_mount_post_wall*2;
@@ -153,12 +154,12 @@ sw1_wing_x = (sw1_body_tl - sw1_body_l) / 2;
 sw2_screw_model_stl = "M2.5x8_flat.stl";
 sw2_screw_d = 2.5;
 sw2_screw_l = 8;
-sw2_nut_thickness = 4;
-sw2_nut_width = (sw1_body_tl-sw1_body_ml)/2;
-sw2_nut_chamfer = 0.5;
-sw2_nut_id_fdm = sw2_screw_d * 0.95;
-sw2_nut_id_sls = sw2_screw_d * 0.85;
-sw2_nut_id = (print_tech=="SLS") ? sw2_nut_id_sls : sw2_nut_id_fdm;
+sw_nut_thickness = 4;
+sw_nut_width = (sw1_body_tl-sw1_body_ml)/2;
+sw_nut_chamfer = 0.5;
+sw_nut_id_fdm = sw2_screw_d * 0.95;
+sw_nut_id_sls = sw2_screw_d * 0.85;
+sw_nut_id = (printing_process=="SLS") ? sw_nut_id_sls : sw_nut_id_fdm;
 // type 3 - C&K OS203013MT7QN1 on M2.5x8 wafer head screws & printed nuts
 sw3_screw_head_d = 5.75; // wafer head countersink diameter
 sw3_screw_head_t = 0.8; // wafer head countersink depth
@@ -224,19 +225,22 @@ module top_window () {
   w = window_width/2-window_corner;
   h = window_height/2-window_corner;
   translate([window_pos_x,window_pos_y,outer_height-wall_thickness-o]) {
+   // window
    hull()
     mirror_copy([0,1,0])
      translate([0,h,0])
       mirror_copy([1,0,0])
        translate([w,0,0])
-        cylinder(h=o+wall_thickness+o,r=window_corner); // window
-   hull()
-    mirror_copy([0,1,0])
-     translate([0,h,0])
-      mirror_copy([1,0,0])
-       translate([w,0,-1.6])
-        cylinder(h=window_corner*2,r1=0,r2=window_corner*2); // chamfer
-  }
+        cylinder(h=o+wall_thickness+o,r=window_corner);
+   // "window frame" chamfer - not worth it if wall is thin
+   if (wall_thickness>=1.5)
+    hull()
+     mirror_copy([0,1,0])
+      translate([0,h,0])
+       mirror_copy([1,0,0])
+        translate([w,0,-1.6])
+         cylinder(h=window_corner*2,r1=0,r2=window_corner*2);
+   }
 }
 
 module pcb_model () {
@@ -369,7 +373,10 @@ module sw_model () {
   translate([sw1_post_mx,-outer_width/2-o,sw1_pos_z]) {
    rotate([0,0,180])
     color("grey",0.5) import(sw2_screw_model_stl);
-    translate([-sw1_post_mx+sw1_body_ml/2+fc/2,o+fc+wall_thickness+sw1_wing_setback+o,-sw1_body_z/2]) sw2_nut();
+//    translate([-sw1_post_mx+sw1_body_ml/2+fc/2,o+fc+wall_thickness+sw1_wing_setback+o,-sw1_body_z/2])
+    translate([-sw1_post_mx+sw1_body_ml/2+sw_nut_width/2+fc/2,o+fc+wall_thickness+sw1_wing_setback+sw_nut_thickness+o,0])
+     rotate([90,90,0])
+      sw_nut();
   }
  }
 }
@@ -427,16 +434,22 @@ module sw_mount () {
  }
 }
 
-module sw2_nut() {
+module sw_nut() {
  difference () {
-  cube([sw2_nut_width,sw2_nut_thickness,sw1_body_z]);
-  translate([sw1_post_mx-sw1_body_ml/2-fc/2,-o,sw1_body_z/2])
-   rotate([-90,0,0]) {
+  hull() {
+   mirror_copy([0,1,0])
+    translate([0,sw_nut_width/4,0])
+     mirror_copy([1,0,0])
+      translate([sw1_wing_z/2-sw_nut_width/4,0,0])
+       cylinder(h=sw_nut_thickness,d=sw_nut_width/2);
+   
+  }
+  translate([0,sw1_post_mx-sw1_body_ml/2-fc/2-sw_nut_width/2,-o-0.2]) {
     // bore
-    cylinder(h=o+sw2_nut_thickness+o,d=sw2_nut_id);
+    cylinder(h=o+sw_nut_thickness+o,d=sw_nut_id);
     // chamfer
-    translate([0,0,sw2_nut_thickness-sw2_nut_id/2-sw2_nut_chamfer])
-     cylinder(h=sw2_nut_id,d1=0,d2=sw2_nut_id*2);
+    translate([0,0,sw_nut_thickness-sw_nut_id/2-sw_nut_chamfer])
+     cylinder(h=sw_nut_id,d1=0,d2=sw_nut_id*2);
   }
  }
 }
@@ -485,7 +498,7 @@ module top_case () {
    rca_pin_clearance();
    sw_hole();
    // text
-   translate([0,0,outer_height-text_depth]) {
+   if (include_text) translate([0,0,outer_height-text_depth]) {
     th = text_depth + o;
     translate([0,inner_width/2-inner_corner_v-4,0])
      linear_extrude(height=th) text(text="RGB TO VGA",size=text_size_2,halign="center",valign="center");
@@ -551,12 +564,12 @@ if (view == "top") {
    //sw_model();
    top_case();
   }
+  
   if (switch_type==2 || switch_type==3) {
-   translate([0,-sw1_wing_x,0])
-    rotate([90,0,-90])
-     mirror_copy ([1,0,0])
-      translate([2,0,0])
-       sw2_nut();
+   translate([window_pos_x,-window_pos_y,0])
+     mirror_copy ([0,1,0])
+      translate([0,window_height/4-sw_nut_width/4,0])
+       sw_nut();
   }
 }
 if (view == "bottom") {
