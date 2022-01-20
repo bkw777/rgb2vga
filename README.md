@@ -20,9 +20,9 @@ The enclosure is new, and the OpenSCAD source provided.
 Video showing v003 in action.  
 [![](https://img.youtube.com/vi/MPYQRHWyUGA/hqdefault.jpg)](https://youtu.be/MPYQRHWyUGA)
 
-![](PCB/rgb2vga.jpg)
-![](PCB/rgb2vga.bottom.jpg)
-![](PCB/rgb2vga.svg)
+![](pcb/rgb2vga.jpg)
+![](pcb/rgb2vga.bottom.jpg)
+![](pcb/rgb2vga.svg)
 ![](case/rgb2vga.png)
 
 <!-- [PCB from OSHPark]()  -->
