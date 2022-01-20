@@ -78,12 +78,16 @@ The source for the enclosure is the [rgb2vga.scad](case/rgb2vga.scad) OpenSCAD f
 The bottom part of the enclosure has screw holes that will accept the M3 screws that came on the rgb2vga, but the screws are not needed. You can simply remove all hardware parts from the DE0-Nano, put the DE0-Nano + rgb2vga in the case and snap it together.
 
 ## Artifact Switch
-Cut the 3-pin female jumper cable in half. Set one half aside, it won't be used.  
-Take one half and solder the cut ends to the slide switch as per the diagram on the silk screen on the bottom of the PCB.  
-Place the switch onto the posts inside the top cover  
- There will be excess plastic underneath the two mounting posts, preventing the switch from seating flat.  
- Just heat the switch flanges with the soldering iron to melt the switch into place flat to the inside wall.  
-Melt the posts with a soldering iron to secure the switch to the top cover.  
-Plug the remaining 3-pin female plug onto the 3-pin male header on the pcb.  
-Set the small artifact switch on the pcb to the "OFF" position before closing up the enclosure.
+Cut the 3-pin female jumper cable in half. Set one half aside, it won't be used.
 
+Take one half and solder the cut ends to the slide switch as per the diagram on the silk screen on the bottom of the PCB.
+
+Place the switch onto the posts inside the top cover.  
+There will be excess plastic underneath the two mounting posts, preventing the switch from seating flat.  
+Just heat the switch flanges with the soldering iron to melt the switch into place flat to the inside wall.
+
+Melt the posts with a soldering iron to secure the switch to the top cover.  
+
+Plug the remaining 3-pin female plug onto the 3-pin male header on the pcb.  
+
+Set the small artifact switch on the pcb to the "OFF" position before closing up the enclosure.
