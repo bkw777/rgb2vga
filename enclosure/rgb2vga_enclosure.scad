@@ -16,8 +16,7 @@ make = "explode";
 // How do you want to mount the Artifact/Inverse slide switch?
 // 0 = no switch
 // 1 = OS203013MT7QN1 on meltable posts
-// 2 = OS203013MT7QN1 and M2.5x8 flat head screws
-// 3 = OS203013MT7QN1 and M2.5x8 wafer or pan head screws
+// 2 = OS203013MT7QN1 and M2.5x8 wafer or pan head screws
 switch_mount = 1;
 
 // Printing process: "FDM", "SLS"
@@ -154,20 +153,18 @@ sw_ear_setback = 2; // center front to wing rear, includes wing sw_sheet_thickne
 sw_ear_z = 8.4;
 sw_ear_x = (sw_body_tl - sw_body_l) / 2;
 
-// switch mount 2 - M2.5x8 flat head screws
-sw2_screw_model_stl = "ref/M2.5x8_flat.stl";
 sw_screw_d = 2.5;
 sw_screw_l = 8;
 
 // switch mount 3 - M2.5x8 wafer head screws
 // extra wide wafer head 5.5mm
 // https://www.metricscrews.us/index.php?main_page=product_info&cPath=98_6_48&products_id=138
-//sw3_screw_head_d = 5.75; // wafer head countersink diameter
+//sw_screw_head_d = 5.75; // wafer head countersink diameter
 
 // regular wafer head or pad head 4.5mm
 // https://www.metricscrews.us/index.php?main_page=product_info&cPath=98_6_48&products_id=137
-sw3_screw_head_d = 4.75; // wafer head countersink diameter
-sw3_screw_head_t = 0.5; // wafer head countersink depth
+sw_screw_head_d = 4.75; // wafer head countersink diameter
+sw_screw_head_t = 0.5; // wafer head countersink depth
 
 // printed nuts specifically to fit the switch
 // height must be the full switch body width or greater
@@ -382,18 +379,19 @@ module bottom_towers () {
 }
 
 module sw_model () {
- if (switch_mount>=1 || switch_mount<=3) {
+ if (switch_mount>0) {
   translate([sw_pos_x,sw_pos_y,sw_pos_z]) rotate([0,0,180])
    color("grey",0.5) import(sw_model_stl);
   }
- if (switch_mount==2 || switch_mount==3) {
+ if (switch_mount==2) {
  mirror_copy([1,0,0])
   translate([sw1_post_mx,-outer_width/2-o,sw_pos_z]) {
-   rotate([0,0,180])
-    color("grey",0.5) import(sw2_screw_model_stl);
-    translate([-sw1_post_mx+sw_body_ml/2+sw_nut_width/2+fc/2,o+fc+wall_thickness+sw_ear_setback+sw_nut_thickness+o,0])
-     rotate([90,90,0])
-      sw_nut();
+   //rotate([0,0,180])
+   // color("grey",0.5)
+   //  import(sw_screw_model_stl);
+   translate([-sw1_post_mx+sw_body_ml/2+sw_nut_width/2+fc/2,o+fc+wall_thickness+sw_ear_setback+sw_nut_thickness+o,0])
+    rotate([90,90,0])
+     sw_nut();
   }
  }
 }
@@ -406,17 +404,15 @@ module sw_hole () {
    cube([sw_hole_l+fc,o+wall_thickness+o,sw_hole_h+fc],center=true);
   
   // screw holes
-  if (switch_mount==2 || switch_mount==3) {
+  if (switch_mount==2) {
    base_thickness = sw_ear_setback - sw_sheet_thickness + fc + o;
    mirror_copy([1,0,0])
     translate([sw1_post_mx,-outer_width/2-o,sw_pos_z])
      rotate ([-90,0,0]) {
-      // screw hole
+      // bore
       cylinder(h=o+wall_thickness+base_thickness+o,d=sw_screw_d);
-      // flat-head countersink
-      if (switch_mount==2) cylinder(h=wall_thickness*2,d1=sw_screw_d*2,d2=0);
-      // wafer-head countersink
-      if (switch_mount==3) cylinder(h=sw3_screw_head_t,d=sw3_screw_head_d);
+      // countersink
+      cylinder(h=sw_screw_head_t,d=sw_screw_head_d);
     }
   }
  }
@@ -609,7 +605,7 @@ if (make == "top") {
    top_case();
   }
   
-  if (switch_mount==2 || switch_mount==3) {
+  if (switch_mount==2) {
    translate([window_pos_x,-window_pos_y,0])
      mirror_copy ([0,1,0])
       translate([0,window_height/4-sw_nut_width/4,0])
