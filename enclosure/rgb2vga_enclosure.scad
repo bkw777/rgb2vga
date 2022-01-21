@@ -1,12 +1,13 @@
 /* 3d-printable enclosure for github.com/bkw777/rgb2vga */
-// version: 013
+// version: 014
 
 // This file contains both the top and bottom case parts.
 // The "make = ..." setting below selects which part(s) to view/output.
 
 // "closed" = show both top & bottom shells and pcb model
 // "explode" = show both top & bottom shells, seperated by explode_seperation, and pcb model
-// "top" = show top shell and nuts if applicable, rotated and translated for FDM printing
+// "top" = show top shell, meltable bosses for switch, rotated and translated for 3D printing
+// "alttop" = like "top", but screw holes & nuts for switch
 // "bottom" = show bottom shell alone, rotated and translated for FDM printing
 // "nut" = one nut alone
 make = "explode";
@@ -17,7 +18,7 @@ make = "explode";
 // 0 = no switch
 // 1 = OS203013MT7QN1 on meltable posts
 // 2 = OS203013MT7QN1 and M2.5x8 wafer or pan head screws
-switch_mount = 1;
+switch_mount = (make == "alttop") ? 2 : 1 ;
 
 // Printing process: "FDM", "SLS"
 // The ID of screw holes needs to be adjusted depending on whether the model is printed by FDM or SLS.
@@ -39,13 +40,13 @@ inner_corner_h = 6;  // main shell inside corner horizontal radius
 inner_corner_v = 2;  // main shell inside corner vertical radius
 df = 1;  // default fillet
 
-// diameter of hole for M3 screw, but not needed
+// holes for M3 screws, but note that screws are not required
 pcb_mount_screw_d = 3;
 pcb_mount_post_id_fdm = pcb_mount_screw_d * 0.85;
 pcb_mount_post_id_sls = pcb_mount_screw_d * 0.8;
 pcb_mount_post_id = (printing_process=="SLS") ? pcb_mount_post_id_sls : pcb_mount_post_id_fdm;
 
-// set the pcb mount post OD by adding this to the ID
+// thickness of the material around the pcb mounting screws - sets the screw post OD
 pcb_mount_post_wall = 1.8;
 pcb_mount_post_od = pcb_mount_post_id + pcb_mount_post_wall*2;
 
@@ -105,19 +106,21 @@ usb_height = 4.1;
 usb_gap = 1 + port_gap;
 usb_corner = max(0.1,usb_gap);
 
-hd15_height = 12.6;
+hd15_height = 13;
 ports_width = rgb2vga_pcb_width - 3.5;
-ports_height = hd15_height + pcb_thickness; // + pcb_thickness;
+ports_height = hd15_height + pcb_thickness;
 ports_gap = fc;
 ports_corner = 2;
 ports_elev = rgb2vga_pcb_elev-ports_height/2+pcb_thickness;
 
 split_elev = outer_height/2; // where to cut for top & bottom parts
 
+// top/bottom clips
 clip_width = 3;
 clip_depth = 6;
 clip_height = 4;
 clip_detent = 1;
+cdfc = 0.1; // fitment clearance for detent, different than fc
 
 reg_post_width = 2;
 reg_post_depth = 4;
@@ -130,7 +133,7 @@ rca_pin_i = 2.75;
 rca_pin_r = 1.8;
 rca_pin_h = 3;
 
-// artifact/inverse switch mounted on enclosure
+// slide switch mounted on enclosure
 // switch model C&K OS203013MT7QN1
 sw_model_stl = "ref/CK_OS203013MT7QN1.stl";
 
@@ -163,7 +166,12 @@ sw_screw_l = 8;
 
 // regular wafer head or pad head 4.5mm
 // https://www.metricscrews.us/index.php?main_page=product_info&cPath=98_6_48&products_id=137
-sw_screw_head_d = 4.75; // wafer head countersink diameter
+//sw_screw_head_d = 4.75; // wafer head countersink diameter
+
+// pan head from digikey
+// https://www.digikey.com/short/z03czhjt
+sw_screw_head_d = 5;
+
 sw_screw_head_t = 0.5; // wafer head countersink depth
 
 // printed nuts specifically to fit the switch
@@ -269,43 +277,71 @@ module top_clip () {
  d = reg_post_depth; // registration post depth
  w = reg_post_width; // registration post width
  l = inner_length/2-de0nano_pcb_width/2+w+o ; // bump cylinder length
- translate([-w,0,split_elev+clip_detent+fc]) {
+ translate([-w,0,split_elev+clip_detent+cdfc]) {
   difference() {
-   translate([o,0,0]) rotate([0,90,0]) cylinder(h=l,r=clip_detent); // bump
+   translate([o,0,0])
+    rotate([0,90,0])
+     cylinder(h=l,r=clip_detent); // bump
    difference () { // cut bump cylinder to inner shell + o
-    translate([l-inner_corner_h,inner_corner_h-o,-clip_detent-o]) rotate([0,0,-90]) cube([inner_corner_h+wall_thickness,inner_corner_h+wall_thickness,o+clip_detent*2+o]);
-    translate([l-inner_corner_h+o,inner_corner_h-o,-clip_detent-o-o]) cylinder(h=o+o+clip_detent*2+o+o,r=inner_corner_h+o);
+    translate([l-inner_corner_h,inner_corner_h-o,-clip_detent-o])
+     rotate([0,0,-90])
+      cube([inner_corner_h+wall_thickness,inner_corner_h+wall_thickness,o+clip_detent*2+o]);
+    translate([l-inner_corner_h+o,inner_corner_h-o,-clip_detent-o-o])
+     cylinder(h=o+o+clip_detent*2+o+o,r=inner_corner_h+o);
    }
   }
   difference () {
    union(){
-    translate([0,-o,-clip_detent]) cube([w,d+o,split_elev-wall_thickness+o-fc]); // registration post
-    translate([df+w-o,df-o,o-fc]) rotate([0,0,180]) fillet_linear(l=split_elev-wall_thickness+o-clip_detent-inner_corner_v,r=df); // vertical outside fillet
-    translate([-df+o,df-o,-clip_detent]) rotate([0,0,-90]) fillet_linear(l=split_elev-wall_thickness+o-fc,r=df); // vertical inside fillet
+    translate([0,-o,-clip_detent])
+     cube([w,d+o,split_elev-wall_thickness+o-cdfc]); // registration post
+    translate([df+w-o,df-o,o-cdfc])
+     rotate([0,0,180])
+      fillet_linear(l=split_elev-wall_thickness+o-clip_detent-inner_corner_v,r=df); // vertical outside fillet
+    translate([-df+o,df-o,-clip_detent])
+     rotate([0,0,-90])
+      fillet_linear(l=split_elev-wall_thickness+o-cdfc,r=df); // vertical inside fillet
     translate([w/2,0,0]) mirror_copy([1,0,0]) {
-      translate([df+w/2-o,inner_corner_v/2-o,-df*2+split_elev-wall_thickness+o-fc]) rotate([90,0,180]) fillet_linear(l=d-inner_corner_v/2+o,r=df); // horizontal depth fillets
-      translate([-w/2+o,d-o,-df-df+split_elev-wall_thickness-fc+o]) rotate([0,0,-90]) fillet_polar(R=0,r=df);
-      translate([df+w/2-o,inner_corner_v-o,-df+split_elev-wall_thickness-inner_corner_v-fc+o]) rotate([90,0,-90]) fillet_polar(R=inner_corner_v,r=df);
+      translate([df+w/2-o,inner_corner_v/2-o,-df*2+split_elev-wall_thickness+o-cdfc])
+       rotate([90,0,180])
+        fillet_linear(l=d-inner_corner_v/2+o,r=df); // horizontal depth fillets
+      translate([-w/2+o,d-o,-df-df+split_elev-wall_thickness-cdfc+o])
+       rotate([0,0,-90])
+        fillet_polar(R=0,r=df);
+      translate([df+w/2-o,inner_corner_v-o,-df+split_elev-wall_thickness-inner_corner_v-cdfc+o])
+       rotate([90,0,-90])
+        fillet_polar(R=inner_corner_v,r=df);
     }
    }
-   translate([w-1,-o-o,-clip_detent-o]) rotate([0,45,0]) cube([w,o+d+o+o,clip_detent*1.6]); // registration ramp
+   translate([w-1,-o-o,-clip_detent-o])
+    rotate([0,45,0])
+     cube([w,o+d+o+o,clip_detent*1.6]); // registration ramp
   }
  }
- translate([0,d+df-o,-df+outer_height-wall_thickness+o]) rotate([90,0,-90]) fillet_linear(l=w,r=df); // horizontal end fillet
+ translate([0,d+df-o,-df+outer_height-wall_thickness+o])
+  rotate([90,0,-90])
+   fillet_linear(l=w,r=df); // horizontal end fillet
 }
 
 module bottom_clip () {
- dr = clip_detent + fc;
+ dr = clip_detent + cdfc;
  h = split_elev - wall_thickness;
 
  difference() {
   union() {
    // add main post
    cube([clip_width,clip_depth+o,o+h+clip_height]);
-   translate([clip_width+df-o,clip_depth-df+o,0]) rotate([0,0,90]) fillet_linear(l=h+o,r=df);
-   translate([clip_width+df-o,0,df]) rotate([-90,90,0]) fillet_linear(l=clip_depth+o,r=df);
-   translate([clip_width+df-o,clip_depth-df+o,df]) rotate([0,0,90]) fillet_polar(R=df,r=df,as=90);
-   translate([clip_width-o,o,df]) rotate([0,0,90]) fillet_polar(R=0,r=df,A=90,as=90);
+   translate([clip_width+df-o,clip_depth-df+o,0])
+    rotate([0,0,90])
+     fillet_linear(l=h+o,r=df);
+   translate([clip_width+df-o,0,df])
+    rotate([-90,90,0])
+     fillet_linear(l=clip_depth+o,r=df);
+   translate([clip_width+df-o,clip_depth-df+o,df])
+    rotate([0,0,90])
+     fillet_polar(R=df,r=df,as=90);
+   translate([clip_width-o,o,df])
+    rotate([0,0,90])
+     fillet_polar(R=0,r=df,A=90,as=90);
   }
   union(){
    // cut main outside fitment clearance
@@ -339,29 +375,52 @@ module bottom_tower () {
  // pcb mount post
  difference () {
   union() {
+   // screw post
    screw_post(h=h,od=pcb_mount_post_od,fr=df,o=o);
+   // fill from post to end wall
    translate([-pcb_mount_post_od/2,0,0]) {
-     cube([pcb_mount_post_od/2+bl+o,aw+o,h]); // fill from post to end wall
-     translate([-df+o,aw-df+o,0]) fillet_linear(l=h,r=df);
-     translate ([bfl/2,0,0]) mirror_copy([1,0,0]) translate([-df-bfl/2+o,aw-inner_corner_v+o,inner_corner_v]) rotate([0,90,0]) fillet_polar(R=inner_corner_v,r=df,a=90);
-     translate([-df+o,0,df]) rotate([270,0,0]) fillet_linear(r=df,l=aw+o);
+     cube([pcb_mount_post_od/2+bl+o,aw+o,h]);
+     translate([-df+o,aw-df+o,0])
+      fillet_linear(l=h,r=df);
+     translate ([bfl/2,0,0])
+      mirror_copy([1,0,0])
+       translate([-df-bfl/2+o,aw-inner_corner_v+o,inner_corner_v])
+        rotate([0,90,0])
+         fillet_polar(R=inner_corner_v,r=df,a=90);
+     translate([-df+o,0,df])
+      rotate([270,0,0])
+       fillet_linear(r=df,l=aw+o);
    }
+   // fill from post to case clip, but no thicker than case clip
    translate([0,aw-bw,0]) {
-     cube([bl+o,bw+o,h]); // fill from post to case clip
-     translate([0,-df+o,df]) rotate([0,90,0]) fillet_linear(l=bl+clip_width,r=df); // moved from bottom_clip()
+    cube([bl+o,bw+o,h]);
+     translate([0,-df+o,df])
+      rotate([0,90,0])
+       fillet_linear(l=bl+clip_width,r=df); // moved from bottom_clip()
    }
   }
   union(){
-  translate([0,0,o]) cylinder(d=pcb_mount_post_id,h=h); // screw hole
-  translate([0,0,de0nano_pcb_elev-fc-pcb_mount_post_id*0.7]) cylinder(h=pcb_mount_post_id,r1=0,r2=pcb_mount_post_id); // chamfer
+  // screw hole
+  // bore
+  translate([0,0,o])
+   cylinder(d=pcb_mount_post_id,h=h);
+  // chamfer
+  translate([0,0,de0nano_pcb_elev-fc-pcb_mount_post_id*0.7])
+   cylinder(h=pcb_mount_post_id,r1=0,r2=pcb_mount_post_id);
 
-  // kludge-tastic... just to trim the fillet down to the inner hull + o
-  translate([-10,inner_width/2-de0nano_pcb_mount_l/2-df+o,df-o])
+  // If wall_thickness is not at least 0.2mm larger than df, then the fillet around the base of the screw post pokes out beyond the outer shell.
+  // Cut the fillet down to the shape of the inner shell + o
+  cbl = o + df + pcb_mount_post_od + df + o; // cut body length
+  pw = inner_width/2 - de0nano_pcb_mount_l/2; // post to wall
+  cbhw = cbl/2 - pw + inner_corner_v; // cut body height & width
+  translate([-cbl/2,pw-inner_corner_v+o,inner_corner_v])
    rotate([0,90,0])
     difference() {
-     cube([10,10,20]);
-     translate([0,0,-o]) cylinder(r=df+o,h=o+20+o);
+     cube([cbhw,cbhw,cbl]);
+     translate([0,0,-o])
+      cylinder(r=inner_corner_v+o,h=o+cbl+o);
     }
+
   }
  }
 
@@ -564,6 +623,8 @@ module top_case () {
  } // difference
 
  // add retainer clips
+ // registration posts on the top clips outside to outside same width as the de0-nano pcb
+ // fitment clearance is already applied by the registration posts on the bottom clips
  mirror_copy([1,0,0])
   translate([de0nano_pcb_width/2,0,0])
    mirror_copy([0,1,0])
@@ -595,9 +656,10 @@ if (make == "explode") {
   top_case();
   sw_model();
  }
- translate([0,0,-explode_seperation/2]) bottom_case();
+ translate([0,0,-explode_seperation/2])
+  bottom_case();
 }
-if (make == "top") {
+if (make == "top" || make == "alttop") {
  translate([0,0,outer_height])
   rotate([180,0,0]) {
    //%pcb_model();

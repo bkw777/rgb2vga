@@ -2,7 +2,8 @@
 # Brian K. White - b.kenyon.w@gmail.com
 
 model = rgb2vga_enclosure
-parts = top bottom
+parts = bottom top alttop
+printing_process = FDM
 version != awk '(/^\/\/ version: /) {print $$3}' $(model).scad
 sources = $(model).scad handy.scad
 
@@ -16,7 +17,7 @@ $(parts): %: $(model)_%_$(version).stl #%.png
 
 # Generate .stl for 3d printing
 $(model)_%_$(version).stl: $(sources)
-	$(openscad) -D'make="$(*)"' -D'switch_mount=1' -D'printing_process="FDM"' -o $(@) --export-format binstl $(model).scad
+	$(openscad) -D'make="$(*)"' -D'printing_process="$(printing_process)"' -o $(@) --export-format binstl $(model).scad
 
 # Generate .png for README.md
 #%.png: $(sources)
