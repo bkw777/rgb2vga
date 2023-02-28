@@ -18,7 +18,7 @@ make = "explode";
 // 0 = no switch
 // 1 = OS203013MT7QN1 on meltable posts
 // 2 = OS203013MT7QN1 and M2.5x8 wafer or pan head screws
-switch_mount = (make == "alttop") ? 2 : 1 ;
+switch_mount = (make == "top") ? 2 : 1 ;
 
 // Printing process: "FDM", "SLS"
 // The ID of screw holes needs to be adjusted depending on whether the model is printed by FDM or SLS.
@@ -247,14 +247,14 @@ module rca_pin_clearance() {
 module top_window () {
   w = window_width/2-window_corner;
   h = window_height/2-window_corner;
-  translate([window_pos_x,window_pos_y,outer_height-wall_thickness-o]) {
+  translate([window_pos_x,window_pos_y,outer_height-wall_thickness-1]) {
    // window
    hull()
     mirror_copy([0,1,0])
      translate([0,h,0])
       mirror_copy([1,0,0])
        translate([w,0,0])
-        cylinder(h=o+wall_thickness+o,r=window_corner);
+        cylinder(h=1+wall_thickness+1,r=window_corner);
    // "window frame" chamfer - not worth it if wall is thin
    if (wall_thickness>=1.5)
     hull()
@@ -440,7 +440,7 @@ module bottom_towers () {
 module sw_model () {
  if (switch_mount>0) {
   translate([sw_pos_x,sw_pos_y,sw_pos_z]) rotate([0,0,180])
-   color("grey",0.5) import(sw_model_stl);
+   /*color("grey",0.5)*/ import(sw_model_stl);
   }
  if (switch_mount==2) {
  mirror_copy([1,0,0])
@@ -654,7 +654,7 @@ if (make == "explode") {
  %pcb_model();
  translate([0,0,explode_seperation/2]) {
   top_case();
-  sw_model();
+  %sw_model();
  }
  translate([0,0,-explode_seperation/2])
   bottom_case();

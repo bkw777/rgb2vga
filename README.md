@@ -15,15 +15,43 @@ The schematic and pcb layout are re-drawn from scratch in KiCad to provide edita
 
 The VHDL source is just a fork of [the original](https://github.com/lfantoniosi/rgb2vga) but with all the non-source files cleaned out.
 
-The enclosure is new, and the OpenSCAD source provided.
+The enclosure is new, and the OpenSCAD source is included.
 
 Video showing v003 in action.  
 [![](https://img.youtube.com/vi/MPYQRHWyUGA/hqdefault.jpg)](https://youtu.be/MPYQRHWyUGA)
 
+![](rgb2vga.jpg)
 ![](pcb/rgb2vga.jpg)
 ![](pcb/rgb2vga.bottom.jpg)
 ![](pcb/rgb2vga.svg)
-![](case/rgb2vga.png)
+![](pics/rgb2vga_enclosure_exploded.png)
+![](pics/12.jpg)
+![](pics/rgb2vg_1.jpg)
+![](pics/rgb2vg_2.jpg)
+![](pics/rgb2vg_3.jpg)
+![](pics/rgb2vg_4.jpg)
+![](pics/rgb2vg_5.jpg)
+![](pics/rgb2vg_6.jpg)
+![](pics/rgb2vg_7.jpg)
+![](pics/rgb2vg_8.jpg)
+![](pics/rgb2vg_9.jpg)
+![](pics/rgb2vg_10.jpg)
+![](pics/rgb2vg_11.jpg)
+![](pics/rgb2vg_12.jpg)
+![](pics/1.jpg)
+![](pics/2.jpg)
+![](pics/3.jpg)
+![](pics/4.jpg)
+![](pics/5.jpg)
+![](pics/6.jpg)
+![](pics/7.jpg)
+![](pics/8.jpg)
+![](pics/9.jpg)
+![](pics/10.jpg)
+![](pics/11.jpg)
+![](pics/alt_top_1.jpg)
+![](pics/alt_top_2.jpg)
+![](pics/alt_top_3.jpg)
 
 <!-- [PCB from OSHPark]()  -->
 [PCB from PCBWAY](https://www.pcbway.com/project/shareproject/de0_nano_fpga_rgb2vga.html)  
