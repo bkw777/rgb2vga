@@ -58,8 +58,10 @@ Video showing v003 in action.
 
 [BOM from DigiKey](https://www.digikey.com/short/j4vbnmvj)
 
-[DE0-Nano](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=593) (or [search ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15))  
-When searching, don't accidentally get **DE0-Nano-SoC**, that's something else.
+[DE0-Nano](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=593), aka Terasic part number P0082.  
+Other sources: [DigiKey](https://www.digikey.com/en/products/detail/terasic-inc/P0082/2625112), [ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15)
+When searching, don't accidentally get **DE0-Nano-SoC**, that's something else.  
+Unfortunately the DE0-Nano board is discontinued and getting expensive.
 
 [Enclosure from CraftCloud](https://craftcloud3d.com/offer/e28365bf-4fbd-4414-9492-a3820372ae03)
 
