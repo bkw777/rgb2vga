@@ -55,10 +55,12 @@ $fs = 0.2;
 $fa = 1;
 
 // To create pcb.stl:
-//  pcbnew: export pcb.step
-//  freecad: import pcb.step, export pcb.stl
+//  KiCad pcbnew:
+//    properties on DE0-Nano virtual component, 3d models, un-check all 3d models except DE0-Nano_bare
+//    file, export, STEP, out/rgb2vga.pcb.step
+//  FreeCAD: import rgb2vga.pcb.step, export STL Mesh, rgb2vga.pcb.stl
 // Both files are huge, exclude from git.
-pcb_model_stl = "ref/pcb.stl";
+pcb_model_stl = "../pcb/out/rgb2vga.pcb.stl";
 
 pcb_thickness = 1.6;
 space_above = 4;       // rgb2vga pcb top to inside wall ceiling

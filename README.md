@@ -4,6 +4,7 @@ Convert 15khz RGB to 31khz VGA
 Uses Altera DE0-Nano FPGA development board to convert analog 15Khz RGB signal to VGA 31Khz 256 color.
 
 This is a modified version of the original [RGB2VGA by Luis Felipe da Costa Antoniosi](https://sites.google.com/site/tandycocoloco/rgb2vga).
+( 2024 - site is down. Bless [archive.org](https://web.archive.org/web/https://sites.google.com/site/tandycocoloco/rgb2vga) )
 
 The electronics and fpga code are the same as the original.
 
@@ -13,17 +14,20 @@ The physical layout is changed to make a more compact package and to build-in th
 
 The schematic and pcb layout are re-drawn from scratch in KiCad to provide editable source files.
 
-The VHDL source is just a fork of [the original](https://github.com/lfantoniosi/rgb2vga) but with all the non-source files cleaned out.
+The VHDL source is just a fork of [the original](https://github.com/lfantoniosi/rgb2vga) but with all the non-source files cleaned out.  
+The VHDL does compile and you can generate a new working rgb2vga.jic from it. But as noted by Roger Taylor, you may want to use the original JIC file from Luis anyway because it may be more stable. There is a preseved copy of Luis's original rgb2vga.jic in [vhdl/Original_JIC](vhdl/Original_JIC).
 
 The enclosure is new, and the OpenSCAD source is included.
 
 Video showing v003 in action.  
 [![](https://img.youtube.com/vi/MPYQRHWyUGA/hqdefault.jpg)](https://youtu.be/MPYQRHWyUGA)
 
-![](rgb2vga.jpg)
-![](pcb/rgb2vga.jpg)
-![](pcb/rgb2vga.bottom.jpg)
-![](pcb/rgb2vga.svg)
+![](pcb/out/rgb2vga.jpg)
+![](pcb/out/rgb2vga.f.jpg)
+![](pcb/out/rgb2vga.b.jpg)
+![](pcb/out/rgb2vga.top.jpg)
+![](pcb/out/rgb2vga.bottom.jpg)
+![](pcb/out/rgb2vga.svg)
 ![](pics/rgb2vga_enclosure_exploded.png)
 ![](pics/12.jpg)
 ![](pics/rgb2vg_1.jpg)
@@ -56,12 +60,12 @@ Video showing v003 in action.
 <!-- [PCB from OSHPark]()  -->
 [PCB from PCBWAY](https://www.pcbway.com/project/shareproject/de0_nano_fpga_rgb2vga.html)  
 
-[BOM from DigiKey](https://www.digikey.com/short/j4vbnmvj)
+[BOM from DigiKey](https://www.digikey.com/short/5mq32b7z)
 
-[DE0-Nano](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=593), aka Terasic part number P0082.  
-Other sources: [DigiKey](https://www.digikey.com/en/products/detail/terasic-inc/P0082/2625112), [ebay](https://www.ebay.com/sch/i.html?_nkw=de0-nano&_sacat=0&LH_TitleDesc=0&_odkw=de0+nano&_osacat=0&_sop=15)
-When searching, don't accidentally get **DE0-Nano-SoC**, that's something else.  
-Unfortunately the DE0-Nano board is discontinued and getting expensive.
+<!-- 
+[DE0-Nano](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=593)
+When searching other sources like ebay, don't accidentally get **DE0-Nano-SoC**, that's something else.
+-->
 
 [Enclosure from CraftCloud](https://craftcloud3d.com/offer/e28365bf-4fbd-4414-9492-a3820372ae03)
 
@@ -70,9 +74,9 @@ Unfortunately the DE0-Nano board is discontinued and getting expensive.
 # Directions  
 ## Building the PCB  
 - Remove pin #6 from the 2x5 coco3 rgb connector before soldering. Pin #6 is the center pin on the bottom row, opposite/away from the polarity notch.  
+- Solder trim pot R24 on the bottom side, and flush cut and re-flow to smooth domes, before R13, R15, R16.  
 - Solder the LM1881 U1 before any of the other parts around it.  
-- Solder the Artifact switch SW2 before soldering the trim pot R24.  
-- Solder the 3-pin J7 on the bottom and flush-cut the legs on top before soldering the resistors on the top side.  
+- Solder the Artifact switch SW2 before the 3-pin header J7.  
 - Solder remaining parts in any order.  
 
 ## Programming the DE0-Nano  

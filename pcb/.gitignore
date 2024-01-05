@@ -8,6 +8,7 @@
 *.kicad_pcb-bak
 *.sch-bak
 *~
+*.lck
 _autosave-*
 *.tmp
 *-save.pro
@@ -29,7 +30,5 @@ fp-info-cache
 
 # Exclude exports
 GERBER_*
-*.step
-*.stl
-!/*/**/*.step
-!/*/**/*.stl
+out/*.step
+out/*.stl
