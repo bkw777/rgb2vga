@@ -3,8 +3,8 @@ Convert 15khz RGB to 31khz VGA
 
 Uses Altera DE0-Nano FPGA development board to convert analog 15Khz RGB signal to VGA 31Khz 256 color.
 
-This is a modified version of the original [RGB2VGA by Luis Felipe da Costa Antoniosi](https://sites.google.com/site/tandycocoloco/rgb2vga).
-( 2024 - site is down. Bless [archive.org](https://web.archive.org/web/https://sites.google.com/site/tandycocoloco/rgb2vga) )
+This is a modified version of the original [RGB2VGA by Luis Felipe da Costa Antoniosi](https://sites.google.com/site/tandycocoloco/rgb2vga).  
+(2024 - site is down. Bless [archive.org](https://web.archive.org/web/https://sites.google.com/site/tandycocoloco/rgb2vga))
 
 The electronics and fpga code are the same as the original.
 
