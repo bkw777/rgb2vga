@@ -62,7 +62,7 @@
   (pad "1" thru_hole circle (at 0 0) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (tstamp 68f4df51-8952-43b4-a4f9-8da98e53c5bd))
   (pad "2" thru_hole circle (at -7.62 -2.54) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (tstamp e1e56a0e-43fd-400f-94fa-e1470f0817e7))
   (pad "3" thru_hole circle (at -12.7 0) (size 1.8 1.8) (drill 1) (layers "*.Cu" "*.Mask") (tstamp 3d2c4df3-6ff8-4257-b939-45b4f4352449))
-  (model "${KIPRJMOD}/000_LOCAL.pretty/3dshapes/Potentiometer_Bourns_3006P_Horizontal.step"
+  (model "${KIPRJMOD}/000_LOCAL.pretty/3dshapes/Bourns_3006P.step"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

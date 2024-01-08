@@ -4,7 +4,7 @@ Convert 15khz RGB to 31khz VGA
 Uses Altera DE0-Nano FPGA development board to convert analog 15Khz RGB signal to VGA 31Khz 256 color.
 
 This is a modified version of the original [RGB2VGA by Luis Felipe da Costa Antoniosi](https://sites.google.com/site/tandycocoloco/rgb2vga).  
-(2024 - site is down. Bless [archive.org](https://web.archive.org/web/https://sites.google.com/site/tandycocoloco/rgb2vga))
+( 2024 - Original site is down. [archive.org](https://web.archive.org/web/https://sites.google.com/site/tandycocoloco/rgb2vga) )
 
 The electronics and fpga code are the same as the original.
 
@@ -22,12 +22,6 @@ The enclosure is new, and the OpenSCAD source is included.
 Video showing v003 in action.  
 [![](https://img.youtube.com/vi/MPYQRHWyUGA/hqdefault.jpg)](https://youtu.be/MPYQRHWyUGA)
 
-![](pcb/out/rgb2vga.jpg)
-![](pcb/out/rgb2vga.f.jpg)
-![](pcb/out/rgb2vga.b.jpg)
-![](pcb/out/rgb2vga.top.jpg)
-![](pcb/out/rgb2vga.bottom.jpg)
-![](pcb/out/rgb2vga.svg)
 ![](pics/rgb2vga_enclosure_exploded.png)
 ![](pics/12.jpg)
 ![](pics/rgb2vg_1.jpg)
@@ -53,20 +47,40 @@ Video showing v003 in action.
 ![](pics/9.jpg)
 ![](pics/10.jpg)
 ![](pics/11.jpg)
+
+Alternate enclosure top with screws and nuts for the artifact switch instead of melt-able posts.
 ![](pics/alt_top_1.jpg)
 ![](pics/alt_top_2.jpg)
 ![](pics/alt_top_3.jpg)
 
+![](pcb/out/rgb2vga.jpg)
+![](pcb/out/rgb2vga.b.jpg)
+![](pcb/out/rgb2vga.top.jpg)
+![](pcb/out/rgb2vga.bottom.jpg)
+![](pcb/out/rgb2vga.svg)
+
 <!-- [PCB from OSHPark]()  -->
 [PCB from PCBWAY](https://www.pcbway.com/project/shareproject/de0_nano_fpga_rgb2vga.html)  
 
-[BOM from DigiKey](https://www.digikey.com/short/5mq32b7z)
+[BOM from DigiKey](https://www.digikey.com/short/c8vqzm80)  
+(does not include R29 or C4, normally no not populate)
 
 <!-- 
 [DE0-Nano](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=593)
 When searching other sources like ebay, don't accidentally get **DE0-Nano-SoC**, that's something else.
 -->
 
+<!--
+## Through-Hole Version
+![](pcb/out/rgb2vga.THT.jpg)
+![](pcb/out/rgb2vga.THT.b.jpg)
+![](pcb/out/rgb2vga.THT.top.jpg)
+![](pcb/out/rgb2vga.THT.bottom.jpg)
+
+[Through-Hole BOM from DigiKey](https://www.digikey.com/short/5mq32b7z)
+-->
+
+## Enclosure
 [Enclosure from CraftCloud](https://craftcloud3d.com/offer/e28365bf-4fbd-4414-9492-a3820372ae03)
 
 [PCB Gerbers, FPGA Firmware, Enclosure STLs](../../releases/)
