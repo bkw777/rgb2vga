@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "DE0-NANO RGB2VGA")
-		(date "2024-01-07")
-		(rev "008")
+		(date "2024-07-26")
+		(rev "009")
 		(company "Brian K. White - b.kenyon.w@gmail.com")
 		(comment 1 "Original Design by Luis Antoniosi 2014")
 	)
@@ -4443,6 +4443,197 @@
 				)
 			)
 		)
+		(symbol "000_LOCAL:SolderJumper_2_Bridged"
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "JP"
+				(at 0 2.032 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SolderJumper_2_Bridged"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Solder Jumper, 2-pole, closed/bridged"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "solder jumper SPST"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SolderJumper*Bridged*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SolderJumper_2_Bridged_0_1"
+				(rectangle
+					(start -0.508 0.508)
+					(end 0.508 -0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(arc
+					(start -0.254 1.016)
+					(mid -1.2656 0)
+					(end -0.254 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -0.254 1.016)
+					(mid -1.2656 0)
+					(end -0.254 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.254 1.016) (xy -0.254 -1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 1.016) (xy 0.254 -1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0.254 -1.016)
+					(mid 1.2656 0)
+					(end 0.254 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0.254 -1.016)
+					(mid 1.2656 0)
+					(end 0.254 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "SolderJumper_2_Bridged_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 	)
 	(junction
 		(at 72.39 157.48)
@@ -4601,6 +4792,12 @@
 		(uuid "915f71f8-517c-4fbd-a031-ecb0e6620e25")
 	)
 	(junction
+		(at 180.34 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "91f2b3b5-9800-442c-bee8-b196d10c4713")
+	)
+	(junction
 		(at 127 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4689,6 +4886,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cb0198da-e4ff-4df4-a8d5-5ce0a1901da0")
+	)
+	(junction
+		(at 172.72 127)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cfc8b428-1bed-4a34-83c3-7df8ba768764")
 	)
 	(junction
 		(at 69.85 38.1)
@@ -5102,7 +5305,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 134.62) (xy 187.96 134.62)
+			(xy 172.72 134.62) (xy 180.34 134.62)
 		)
 		(stroke
 			(width 0)
@@ -5339,6 +5542,16 @@
 			(type default)
 		)
 		(uuid "22c217a9-7fb5-49f4-8500-8719d9c7f0ca")
+	)
+	(wire
+		(pts
+			(xy 180.34 134.62) (xy 187.96 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24a8663e-68d5-4105-b667-1c0648e1e246")
 	)
 	(wire
 		(pts
@@ -6682,6 +6895,16 @@
 	)
 	(wire
 		(pts
+			(xy 172.72 127) (xy 180.34 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c420538c-2680-41ea-bb9f-d88f324b1817")
+	)
+	(wire
+		(pts
 			(xy 44.45 157.48) (xy 44.45 165.1)
 		)
 		(stroke
@@ -7418,7 +7641,7 @@
 		)
 		(uuid "c7245287-b021-4269-8c24-b02ed15ef656")
 	)
-	(text "optional\n500kHz\nlow pass"
+	(text "optional\n500kHz\nlow pass\ncut JP1"
 		(exclude_from_sim no)
 		(at 167.64 124.46 0)
 		(effects
@@ -12074,6 +12297,74 @@
 		)
 	)
 	(symbol
+		(lib_id "000_LOCAL:SolderJumper_2_Bridged")
+		(at 180.34 130.81 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "19817fff-55f9-4062-a61c-aa5b3aabdf69")
+		(property "Reference" "JP1"
+			(at 180.848 126.238 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "lowpass"
+			(at 180.594 124.206 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "000_LOCAL:JP_0805"
+			(at 180.34 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 180.34 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Solder Jumper, 2-pole, closed/bridged"
+			(at 180.34 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "299eecba-abc9-4243-b52b-ce6295c02b4d")
+		)
+		(pin "2"
+			(uuid "73c8e208-4a22-419b-8dd5-dce2b18d58ba")
+		)
+		(instances
+			(project ""
+				(path "/dc38b7f3-94d8-459d-903b-54a6ae2cb037"
+					(reference "JP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "000_LOCAL:GND")
 		(at 133.35 127 0)
 		(mirror y)
@@ -12839,7 +13130,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "000_LOCAL:R_0805_SJC"
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 172.72 130.81 0)
 			(effects
 				(font
