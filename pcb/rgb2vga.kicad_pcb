@@ -214,7 +214,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:C_0805"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -446,7 +446,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:C_0805"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -678,7 +678,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -850,7 +850,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1022,7 +1022,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1194,7 +1194,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1366,7 +1366,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1538,7 +1538,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1710,7 +1710,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1882,7 +1882,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2054,7 +2054,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2226,7 +2226,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2398,7 +2398,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2570,7 +2570,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2742,7 +2742,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2914,7 +2914,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3086,7 +3086,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3258,7 +3258,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3430,7 +3430,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3602,7 +3602,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3774,7 +3774,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3946,7 +3946,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4118,7 +4118,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4290,7 +4290,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4462,7 +4462,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4634,7 +4634,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4806,7 +4806,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4978,7 +4978,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5148,7 +5148,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:SOIC-8_4x5"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5481,7 +5481,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5652,7 +5652,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:SW_DIP_SPSTx10_Slide_6.7_8.61_P2.54_LowProfile"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7094,7 +7094,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:DE0-Nano_bare"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7497,7 +7497,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:R_0805_SJC"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7682,7 +7682,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:C_0805"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7914,7 +7914,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:C_0805"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8147,7 +8147,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:HD15-SN-25"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8764,7 +8764,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:Potentiometer_Bourns_3006P_Horizontal"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -9110,7 +9110,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:HD15-SN-25"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -9726,7 +9726,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:PinSocket_2x20_P2.54mm_Polarized_Vertical"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10460,7 +10460,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:IDC-Header_2x05_P2.54mm_Horizontal COCO3 KEYED"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10973,7 +10973,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:SW_DP3T_CK_JS203011JAQN"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11496,7 +11496,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:PinSocket_2x20_P2.54mm_Polarized_Vertical"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12230,7 +12230,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:PinHeader_1x03_P2.54mm_Horizontal"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12837,7 +12837,7 @@
 				(justify top)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "000_LOCAL:RCA"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
