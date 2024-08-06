@@ -514,7 +514,7 @@
       "idf": "",
       "netlist": "",
       "plot": "GERBER_${TITLE}_${REVISION}",
-      "pos_files": "",
+      "pos_files": "GERBER_${TITLE}_${REVISION}",
       "specctra_dsn": "",
       "step": "out/rgb2vga.pcb.step",
       "svg": "",

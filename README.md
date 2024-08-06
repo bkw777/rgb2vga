@@ -62,7 +62,7 @@ Alternate enclosure top with screws and nuts for the artifact switch instead of 
 <!-- [PCB from OSHPark]()  -->
 [PCB from PCBWAY](https://www.pcbway.com/project/shareproject/de0_nano_fpga_rgb2vga.html)  
 
-[BOM from DigiKey](https://www.digikey.com/short/pwd4r9zf)  
+[BOM from DigiKey](https://www.digikey.com/short/wv89d9fv)  
 (does not include R29 or C4, normally no not populate)
 
 <!-- 

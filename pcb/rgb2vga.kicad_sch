@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "DE0-NANO RGB2VGA")
-		(date "2024-07-26")
-		(rev "009")
+		(date "2024-08-06")
+		(rev "010")
 		(company "Brian K. White - b.kenyon.w@gmail.com")
 		(comment 1 "Original Design by Luis Antoniosi 2014")
 	)
@@ -4642,6 +4642,12 @@
 		(uuid "0134e5c6-51b4-421a-851b-1a00e0d4cc65")
 	)
 	(junction
+		(at 208.28 54.61)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "023d791e-8a2d-4c2c-b8ee-f720532ebd72")
+	)
+	(junction
 		(at 82.55 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4670,12 +4676,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2b93c7fe-0ac4-4347-ab1a-ace1cb65d616")
-	)
-	(junction
-		(at 208.28 55.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2da920b8-4d02-48a2-bb14-7fb89d7fd4b5")
 	)
 	(junction
 		(at 90.17 165.1)
@@ -4822,6 +4822,18 @@
 		(uuid "9a56fb81-11e0-4fa4-a830-bdb4e0bce4de")
 	)
 	(junction
+		(at 208.28 67.31)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9b149b3c-4683-4d4b-a1b4-644b76aa317b")
+	)
+	(junction
+		(at 208.28 62.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9b22f4a7-9aaf-4884-9797-064a751a6b1e")
+	)
+	(junction
 		(at 208.28 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4922,12 +4934,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ea9f82e7-cd3d-4339-9d97-74c8d8bbfc9a")
-	)
-	(junction
-		(at 208.28 66.04)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ed7bda05-dcb0-4e4e-aefb-585c6c239e42")
 	)
 	(junction
 		(at 205.74 144.78)
@@ -5405,6 +5411,16 @@
 	)
 	(wire
 		(pts
+			(xy 208.28 62.23) (xy 208.28 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "182aef6e-9007-4eb3-b734-1fd7f1464b22")
+	)
+	(wire
+		(pts
 			(xy 67.31 38.1) (xy 69.85 38.1)
 		)
 		(stroke
@@ -5462,6 +5478,16 @@
 			(type default)
 		)
 		(uuid "1cc5971e-f123-4ea7-83df-c76c4034e5e3")
+	)
+	(wire
+		(pts
+			(xy 215.9 66.04) (xy 223.52 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d29331f-64e1-43d6-bc20-eb7b9b3de9b5")
 	)
 	(wire
 		(pts
@@ -5605,6 +5631,16 @@
 	)
 	(wire
 		(pts
+			(xy 215.9 62.23) (xy 215.9 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "27cae2b3-8108-41b7-8440-a185235b9080")
+	)
+	(wire
+		(pts
 			(xy 190.5 58.42) (xy 203.2 58.42)
 		)
 		(stroke
@@ -5715,7 +5751,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 53.34) (xy 208.28 55.88)
+			(xy 208.28 53.34) (xy 208.28 54.61)
 		)
 		(stroke
 			(width 0)
@@ -5812,6 +5848,16 @@
 			(type default)
 		)
 		(uuid "393597ea-253e-48b5-83ba-8b47677f618c")
+	)
+	(wire
+		(pts
+			(xy 215.9 55.88) (xy 223.52 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b649426-60e8-4f17-b8de-0cbd3ad640df")
 	)
 	(wire
 		(pts
@@ -5935,7 +5981,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 68.58) (xy 208.28 66.04)
+			(xy 208.28 68.58) (xy 208.28 67.31)
 		)
 		(stroke
 			(width 0)
@@ -6202,6 +6248,16 @@
 			(type default)
 		)
 		(uuid "7c63f1b0-e879-4858-bc49-e11931d621a5")
+	)
+	(wire
+		(pts
+			(xy 215.9 60.96) (xy 223.52 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7cb1a9d3-ce07-477d-98d3-6432c1996e60")
 	)
 	(wire
 		(pts
@@ -6475,7 +6531,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 63.5) (xy 208.28 60.96)
+			(xy 208.28 63.5) (xy 208.28 62.23)
 		)
 		(stroke
 			(width 0)
@@ -6582,6 +6638,26 @@
 			(type default)
 		)
 		(uuid "a555d0fd-cc84-4e5c-8f47-80418736aedb")
+	)
+	(wire
+		(pts
+			(xy 208.28 67.31) (xy 208.28 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a59baac8-a614-4fa6-9a93-249f18e896e0")
+	)
+	(wire
+		(pts
+			(xy 215.9 54.61) (xy 215.9 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a61c02c8-5a44-434d-a3bf-2f5387a86627")
 	)
 	(wire
 		(pts
@@ -6712,6 +6788,16 @@
 			(type default)
 		)
 		(uuid "b380f298-3230-4710-bb0f-2eee331ed7da")
+	)
+	(wire
+		(pts
+			(xy 208.28 54.61) (xy 208.28 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b3b45a39-4530-450c-a12c-34d20b57a9de")
 	)
 	(wire
 		(pts
@@ -6885,7 +6971,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 55.88) (xy 223.52 55.88)
+			(xy 208.28 54.61) (xy 215.9 54.61)
 		)
 		(stroke
 			(width 0)
@@ -6935,7 +7021,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 66.04) (xy 223.52 66.04)
+			(xy 208.28 67.31) (xy 215.9 67.31)
 		)
 		(stroke
 			(width 0)
@@ -7035,7 +7121,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 60.96) (xy 223.52 60.96)
+			(xy 208.28 62.23) (xy 215.9 62.23)
 		)
 		(stroke
 			(width 0)
@@ -7455,6 +7541,16 @@
 	)
 	(wire
 		(pts
+			(xy 215.9 67.31) (xy 215.9 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa7ca85c-4fcc-4249-9323-08110139deb1")
+	)
+	(wire
+		(pts
 			(xy 54.61 167.64) (xy 55.88 167.64)
 		)
 		(stroke
@@ -7665,7 +7761,7 @@
 	)
 	(text "DAC TRIM"
 		(exclude_from_sim no)
-		(at 132.08 121.92 0)
+		(at 136.398 122.682 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9446,7 +9542,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-0000619aceb2")
 		(property "Reference" "R1"
-			(at 210.058 71.374 90)
+			(at 202.184 70.104 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9454,11 +9550,12 @@
 			)
 		)
 		(property "Value" "390"
-			(at 201.676 70.358 90)
+			(at 209.042 71.12 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "000_LOCAL:R_0805"
@@ -9513,7 +9610,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-0000619afd24")
 		(property "Reference" "R2"
-			(at 210.058 68.834 90)
+			(at 202.184 67.564 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9521,11 +9618,12 @@
 			)
 		)
 		(property "Value" "820"
-			(at 201.676 67.818 90)
+			(at 209.042 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "000_LOCAL:R_0805"
@@ -9580,7 +9678,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-0000619b8305")
 		(property "Reference" "R3"
-			(at 210.058 66.04 90)
+			(at 202.184 65.024 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9588,11 +9686,12 @@
 			)
 		)
 		(property "Value" "1.8K"
-			(at 201.422 65.278 90)
+			(at 209.042 66.04 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "000_LOCAL:R_0805"
@@ -9647,7 +9746,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-0000619b83ff")
 		(property "Reference" "R4"
-			(at 210.058 63.5 90)
+			(at 202.184 62.484 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9655,11 +9754,12 @@
 			)
 		)
 		(property "Value" "390"
-			(at 201.676 62.738 90)
+			(at 209.042 63.5 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "000_LOCAL:R_0805"
@@ -9714,7 +9814,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-0000619bc355")
 		(property "Reference" "R5"
-			(at 210.058 61.214 90)
+			(at 202.184 59.944 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9722,11 +9822,12 @@
 			)
 		)
 		(property "Value" "820"
-			(at 201.676 60.198 90)
+			(at 209.042 60.96 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "000_LOCAL:R_0805"
@@ -9781,7 +9882,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-0000619bc46f")
 		(property "Reference" "R6"
-			(at 210.058 58.674 90)
+			(at 202.184 57.404 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9789,11 +9890,12 @@
 			)
 		)
 		(property "Value" "1.8K"
-			(at 201.422 57.658 90)
+			(at 209.042 58.42 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "000_LOCAL:R_0805"
@@ -9848,7 +9950,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-0000619bc479")
 		(property "Reference" "R7"
-			(at 210.058 55.88 90)
+			(at 202.184 54.864 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9856,11 +9958,12 @@
 			)
 		)
 		(property "Value" "390"
-			(at 201.676 55.118 90)
+			(at 209.042 55.88 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "000_LOCAL:R_0805"
@@ -9915,7 +10018,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-0000619bc483")
 		(property "Reference" "R8"
-			(at 210.058 53.594 90)
+			(at 202.184 52.324 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9923,11 +10026,12 @@
 			)
 		)
 		(property "Value" "820"
-			(at 201.676 52.578 90)
+			(at 209.042 53.34 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "000_LOCAL:R_0805"
@@ -9982,7 +10086,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-0000619e7f52")
 		(property "Reference" "R26"
-			(at 210.566 51.054 90)
+			(at 201.676 49.784 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9990,11 +10094,12 @@
 			)
 		)
 		(property "Value" "1.8K"
-			(at 201.422 50.038 90)
+			(at 209.042 50.8 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "000_LOCAL:R_0805"
@@ -10050,7 +10155,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061a15f46")
 		(property "Reference" "R10"
-			(at 209.55 47.244 90)
+			(at 201.676 47.244 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10058,11 +10163,12 @@
 			)
 		)
 		(property "Value" "47"
-			(at 202.438 47.244 90)
+			(at 208.026 47.244 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "000_LOCAL:R_0805"
@@ -10118,7 +10224,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061a22b3c")
 		(property "Reference" "R9"
-			(at 209.042 44.704 90)
+			(at 202.438 44.704 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10126,11 +10232,12 @@
 			)
 		)
 		(property "Value" "47"
-			(at 202.438 44.704 90)
+			(at 208.026 44.704 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "000_LOCAL:R_0805"
@@ -10185,21 +10292,19 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061abe464")
 		(property "Reference" "R27"
-			(at 64.008 55.372 90)
+			(at 58.928 52.324 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "1K"
-			(at 60.198 54.61 90)
+			(at 59.436 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "000_LOCAL:R_0805"
@@ -10254,21 +10359,19 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061abe70a")
 		(property "Reference" "R28"
-			(at 64.008 65.532 90)
+			(at 58.674 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "1K"
-			(at 60.198 65.278 90)
+			(at 59.182 64.516 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "000_LOCAL:R_0805"
@@ -10395,21 +10498,19 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061c03da8")
 		(property "Reference" "R11"
-			(at 130.048 121.412 90)
+			(at 131.318 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "2K"
-			(at 126.746 120.65 90)
+			(at 130.81 120.396 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "000_LOCAL:R_0805"
@@ -10465,21 +10566,19 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061c03fa1")
 		(property "Reference" "R12"
-			(at 119.888 121.412 90)
+			(at 121.158 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "2K"
-			(at 116.586 120.65 90)
+			(at 120.65 120.396 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "000_LOCAL:R_0805"
@@ -10535,21 +10634,19 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061c0a511")
 		(property "Reference" "R14"
-			(at 109.728 121.412 90)
+			(at 110.998 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "2K"
-			(at 106.426 120.396 90)
+			(at 110.49 120.396 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "000_LOCAL:R_0805"
@@ -10605,7 +10702,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061c0eb4d")
 		(property "Reference" "R16"
-			(at 123.19 126.238 90)
+			(at 123.19 126.746 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10613,7 +10710,7 @@
 			)
 		)
 		(property "Value" "1K"
-			(at 123.19 122.936 90)
+			(at 122.682 128.778 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10673,7 +10770,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061c14117")
 		(property "Reference" "R15"
-			(at 113.03 126.238 90)
+			(at 113.03 126.746 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10681,7 +10778,7 @@
 			)
 		)
 		(property "Value" "1K"
-			(at 113.03 122.936 90)
+			(at 112.522 128.778 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10740,7 +10837,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061c177e5")
 		(property "Reference" "R24"
-			(at 138.43 124.46 90)
+			(at 138.43 123.698 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10748,7 +10845,7 @@
 			)
 		)
 		(property "Value" "10K"
-			(at 133.096 122.682 90)
+			(at 138.43 125.73 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10810,7 +10907,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061c2c786")
 		(property "Reference" "R17"
-			(at 103.378 126.238 90)
+			(at 103.378 126.746 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10818,7 +10915,7 @@
 			)
 		)
 		(property "Value" "2K"
-			(at 102.87 122.936 90)
+			(at 102.87 128.778 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11277,7 +11374,7 @@
 			)
 		)
 		(property "Value" "82"
-			(at 64.77 36.322 90)
+			(at 65.024 42.164 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11345,7 +11442,7 @@
 			)
 		)
 		(property "Value" "82"
-			(at 49.53 31.242 90)
+			(at 49.784 37.084 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11413,7 +11510,7 @@
 			)
 		)
 		(property "Value" "82"
-			(at 77.47 41.402 90)
+			(at 77.724 46.99 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11689,7 +11786,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061e817a2")
 		(property "Reference" "C1"
-			(at 191.77 129.54 90)
+			(at 190.5 129.54 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11697,7 +11794,7 @@
 			)
 		)
 		(property "Value" "0.1u"
-			(at 191.77 132.08 90)
+			(at 190.5 131.572 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11757,7 +11854,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061edfd57")
 		(property "Reference" "C2"
-			(at 193.04 139.7 0)
+			(at 192.278 139.192 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11765,7 +11862,7 @@
 			)
 		)
 		(property "Value" "0.1u"
-			(at 193.04 143.51 0)
+			(at 193.04 143.002 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11825,21 +11922,21 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061ee7698")
 		(property "Reference" "R13"
-			(at 185.42 146.05 0)
+			(at 185.42 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Value" "680K"
-			(at 185.42 148.59 0)
+			(at 185.42 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Footprint" "000_LOCAL:R_0805"
@@ -11894,7 +11991,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061ef13f2")
 		(property "Reference" "R19"
-			(at 90.678 85.598 90)
+			(at 90.678 86.106 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11903,7 +12000,7 @@
 			)
 		)
 		(property "Value" "1.2K"
-			(at 90.424 81.788 90)
+			(at 90.678 88.138 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11964,7 +12061,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061f00990")
 		(property "Reference" "R18"
-			(at 85.09 85.598 90)
+			(at 84.328 80.264 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11973,7 +12070,7 @@
 			)
 		)
 		(property "Value" "6.8K"
-			(at 84.836 81.788 90)
+			(at 84.836 82.042 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12033,7 +12130,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061f248e1")
 		(property "Reference" "R20"
-			(at 125.222 83.312 90)
+			(at 125.222 83.566 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12042,7 +12139,7 @@
 			)
 		)
 		(property "Value" "1.2K"
-			(at 125.476 79.502 90)
+			(at 125.73 85.598 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12103,7 +12200,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061f24b2b")
 		(property "Reference" "R21"
-			(at 128.27 83.312 90)
+			(at 128.778 83.566 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12112,7 +12209,7 @@
 			)
 		)
 		(property "Value" "6.8K"
-			(at 128.27 79.502 90)
+			(at 128.778 85.598 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12306,16 +12403,15 @@
 		(dnp no)
 		(uuid "19817fff-55f9-4062-a61c-aa5b3aabdf69")
 		(property "Reference" "JP1"
-			(at 180.848 126.238 90)
+			(at 180.34 125.222 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "lowpass"
-			(at 180.594 124.206 90)
+			(at 180.34 122.682 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12851,12 +12947,13 @@
 				)
 			)
 		)
-		(property "Value" "512p"
-			(at 170.18 140.97 0)
+		(property "Value" "510p"
+			(at 172.212 140.716 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "000_LOCAL:C_0805"
@@ -13045,7 +13142,7 @@
 		(dnp no)
 		(uuid "9b72cd5b-79f3-416a-8c4f-9e027b6dcc43")
 		(property "Reference" "C3"
-			(at 201.93 120.65 90)
+			(at 199.644 119.38 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13053,7 +13150,7 @@
 			)
 		)
 		(property "Value" "1u"
-			(at 201.93 125.73 90)
+			(at 199.644 121.666 90)
 			(effects
 				(font
 					(size 1.27 1.27)
