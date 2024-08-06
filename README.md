@@ -3,8 +3,8 @@ Convert 15khz RGB to 31khz VGA
 
 Uses Altera DE0-Nano FPGA development board to convert analog 15Khz RGB signal to VGA 31Khz 256 color.
 
-This is a modified version of the original [RGB2VGA by Luis Felipe da Costa Antoniosi](https://sites.google.com/site/tandycocoloco/rgb2vga).  
-( 2024 - Original site is down. [archive.org](https://web.archive.org/web/https://sites.google.com/site/tandycocoloco/rgb2vga) )
+This is a modified version of the original [RGB2VGA by Luis Felipe da Costa Antoniosi](https://sites.google.com/site/tandycocoloco/fpga-rgb2vga).  
+<!-- (Archived original site [archive.org](https://web.archive.org/web/https://sites.google.com/site/tandycocoloco/rgb2vga)) -->
 
 The electronics and fpga code are the same as the original.
 
@@ -14,10 +14,10 @@ The physical layout is changed to make a more compact package and to build-in th
 
 The schematic and pcb layout are re-drawn from scratch in KiCad to provide editable source files.
 
-The VHDL source is just a fork of [the original](https://github.com/lfantoniosi/rgb2vga) but with all the non-source files cleaned out.  
+The VHDL source is just a fork of [the original](https://github.com/lfantoniosi/rgb2vga) but with all of the non-source files cleaned out.  
 The VHDL does compile and you can generate a new working rgb2vga.jic from it. But as noted by Roger Taylor, you may want to use the original JIC file from Luis anyway because it may be more stable. There is a preseved copy of Luis's original rgb2vga.jic in [vhdl/Original_JIC](vhdl/Original_JIC).
 
-The enclosure is new, and the OpenSCAD source is included.
+The enclosure is mine, and the OpenSCAD source is included.
 
 Video showing v003 in action.  
 [![](https://img.youtube.com/vi/MPYQRHWyUGA/hqdefault.jpg)](https://youtu.be/MPYQRHWyUGA)
@@ -48,7 +48,7 @@ Video showing v003 in action.
 ![](pics/10.jpg)
 ![](pics/11.jpg)
 
-Alternate enclosure top with screws and nuts for the artifact switch instead of melt-able posts.
+Alternate enclosure top with screws and nuts for the artifact switch instead of melted posts.
 ![](pics/alt_top_1.jpg)
 ![](pics/alt_top_2.jpg)
 ![](pics/alt_top_3.jpg)
@@ -63,7 +63,13 @@ Alternate enclosure top with screws and nuts for the artifact switch instead of 
 [PCB from PCBWAY](https://www.pcbway.com/project/shareproject/de0_nano_fpga_rgb2vga.html)  
 
 [BOM from DigiKey](https://www.digikey.com/short/pwd4r9zf)  
-(does not include R29 or C4, normally no not populate)
+
+The BOM does not include R29 or C4, which you normally do not populate.  
+<!-- 
+R29 and C4 provide a 500khz lowpass filter from the LM1881 datasheet.  
+If you want to add the lowpass filter, remember to cut the trace in the middle of the R29 footprint.  
+I have no idea if the lowpass filter is desired or not. It's in the LM1881 datasheet and it sounds like a good idea since the computer is full of 1+ mhz signals, but I have not actually tested that addition yet.
+-->
 
 <!-- 
 [DE0-Nano](http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=593)
