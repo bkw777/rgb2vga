@@ -4200,7 +4200,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "~"
+			(property "Datasheet" "datasheets/cl-sb.pdf"
 				(at -15.875 4.445 0)
 				(effects
 					(font
@@ -4447,7 +4447,7 @@
 			(pin_names
 				(offset 0) hide)
 			(exclude_from_sim no)
-			(in_bom yes)
+			(in_bom no)
 			(on_board yes)
 			(property "Reference" "JP"
 				(at 0 2.032 0)
@@ -4625,6 +4625,280 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "SW_DP3T_1"
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SW_DP3T"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -15.875 4.445 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "datasheets/cl-sb.pdf"
+				(at -15.875 4.445 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Switch, three position, dual pole triple throw, 3 position switch, SP3T"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "switch dp3t ON-ON-ON"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SW* DP3T*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SW_DP3T_1_0_1"
+				(circle
+					(center -2.032 0)
+					(radius 0.4572)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.651 0.254) (xy 1.651 2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 -2.54)
+					(radius 0.4572)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.4572)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 2.54)
+					(radius 0.4572)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SW_DP3T_1_1_1"
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 2.54)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "SW_DP3T_1_2_1"
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 2.54)
+					(name "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 2.54)
+					(name "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -8441,14 +8715,14 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061831d6d")
 		(property "Reference" "J6"
-			(at 231.14 76.2 0)
+			(at 231.14 76.454 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "VGA_OUT"
+		(property "Value" "HD15F_horizontal_tht"
 			(at 231.14 78.74 0)
 			(effects
 				(font
@@ -8474,13 +8748,30 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CONN D-SUB HD RCPT 15P R/A SLDR"
 			(at 231.14 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "MPN" "HD15-SN-25"
+			(at 231.14 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Label" "VGA_OUT"
+			(at 231.14 81.534 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "0"
@@ -8550,19 +8841,20 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061838f0f")
 		(property "Reference" "J2"
-			(at 97.79 24.638 0)
+			(at 110.744 26.416 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "RGB_IN"
-			(at 88.9 25.4 0)
+		(property "Value" "HD15F_horizontal_tht"
+			(at 107.442 28.956 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "000_LOCAL:HD15-SN-25"
@@ -8583,13 +8875,30 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CONN D-SUB HD RCPT 15P R/A SLDR"
 			(at 97.79 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "MPN" "HD15-SN-25"
+			(at 97.79 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Label" "RGB_IN"
+			(at 110.998 31.496 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "0"
@@ -8651,187 +8960,6 @@
 	)
 	(symbol
 		(lib_id "000_LOCAL:Conn_02x20_Odd_Even")
-		(at 182.88 60.96 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "00000000-0000-0000-0000-00006183c15c")
-		(property "Reference" "J5"
-			(at 184.15 32.258 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GPIO_1"
-			(at 184.15 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "000_LOCAL:PinSocket_2x20_P2.54mm_Polarized_Vertical"
-			(at 182.88 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "datasheets/DE0-Nano.pdf"
-			(at 182.88 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 182.88 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8e082ee9-f795-43d2-ac7a-f06d83fe5986")
-		)
-		(pin "10"
-			(uuid "89720038-6580-45ea-b0f4-c854b8c30bf8")
-		)
-		(pin "11"
-			(uuid "7abd68c1-8539-4b0b-8a60-1def56963513")
-		)
-		(pin "12"
-			(uuid "faca56d2-0c33-4544-a8eb-9f21c3a7f844")
-		)
-		(pin "13"
-			(uuid "958aacfa-4086-46b7-9cfc-2975850c48c8")
-		)
-		(pin "14"
-			(uuid "f7f01e50-8052-4abf-8adc-8fd568a014bf")
-		)
-		(pin "15"
-			(uuid "83ad712c-c73c-4b6e-ad96-b0edb1331246")
-		)
-		(pin "16"
-			(uuid "851fb3bd-c463-4e47-a5bc-e8904196b75f")
-		)
-		(pin "17"
-			(uuid "467c2343-0ff9-45d0-892d-d0383496d826")
-		)
-		(pin "18"
-			(uuid "f41b1f27-262b-44d7-9ad2-2fdd0c018b89")
-		)
-		(pin "19"
-			(uuid "d2ffb225-21c9-4e44-9daa-85ea224b5ae8")
-		)
-		(pin "2"
-			(uuid "593aa5e3-7aba-49e4-bcca-5f23388e2f97")
-		)
-		(pin "20"
-			(uuid "4f78a575-6cf7-40a4-ade0-b8e8d691544b")
-		)
-		(pin "21"
-			(uuid "9b049b89-0a9b-4dd1-8e08-2262e7ee0033")
-		)
-		(pin "22"
-			(uuid "8665c24e-5bd3-417a-a2dd-6a33d45e8e46")
-		)
-		(pin "23"
-			(uuid "680c48cd-6e8c-43c4-af66-8004acc2d7bb")
-		)
-		(pin "24"
-			(uuid "86d953e3-c0ff-4e45-a7ed-e0f9ab1701e6")
-		)
-		(pin "25"
-			(uuid "a8fef94e-93fc-4000-98dc-9f492c8839d5")
-		)
-		(pin "26"
-			(uuid "6475ad55-bc30-4f7a-af74-587f07c94c6d")
-		)
-		(pin "27"
-			(uuid "c97aad91-6fd3-40bd-85ac-f10774178e11")
-		)
-		(pin "28"
-			(uuid "a9a79324-7e73-452c-9144-e57ee740874e")
-		)
-		(pin "29"
-			(uuid "7d6644b7-965e-46d9-8c97-38105b152b50")
-		)
-		(pin "3"
-			(uuid "0ee43fa1-ed24-4d1f-bca2-ca4916ab1fee")
-		)
-		(pin "30"
-			(uuid "ba8944a5-fa4b-4ccf-9837-fed02c8081de")
-		)
-		(pin "31"
-			(uuid "1d7fe605-31bf-48eb-b7fe-592aded8646a")
-		)
-		(pin "32"
-			(uuid "d6607cf1-e1ae-4d65-921c-57670eb9a1ea")
-		)
-		(pin "33"
-			(uuid "10af9bbb-afb6-4daf-91ee-149d1e23d8da")
-		)
-		(pin "34"
-			(uuid "d353e9f2-e29e-4a83-a85d-edc8563c5f54")
-		)
-		(pin "35"
-			(uuid "edbdbcac-0a58-42dd-9d10-45bedff5223d")
-		)
-		(pin "36"
-			(uuid "dc4177e7-4327-4d02-9486-60e8f70b2382")
-		)
-		(pin "37"
-			(uuid "028ddf50-993e-44b3-a11d-05711308227d")
-		)
-		(pin "38"
-			(uuid "3e291f4c-74f5-4b66-a216-31eda8a0ddd0")
-		)
-		(pin "39"
-			(uuid "5d1710ca-9555-46ce-a1d9-6ec60a202333")
-		)
-		(pin "4"
-			(uuid "f87a18e7-2c17-448b-992f-35fa2c566f1c")
-		)
-		(pin "40"
-			(uuid "d497d219-da03-4df1-9d98-da4cf2c4aac0")
-		)
-		(pin "5"
-			(uuid "91246929-f326-4016-8276-51f299b4d335")
-		)
-		(pin "6"
-			(uuid "9dc307e4-d714-40a7-8d2c-ce018a297db4")
-		)
-		(pin "7"
-			(uuid "e6ec697f-54e3-4b17-9910-e68dae9760f5")
-		)
-		(pin "8"
-			(uuid "1c44ccc0-203a-4d64-96ac-cc331bf79187")
-		)
-		(pin "9"
-			(uuid "df88a275-92b0-4b5c-a8fc-de1b3292d362")
-		)
-		(instances
-			(project "rgb2vga"
-				(path "/dc38b7f3-94d8-459d-903b-54a6ae2cb037"
-					(reference "J5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "000_LOCAL:Conn_02x20_Odd_Even")
 		(at 80.01 134.62 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8840,15 +8968,15 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00006184c244")
 		(property "Reference" "J1"
-			(at 81.28 107.696 0)
+			(at 81.28 108.966 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "GPIO_0"
-			(at 81.28 109.22 0)
+		(property "Value" "PinSocket_02x20_P2.54mm_Vertical_tht"
+			(at 81.28 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8873,13 +9001,30 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CONN HDR 40POS 0.1 GOLD PCB"
 			(at 80.01 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "MPN" "SFH11-PBPC-D20-ST-BK"
+			(at 80.01 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Label" "GPIO_0"
+			(at 81.28 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -9046,7 +9191,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "datasheets/ds04-254-smt.pdf"
 			(at 46.99 134.62 0)
 			(effects
 				(font
@@ -9055,7 +9200,16 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "SWITCH SLIDE DIP SPST 0.025A 24V"
+			(at 46.99 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "DS04-254-2-10BK-SMT"
 			(at 46.99 134.62 0)
 			(effects
 				(font
@@ -9151,13 +9305,12 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C_VIDEO_IN"
-			(at 121.92 62.23 0)
+		(property "Value" "RCA_horizontal_tht"
+			(at 128.27 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "000_LOCAL:RCA"
@@ -9185,6 +9338,23 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "MPN" "RCJ-014"
+			(at 128.27 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Label" "C_VIDEO_IN"
+			(at 128.27 56.896 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -9585,6 +9755,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "ERA-6AEB391V"
+			(at 205.74 71.12 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0aed42c7-2921-4b88-8cc7-fdaf854375e3")
 		)
@@ -9646,6 +9825,15 @@
 		)
 		(property "Description" ""
 			(at 205.74 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "ERA-6AEB821V"
+			(at 205.74 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9721,6 +9909,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "ERA-6AEB182V"
+			(at 205.74 66.04 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "cc935afe-42d9-4472-979a-99c25613edb8")
 		)
@@ -9782,6 +9979,15 @@
 		)
 		(property "Description" ""
 			(at 205.74 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "ERA-6AEB391V"
+			(at 205.74 63.5 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9857,6 +10063,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "ERA-6AEB821V"
+			(at 205.74 60.96 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3a0699b1-1be7-4381-8008-5758a49aa15a")
 		)
@@ -9918,6 +10133,15 @@
 		)
 		(property "Description" ""
 			(at 205.74 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "ERA-6AEB182V"
+			(at 205.74 58.42 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9993,6 +10217,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "ERA-6AEB391V"
+			(at 205.74 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "cdee90ad-fcdf-4410-ad18-1a8c11d979c8")
 		)
@@ -10061,6 +10294,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "ERA-6AEB821V"
+			(at 205.74 53.34 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2f22b528-2bd9-4ec7-bbf9-99cabc9cad6c")
 		)
@@ -10122,6 +10364,15 @@
 		)
 		(property "Description" ""
 			(at 205.74 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "ERA-6AEB182V"
+			(at 205.74 50.8 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10198,6 +10449,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "ERA-6AEB470V"
+			(at 205.74 48.26 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8114e94b-73a4-4918-b2f0-d2a39121bc22")
 		)
@@ -10267,6 +10527,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "ERA-6AEB470V"
+			(at 205.74 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "250378c3-2d18-489d-96d8-ae030bd084bb")
 		)
@@ -10326,6 +10595,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 62.23 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "ERA-6AEB102V"
 			(at 62.23 53.34 0)
 			(effects
 				(font
@@ -10401,6 +10679,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "ERA-6AEB102V"
+			(at 62.23 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8254cce4-6372-4b36-9851-68dfc760d8b1")
 		)
@@ -10461,6 +10748,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 49.53 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "PRPC003SBAN-M71RC"
 			(at 49.53 175.26 0)
 			(effects
 				(font
@@ -10540,6 +10836,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "ERA-6AEB202V"
+			(at 128.27 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d526d9e3-dbb8-4a32-9ca3-5fb39e219f1d")
 		)
@@ -10600,6 +10905,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 118.11 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "ERA-6AEB202V"
 			(at 118.11 119.38 0)
 			(effects
 				(font
@@ -10676,6 +10990,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "ERA-6AEB202V"
+			(at 107.95 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2524065f-7048-483c-9fdc-33fff61f2162")
 		)
@@ -10737,6 +11060,15 @@
 		)
 		(property "Description" ""
 			(at 123.19 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "ERA-6AEB102V"
+			(at 123.19 124.46 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10812,6 +11144,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "ERA-6AEB102V"
+			(at 113.03 124.46 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "04adeb17-fe7b-4bce-8197-1b6b6ba0fef2")
 		)
@@ -10870,8 +11211,17 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "TRIMMER 10KOHM 0.75W PC PIN SIDE"
 			(at 133.35 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "3006P-1-103LF"
+			(at 133.35 124.46 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10949,6 +11299,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "ERA-6AEB202V"
+			(at 102.87 124.46 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3d1ab8ab-7462-4c01-9ad3-1b7153c0fb2d")
 		)
@@ -10974,15 +11333,15 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000061cd355f")
 		(property "Reference" "J3"
-			(at 106.68 68.58 0)
+			(at 106.68 68.072 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "COCO3_RGB_IN"
-			(at 107.188 70.358 0)
+		(property "Value" "IDC-Header_2x05_P2.54mm_Horizontal_tht"
+			(at 106.68 70.358 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10998,7 +11357,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "datasheets/coco3.pdf"
 			(at 105.41 78.74 0)
 			(effects
 				(font
@@ -11007,13 +11366,30 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CONN HEADER R/A 10POS 2.54MM"
 			(at 105.41 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "MPN" "302-R101"
+			(at 105.41 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Label" "COCO3_RGB_IN"
+			(at 106.68 87.884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -11219,7 +11595,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "datasheets/CK_JS203011JAQN.pdf"
+		(property "Datasheet" "datasheets/cl-sb.pdf"
 			(at 33.655 160.655 0)
 			(effects
 				(font
@@ -11228,7 +11604,16 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "SWITCH SLIDE DP3T 200MA 12V"
+			(at 49.53 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL-SB-23A-11T"
 			(at 49.53 165.1 0)
 			(effects
 				(font
@@ -11271,6 +11656,7 @@
 		)
 	)
 	(symbol
+		(lib_name "SW_DP3T_1")
 		(lib_id "000_LOCAL:SW_DP3T")
 		(at 49.53 157.48 0)
 		(unit 2)
@@ -11304,7 +11690,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "datasheets/CK_JS203011JAQN.pdf"
+		(property "Datasheet" "datasheets/cl-sb.pdf"
 			(at 33.655 153.035 0)
 			(effects
 				(font
@@ -11313,7 +11699,16 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "SWITCH SLIDE DP3T 200MA 12V"
+			(at 49.53 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL-SB-23A-11T"
 			(at 49.53 157.48 0)
 			(effects
 				(font
@@ -11408,6 +11803,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "ERA-6AEB820V"
+			(at 64.77 38.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "21e710a7-f58a-4885-ae71-eee6d96e64dc")
 		)
@@ -11469,6 +11873,15 @@
 		)
 		(property "Description" ""
 			(at 49.53 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "ERA-6AEB820V"
+			(at 49.53 33.02 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11544,6 +11957,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "ERA-6AEB820V"
+			(at 77.47 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2ae0dc74-d14e-402b-ad78-a52754dce239")
 		)
@@ -11602,7 +12024,16 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "IC VIDEO SYNC SEPARATOR 8SOIC"
+			(at 205.74 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "LM1881MX/NOPB"
 			(at 205.74 137.16 0)
 			(effects
 				(font
@@ -11828,6 +12259,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "KGM21NR71H104JT"
+			(at 190.5 134.62 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "9df736e8-3ba8-45c2-a280-575866666ff1")
 		)
@@ -11887,7 +12327,16 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAP CER 0.1UF 50V X7R 0805"
+			(at 190.5 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "KGM21NR71H104JT"
 			(at 190.5 140.97 0)
 			(effects
 				(font
@@ -11957,7 +12406,16 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RES SMD 680K OHM 0.1% 1/8W 0805"
+			(at 186.69 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "ERA-6AEB684V"
 			(at 186.69 140.97 0)
 			(effects
 				(font
@@ -12035,6 +12493,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "ERA-6AEB122V"
+			(at 92.71 83.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "654cebda-1f85-459c-a20f-d794d139fb37")
 		)
@@ -12098,6 +12565,15 @@
 		)
 		(property "Description" ""
 			(at 82.55 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "ERA-6AEB682V"
+			(at 82.55 83.82 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12174,6 +12650,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "ERA-6AEB122V"
+			(at 123.19 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "a31bb1dc-cddf-4d9b-8eb7-d20669f560ed")
 		)
@@ -12237,6 +12722,15 @@
 		)
 		(property "Description" ""
 			(at 130.81 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "ERA-6AEB682V"
+			(at 130.81 81.28 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12398,7 +12892,7 @@
 		(at 180.34 130.81 270)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "19817fff-55f9-4062-a61c-aa5b3aabdf69")
@@ -12589,6 +13083,204 @@
 			(project "rgb2vga"
 				(path "/dc38b7f3-94d8-459d-903b-54a6ae2cb037"
 					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "000_LOCAL:Conn_02x20_Odd_Even")
+		(at 182.88 60.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "31402aca-563e-4c86-a064-da69479282af")
+		(property "Reference" "J5"
+			(at 184.15 35.052 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PinSocket_02x20_P2.54mm_Vertical_tht"
+			(at 184.15 32.766 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "000_LOCAL:PinSocket_2x20_P2.54mm_Polarized_Vertical"
+			(at 182.88 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "datasheets/DE0-Nano.pdf"
+			(at 182.88 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "CONN HDR 40POS 0.1 GOLD PCB"
+			(at 182.88 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "SFH11-PBPC-D20-ST-BK"
+			(at 182.88 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Label" "GPIO_1"
+			(at 184.15 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b03388e3-ce5e-4d12-8b90-735bedc714c4")
+		)
+		(pin "10"
+			(uuid "1b6cca61-d722-438d-9e4b-8629114426aa")
+		)
+		(pin "11"
+			(uuid "85d8a450-9c16-4982-b7d0-aa78144f744f")
+		)
+		(pin "12"
+			(uuid "cfd40a58-3be6-4e1f-a733-73edcf037cb8")
+		)
+		(pin "13"
+			(uuid "12c45732-d34d-4fcf-a8e6-f3e7927dac83")
+		)
+		(pin "14"
+			(uuid "2edd9c98-ac4a-439b-90d9-1cbf34711fba")
+		)
+		(pin "15"
+			(uuid "dbf35715-1d6b-4157-9ddc-9822573555d5")
+		)
+		(pin "16"
+			(uuid "9b4ef0bd-3c5e-41d2-aa38-66083702bb75")
+		)
+		(pin "17"
+			(uuid "0e8f11d6-db80-47df-a7da-23ff0f010fc7")
+		)
+		(pin "18"
+			(uuid "28c250d6-072c-4e5f-a320-cb11de93f7a0")
+		)
+		(pin "19"
+			(uuid "9f7279b7-ec38-4eea-a0f3-7e6c598724da")
+		)
+		(pin "2"
+			(uuid "23f59647-dcde-4ce2-a7cb-a16ddddef0b5")
+		)
+		(pin "20"
+			(uuid "2790ff10-cc47-490e-af9c-6e5828bb8590")
+		)
+		(pin "21"
+			(uuid "9d5707d4-5267-4292-b022-ea44e9692753")
+		)
+		(pin "22"
+			(uuid "4a941767-ecb6-4bd5-a3b1-c3cd849197b4")
+		)
+		(pin "23"
+			(uuid "8f12b90e-9af3-43bb-8960-a85517365b54")
+		)
+		(pin "24"
+			(uuid "6446f05e-1499-4cc1-9c0b-58b01d3bb654")
+		)
+		(pin "25"
+			(uuid "eaa4420a-1a1d-491e-80d9-5020cba52aaf")
+		)
+		(pin "26"
+			(uuid "288a6069-1818-4be4-ad42-3b8eba503629")
+		)
+		(pin "27"
+			(uuid "89b22dbf-5b12-4e6c-b977-1d4d00f66ea0")
+		)
+		(pin "28"
+			(uuid "bd57d934-2014-484c-96dd-761bf337ae4b")
+		)
+		(pin "29"
+			(uuid "f84dc2d1-bbfa-423c-9da2-00eb74576218")
+		)
+		(pin "3"
+			(uuid "bb11af0f-d977-46d2-8f8c-d1a0c8f720bb")
+		)
+		(pin "30"
+			(uuid "6cfb4157-cddf-4ec5-a841-e87bf44b4241")
+		)
+		(pin "31"
+			(uuid "4f91f4cd-d547-4830-9c36-824c04636b0d")
+		)
+		(pin "32"
+			(uuid "0bbf1aa6-1c18-4204-81c6-989c7a4b117a")
+		)
+		(pin "33"
+			(uuid "ac7470dd-0410-462f-9eb5-58f2bf135ef9")
+		)
+		(pin "34"
+			(uuid "a2bd2937-9092-4bcc-b86a-871ef2847cac")
+		)
+		(pin "35"
+			(uuid "7c142a7d-5228-46f9-8c60-4cc49f2f29d4")
+		)
+		(pin "36"
+			(uuid "dee9015d-1519-4426-9210-e785ec9f0787")
+		)
+		(pin "37"
+			(uuid "700b55aa-a170-4120-a133-31c3333be2ab")
+		)
+		(pin "38"
+			(uuid "69883ce5-44a9-4e41-a3c5-229da40143f5")
+		)
+		(pin "39"
+			(uuid "a757b14a-bd48-4236-82ab-23a1cc5133e0")
+		)
+		(pin "4"
+			(uuid "a54fa3e9-a1c3-4bc0-b836-813943508f85")
+		)
+		(pin "40"
+			(uuid "a517f27e-5093-49b9-a233-f06a4cf147c9")
+		)
+		(pin "5"
+			(uuid "919cb008-0bed-4b73-99c7-58bfb1ab42ff")
+		)
+		(pin "6"
+			(uuid "f356fdb2-e1fa-40b5-88d9-700facfc3554")
+		)
+		(pin "7"
+			(uuid "2a310e4f-e276-4976-a374-a8ca5a92d05c")
+		)
+		(pin "8"
+			(uuid "18e908f5-a00a-47d5-a1a1-077269868880")
+		)
+		(pin "9"
+			(uuid "eb2951f8-0d52-4e1e-a6dd-2a057fd8e3b6")
+		)
+		(instances
+			(project "rgb2vga"
+				(path "/dc38b7f3-94d8-459d-903b-54a6ae2cb037"
+					(reference "J5")
 					(unit 1)
 				)
 			)
@@ -12937,7 +13629,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "7ab40789-4104-4b0d-b57f-49b4c90d957d")
 		(property "Reference" "C4"
 			(at 168.91 138.43 0)
@@ -12975,6 +13667,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 172.72 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "C0805C511F3HAC7800"
 			(at 172.72 138.43 0)
 			(effects
 				(font
@@ -13184,6 +13885,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "CL21B105KAFNNNE"
+			(at 201.93 123.19 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b92161e5-d152-4336-82bd-fb7c066e9980")
 		)
@@ -13207,7 +13917,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "abcdbe37-f21f-454f-8950-ad41b6614229")
 		(property "Reference" "R29"
 			(at 171.45 129.54 0)
@@ -13246,6 +13956,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 172.72 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "ERA-6AEB621V"
 			(at 172.72 130.81 0)
 			(effects
 				(font
