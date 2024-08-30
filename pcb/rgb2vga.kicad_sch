@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "DE0-NANO RGB2VGA")
-		(date "2024-08-06")
-		(rev "010")
+		(date "2024-08-30")
+		(rev "018")
 		(company "Brian K. White - b.kenyon.w@gmail.com")
 		(comment 1 "Original Design by Luis Antoniosi 2014")
 	)
@@ -8033,7 +8033,7 @@
 		)
 		(uuid "db7b2b23-7923-4ce9-9102-81ab5ca91d81")
 	)
-	(text "DAC TRIM"
+	(text "ADC TRIM"
 		(exclude_from_sim no)
 		(at 136.398 122.682 0)
 		(effects

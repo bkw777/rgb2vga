@@ -9,8 +9,8 @@
 	(paper "USLetter")
 	(title_block
 		(title "DE0-NANO_RGB2VGA")
-		(date "2024-08-06")
-		(rev "017")
+		(date "2024-08-30")
+		(rev "018")
 		(company "Brian K. White - b.kenyon.w@gmail.com")
 		(comment 1 "github.com/bkw777/rgb2vga")
 		(comment 2 "Based on FPGA RGB2VGA by Luis Antoniosi")
@@ -17635,7 +17635,7 @@
 			(justify left mirror)
 		)
 	)
-	(gr_text "DAC TRIM"
+	(gr_text "ADC TRIM"
 		(at 156.2735 128.27 270)
 		(layer "B.SilkS")
 		(uuid "a0033636-a5c2-445d-8545-88e18a5f6e9d")
@@ -17898,7 +17898,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "DAC\nTRIM"
+	(gr_text "ADC\nTRIM"
 		(at 152.3365 127.127 0)
 		(layer "F.SilkS")
 		(uuid "d9f295ab-2967-4649-aa88-4ac6540c3ebc")

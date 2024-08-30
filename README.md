@@ -53,6 +53,7 @@ Alternate enclosure top with screws and nuts for the artifact switch instead of 
 ![](pics/alt_top_2.jpg)
 ![](pics/alt_top_3.jpg)
 
+![](pcb/out/rgb2vga.enclosed.jpg)
 ![](pcb/out/rgb2vga.jpg)
 ![](pcb/out/rgb2vga.b.jpg)
 ![](pcb/out/rgb2vga.top.jpg)
