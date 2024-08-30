@@ -9284,7 +9284,7 @@
 				)
 			)
 		)
-		(attr smd board_only exclude_from_pos_files exclude_from_bom dnp)
+		(attr smd board_only exclude_from_bom dnp)
 		(fp_circle
 			(center 0 0)
 			(end 1.25 0)
@@ -9607,7 +9607,7 @@
 				)
 			)
 		)
-		(attr smd board_only exclude_from_pos_files exclude_from_bom dnp)
+		(attr smd board_only exclude_from_bom dnp)
 		(fp_circle
 			(center 0 0)
 			(end 1.25 0)
@@ -9719,7 +9719,7 @@
 				)
 			)
 		)
-		(attr smd board_only exclude_from_pos_files exclude_from_bom dnp)
+		(attr smd board_only exclude_from_bom dnp)
 		(fp_circle
 			(center 0 0)
 			(end 1.25 0)
@@ -11561,7 +11561,7 @@
 			)
 		)
 		(property "Value" "HD15F_horizontal_tht"
-			(at 0 -3.937 270)
+			(at 0 -3.937 -90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
@@ -13603,7 +13603,7 @@
 			)
 		)
 		(property "Value" "IDC-Header_2x05_P2.54mm_Horizontal_tht"
-			(at 6.795 -5.105 270)
+			(at 6.795 -5.105 -90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
