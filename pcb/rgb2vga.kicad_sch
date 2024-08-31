@@ -8528,7 +8528,7 @@
 		)
 		(uuid "ab40ee7c-e7b9-48e3-ab1c-46daef770f64")
 	)
-	(label "SW_MSX"
+	(label "SW_OFFSET"
 		(at 74.93 142.24 180)
 		(fields_autoplaced yes)
 		(effects
