@@ -61,7 +61,7 @@ Alternate enclosure top with screws and nuts for the artifact switch instead of 
 ![](pcb/out/rgb2vga.svg)
 
 <!-- [PCB from OSHPark]()  -->
-[PCB from PCBWAY](https://www.pcbway.com/project/shareproject/de0_nano_fpga_rgb2vga.html)  
+[PCB and Enclosure from PCBWAY](https://www.pcbway.com/project/shareproject/de0_nano_fpga_rgb2vga.html)  
 
 [BOM from DigiKey](https://www.digikey.com/short/wv89d9fv)  
 
@@ -86,9 +86,6 @@ When searching other sources like ebay, don't accidentally get **DE0-Nano-SoC**,
 
 [Through-Hole BOM from DigiKey](https://www.digikey.com/short/5mq32b7z)
 -->
-
-## Enclosure
-[Enclosure from CraftCloud](https://craftcloud3d.com/offer/e28365bf-4fbd-4414-9492-a3820372ae03)
 
 [PCB Gerbers, FPGA Firmware, Enclosure STLs](../../releases/)
 
